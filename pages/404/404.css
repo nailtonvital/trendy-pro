@@ -1,0 +1,14 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: "Poppins";
+}
+
+.page{
+    text-align: center;
+    margin-top: 120px;
+}
+
+.not-found {
+    font-size: 150px;
+}
