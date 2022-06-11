@@ -7,9 +7,9 @@ const server = express();
 server.use(cors());
 
 server.use(express.json());
-/* 
+
 server.get('/relatedTopics', async (request, response) => {
-    const { word } = request.query
+    const word = request.query.keyword
     
     const related = await googleTrends.relatedTopics({ keyword: word })
         .then((res) => {
@@ -26,22 +26,22 @@ server.get('/relatedTopics', async (request, response) => {
 });
 
 server.get('/relatedQueries', async (request, response) => {
-    const { word } = request.query
-    
-     await googleTrends.relatedQueries({ keyword: word })
-        .then((res) => {
-            let arr = []
-            let text = JSON.parse(res).default.rankedList
-            const result = text[0].rankedKeyword.forEach(element => {
-               arr.push(element.query)
-            });
-            response.send(arr)
-        })
-        .catch((err) => {
-            response.send(err);
-        })
+    const word = request.query.keyword
+
+    await googleTrends.relatedQueries({ keyword: word })
+    .then((res) => {
+        let arr = []
+        let text = JSON.parse(res).default.rankedList
+        const result = text[0].rankedKeyword.forEach(element => {
+            arr.push(element.query)
+        });
+        response.send(arr)
+    })
+    .catch((err) => {
+        response.send(err);
+    })
 });
-*/
+
 server.get('/dailyTrends', async (request, response) => {
     const local = request.query.geo
     
@@ -61,13 +61,19 @@ server.get('/dailyTrends', async (request, response) => {
 
 server.get('/interestOverTime', async (request, response) => {
     //const { word } = request.query
-    
+    info = []
      await googleTrends.interestOverTime({ keyword: 'anime' })
         .then((res) => {
             let arr = []
             let text = JSON.parse(res).default.timelineData
-            const result = text
-            response.send(result)
+            text.map((p)=>{
+                info.push({
+                    time: p.formattedTime,
+                    value: p.value
+                })
+            })
+            
+            response.send(info)
         })
         .catch((err) => {
             response.send(err);
