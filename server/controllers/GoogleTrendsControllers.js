@@ -1,5 +1,6 @@
 const googleTrends = require('google-trends-api');
 
+// Get a list of top most searched terms today
 exports.getDailyTrends = async function (request, response){
     const local = request.query.geo
     await googleTrends.dailyTrends({geo: local})
@@ -16,6 +17,7 @@ exports.getDailyTrends = async function (request, response){
         })
 }
 
+// Get the amount of searches over time
 exports.getInterestOverTime = async (request, response) => {
     const word = request.query.keyword
     info = []
@@ -37,6 +39,7 @@ exports.getInterestOverTime = async (request, response) => {
         })
 }
 
+// Get a list of related queries around a search-tearm
 exports.getRelatedQueries = async (request, response) => {
     const word = request.query.keyword
 
@@ -54,7 +57,7 @@ exports.getRelatedQueries = async (request, response) => {
     })
 }
 
-// return related topics of the keyword
+// Get a list of related topics around a search-tearm
 exports.getRelatedTopics = async (request, response) => {
     const word = request.query.keyword
     

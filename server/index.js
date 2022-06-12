@@ -10,7 +10,6 @@ server.use(cors());
 server.use(express.json());
 
 // Google Trends Area
-
 server.get('/relatedTopics', googleTrends.getRelatedTopics);
 
 server.get('/relatedQueries', googleTrends.getRelatedQueries);
@@ -19,7 +18,7 @@ server.get('/dailyTrends', googleTrends.getDailyTrends);
 
 server.get('/interestOverTime', googleTrends.getInterestOverTime);
 
-// Movies Area
+// Entertainment Area
 // Trending Today
 server.get("/trendingMoviesToday", tmdb.getTrendingMoviesDay)
 server.get("/trendingTVsToday", tmdb.getTrendingTvShowsDay)
