@@ -27,6 +27,9 @@ server.get("/trendingTVsToday", tmdb.getTrendingTvShowsDay)
 server.get("/trendingMoviesWeek", tmdb.getTrendingMoviesWeek)
 server.get("/trendingTVsWeek", tmdb.getTrendingTvShowsWeek)
 
+server.get("/getMovie", tmdb.getMovie)
+server.get("/getTV", tmdb.getTV)
+
 // server.get("/trendingPersons", tmdb.getTrendingPersons)
 
 server.listen(3333, (err) => {
