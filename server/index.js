@@ -1,9 +1,12 @@
 const express = require('express');
 const cors = require('cors');
-const res = require('express/lib/response');
 const server = express();
 const googleTrends = require('../server/controllers/GoogleTrendsControllers')
 const tmdb = require('../server/controllers/MovieController')
+const trend = require('../server/controllers/TrendsController.js');
+
+//const tr = new trend().getInterestOverTime("Messi")
+const tr = new trend().getRelatedQueries("herogasm")
 
 server.use(cors());
 
