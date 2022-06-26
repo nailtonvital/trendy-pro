@@ -1,5 +1,5 @@
 const axios = require('axios')
-class Movie{
+module.exports = class Movie{
     constructor() {}
 
     getTrendingMoviesDay(){
@@ -67,11 +67,11 @@ class Movie{
         axios.get(`https://api.themoviedb.org/3/movie/${movie_id}?api_key=502709b57a68d03a1d751fc801b2b4ea&language=en-US`)
             .then(function (response) {
                 // manipula o sucesso da requisição
-                res.send(response.data);
+                console.log(response.data);
             })
             .catch(function (error) {
                 // manipula erros da requisição
-                res.send(error);
+                console.log(error);
             })
     }
 
@@ -79,11 +79,11 @@ class Movie{
     axios.get(`https://api.themoviedb.org/3/tv/${tv_id}?api_key=502709b57a68d03a1d751fc801b2b4ea&language=en-US`)
         .then(function (response) {
             // manipula o sucesso da requisição
-            res.send(response.data);
+            console.log(response.data);
         })
         .catch(function (error) {
             // manipula erros da requisição
-            res.send(error);
+            console.log(error);
         })
     }
 }
