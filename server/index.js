@@ -1,3 +1,5 @@
+require('dotenv').config();
+const mongoose = require('mongoose');
 const express = require('express');
 const cors = require('cors');
 const server = express();
@@ -5,11 +7,22 @@ const googleTrends = require('../server/controllers/GoogleTrendsControllers')
 const tmdb = require('../server/controllers/MovieController')
 const trend = require('../server/controllers/TrendsController.js');
 
+mongoose.connect(
+    process.env.MONGODB_URI,
+    (err) => {
+        if (err) return console.log("Error: ", err);
+        console.log("MongoDB Connection -- Ready state is:", mongoose.connection.readyState);
+    }
+);
 
-//const tr = new trend().getInterestOverTime("Messi")
+
+//const tr = new trend().getInterestOverTime("Messi").then()
 //const tr = new trend().getRelatedQueries("herogasm")
 //const tr = new trend().getRelatedTopics("anime");
-const tr = new tmdb().getMovie(4557)
+//const tr = new tmdb().getTV(66732)
+//const tr = new tmdb().getMovie(414906)
+//const tr  = new tmdb().getTrendingMoviesDay()
+const tr  = new tmdb().deleteAllMovies()
 
 server.use(cors());
 
@@ -37,6 +50,12 @@ server.use(express.json());
 // server.get("/getTV", tmdb.getTV)
 
 // server.get("/trendingPersons", tmdb.getTrendingPersons)
+
+//server.get('/movies', movies.getAllmovies)
+
+//server.get('/movie/:movieId', movies.getMovieSelected)
+
+
 
 server.listen(3333, (err) => {
     if (!err) {

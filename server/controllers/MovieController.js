@@ -1,16 +1,54 @@
 const axios = require('axios')
-module.exports = class Movie{
+const Movie = require('../models/Movie.js')
+//const trend = require('../server/controllers/TrendsController.js');
+
+module.exports = class MovieClass{
     constructor() {}
 
     getTrendingMoviesDay(){
     axios.get('https://api.themoviedb.org/3/trending/movie/day?api_key=502709b57a68d03a1d751fc801b2b4ea')
         .then(function (response) {
             // manipula o sucesso da requisição
-            console.log(response.data.results);
+            let results = response.data.results
+
+            results.map(result=>{
+                //verifica se existe no banco
+                Movie.findOne({title:result.title}, (err, data) => {
+                    if(!data){
+                        let newMovie = new Movie({
+                            id: result.id,
+                            title:result.title,
+                            originalTitle: result.original_title,
+                            image:result.poster_path,
+                            originalLanguage: result.original_language,
+                            releaseDate: result.release_date,
+                            overview: result.overview,
+                            genres:result.genres,
+                            voteAverage: result.vote_average
+                        });
+
+                        newMovie.save((err, data)=>{
+                            if(err) console.log({Error: err});
+                            console.log(data);
+                        });
+                    }else{
+                        if(err) console.log(`Something went wrong, please try again. ${err}`);
+                        console.log({message:"Movie already exists"});
+                    }
+                })
+            })
         })
         .catch(function (error) {
             // manipula erros da requisição
             console.log(error);
+        })
+    }
+    deleteAllMovies(){
+        Movie.deleteMany({}, err => {
+            if(err) {
+                console.log({message: "Complete delete failed"});
+            }
+            console.log({message: "Complete delete successful"});
         })
     }
 
@@ -67,7 +105,19 @@ module.exports = class Movie{
         axios.get(`https://api.themoviedb.org/3/movie/${movie_id}?api_key=502709b57a68d03a1d751fc801b2b4ea&language=en-US`)
             .then(function (response) {
                 // manipula o sucesso da requisição
-                console.log(response.data);
+                let result = {}
+                let results = response.data
+                result = {
+                    'id': results.id,
+                    'title':results.title,
+                    'original_title': results.original_title,
+                    'poster_path':results.poster_path,
+                    'original_language': results.original_language,
+                    'release_date': results.release_date,
+                    'overview': results.overview,
+                    'genres':results.genres
+                }
+                console.log(results)
             })
             .catch(function (error) {
                 // manipula erros da requisição
@@ -79,7 +129,23 @@ module.exports = class Movie{
     axios.get(`https://api.themoviedb.org/3/tv/${tv_id}?api_key=502709b57a68d03a1d751fc801b2b4ea&language=en-US`)
         .then(function (response) {
             // manipula o sucesso da requisição
-            console.log(response.data);
+            let movieResult = {}
+            let movieResults = response.data
+
+            movieResult = {
+                'id': results.id,
+                'title':results.name,
+                'original_title': results.original_name,
+                'poster_path':results.poster_path,
+                'original_language': results.original_language,
+                'release_date': results.release_date,
+                'overview': results.overview,
+                'genres':results.genres,
+                //'interestOverTime':[],
+                //'relatedTopics':[],
+                //'relatedQueries': []
+            }
+            console.log(movieResultesult)
         })
         .catch(function (error) {
             // manipula erros da requisição
@@ -87,90 +153,3 @@ module.exports = class Movie{
         })
     }
 }
-
-exports.getTrendingMoviesDay = (req, res)=>{
-    axios.get('https://api.themoviedb.org/3/trending/movie/day?api_key=502709b57a68d03a1d751fc801b2b4ea')
-  .then(function (response) {
-    // manipula o sucesso da requisição
-    res.send(response.data.results);
-  })
-  .catch(function (error) {
-    // manipula erros da requisição
-    res.send(error);
-  })
-}
-
-exports.getTrendingTvShowsDay = (req, res)=>{
-    axios.get('https://api.themoviedb.org/3/trending/tv/day?api_key=502709b57a68d03a1d751fc801b2b4ea')
-  .then(function (response) {
-    // manipula o sucesso da requisição
-    res.send(response.data.results);
-  })
-  .catch(function (error) {
-    // manipula erros da requisição
-    res.send(error);
-  })
-}
-
-exports.getTrendingMoviesWeek = (req, res)=>{
-    axios.get('https://api.themoviedb.org/3/trending/movie/week?api_key=502709b57a68d03a1d751fc801b2b4ea')
-  .then(function (response) {
-    // manipula o sucesso da requisição
-    res.send(response.data.results);
-  })
-  .catch(function (error) {
-    // manipula erros da requisição
-    res.send(error);
-  })
-}
-
-exports.getTrendingTvShowsWeek = (req, res)=>{
-    axios.get('https://api.themoviedb.org/3/trending/tv/week?api_key=502709b57a68d03a1d751fc801b2b4ea')
-  .then(function (response) {
-    // manipula o sucesso da requisição
-    res.send(response.data.results);
-  })
-  .catch(function (error) {
-    // manipula erros da requisição
-    res.send(error);
-  })
-}
-
-// exports.getTrendingPersons = (req, res)=>{
-//     axios.get('https://api.themoviedb.org/3/trending/person/day?api_key=502709b57a68d03a1d751fc801b2b4ea')
-//   .then(function (response) {
-//     // manipula o sucesso da requisição
-//     res.send(response.data.results);
-//   })
-//   .catch(function (error) {
-//     // manipula erros da requisição
-//     res.send(error);
-//   })
-// }
-
-exports.getMovie = (req,res)=>{
-  const { movie_id } = req.query
-  axios.get(`https://api.themoviedb.org/3/movie/${movie_id}?api_key=502709b57a68d03a1d751fc801b2b4ea&language=en-US`)
-  .then(function (response) {
-    // manipula o sucesso da requisição
-    res.send(response.data);
-  })
-  .catch(function (error) {
-    // manipula erros da requisição
-    res.send(error);
-  })
-}
-
-exports.getTV= (req,res)=>{
-  const { tv_id } = req.query
-  axios.get(`https://api.themoviedb.org/3/tv/${tv_id}?api_key=502709b57a68d03a1d751fc801b2b4ea&language=en-US`)
-  .then(function (response) {
-    // manipula o sucesso da requisição
-    res.send(response.data);
-  })
-  .catch(function (error) {
-    // manipula erros da requisição
-    res.send(error);
-  })
-}
-

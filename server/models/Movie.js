@@ -1,39 +1,34 @@
-class Movie{
-    constructor(idMovie, title, originalTitle, img, originalLanguage, releaseDate, overview){
-        this._idMovie = idMovie;
-        this._title = title;
-        this._originalTitle = originalTitle;
-        this._originalLanguage = originalLanguage;
-        this._img = img;
-        this._releaseDate = releaseDate;
-        this._overview = overview;
-    }
+'use strict';
+const mongoose = require('mongoose');
 
-    get idMovie(){
-        return this._idMovie
-    }
+const MovieSchema = new mongoose.Schema({
+    id: Number,
+    title: {type:String, required:true},
+    originalTitle: String,
+    image: String,
+    overview: String,
+    originalLanguage: String,
+    releaseDate: String,
+    voteAverage: Number,
+    runTime: Number,
+    genres: String,
+    relatedTopics: [{
+        geo: String,
+        date: {type:String, default: new Date()},
+        value: Number,
+    }],
+    relatedQueries: [{
+        query: String,
+        value: Number,
+    }],
+    interestOverTime: [{
+        startTime: String,
+        endTime: String,
+        value: String,
+    }]
+});
 
-    get title(){
-        return this._title
-    }
+const Movie = mongoose.model('Movie', MovieSchema)
 
-    get img(){
-        return this._img
-    }
+module.exports = Movie
 
-    get originalTitle(){
-        return this._originalTitle
-    }
-
-    get originalLanguage(){
-        return this._originalLanguage
-    }
-
-    get releaseDate(){
-        return this._releaseDate
-    }
-
-    get overview(){
-        return this._overview
-    }
-}

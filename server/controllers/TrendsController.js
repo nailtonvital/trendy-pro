@@ -3,6 +3,7 @@ const googleTrends = require('google-trends-api');
 module.exports = class Trends{
     constructor(word){
         this.keyword = word;
+
     }
 
     async getInterestOverTime(keyword){ 
