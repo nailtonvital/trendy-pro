@@ -22,7 +22,7 @@ mongoose.connect(
 //const tr = new tmdb().getTV(66732)
 //const tr = new tmdb().getMovie(414906)
 //const tr  = new tmdb().getTrendingMoviesDay()
-const tr  = new tmdb().deleteAllMovies()
+//const tr  = new tmdb().deleteAllMovies()
 
 server.use(cors());
 
