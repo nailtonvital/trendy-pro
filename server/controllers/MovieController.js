@@ -65,15 +65,19 @@ module.exports = class MovieClass{
     }
 
     getTrendingMoviesWeek(){
+        
         axios.get('https://api.themoviedb.org/3/trending/movie/week?api_key=502709b57a68d03a1d751fc801b2b4ea')
             .then(function (response) {
                 // manipula o sucesso da requisição
-                console.log(response.data.results);
+                let rs = response.data.results
+                return(rs)
+                // return JSON.stringify(obj)
             })
             .catch(function (error) {
                 // manipula erros da requisição
                 console.log(error);
             })
+            
     }
 
     getTrendingTvShowsWeek(){

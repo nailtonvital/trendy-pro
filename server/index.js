@@ -15,6 +15,11 @@ mongoose.connect(
     }
 );
 
+setInterval(()=>{
+
+    result = new tmdb().getTrendingMoviesWeek()
+    console.log(result.value)
+    }, 1000);
 
 //const tr = new trend().getInterestOverTime("Messi").then()
 //const tr = new trend().getRelatedQueries("herogasm")
@@ -29,13 +34,13 @@ server.use(cors());
 server.use(express.json());
 
 // Google Trends Area
-// server.get('/relatedTopics', googleTrends.getRelatedTopics);
+server.get('/relatedTopics', googleTrends.getRelatedTopics);
 
-// server.get('/relatedQueries', googleTrends.getRelatedQueries);
+server.get('/relatedQueries', googleTrends.getRelatedQueries);
 
 // server.get('/dailyTrends', googleTrends.getDailyTrends);
 
-// server.get('/interestOverTime', googleTrends.getInterestOverTime);
+server.get('/interestOverTime', googleTrends.getInterestOverTime);
 
 // // Entertainment Area
 // // Trending Today
@@ -51,9 +56,9 @@ server.use(express.json());
 
 // server.get("/trendingPersons", tmdb.getTrendingPersons)
 
-//server.get('/movies', movies.getAllmovies)
+// server.get('/movies', movies.getAllmovies)
 
-//server.get('/movie/:movieId', movies.getMovieSelected)
+// server.get('/movie/:movieId', movies.getMovieSelected)
 
 
 
