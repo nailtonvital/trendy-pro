@@ -18,7 +18,7 @@ mongoose.connect(
 setInterval(()=>{
 
     result = new tmdb().getTrendingMoviesWeek()
-    console.log(result.value)
+    console.log(result)
     }, 1000);
 
 //const tr = new trend().getInterestOverTime("Messi").then()
