@@ -1,11 +1,13 @@
-require('dotenv').config();
-const mongoose = require('mongoose');
-const express = require('express');
-const cors = require('cors');
+import * as dotenv from 'dotenv'
+dotenv.config()
+import mongoose from 'mongoose';
+import express, { json } from 'express';
+import cors from 'cors';
 const server = express();
-const googleTrends = require('../server/controllers/GoogleTrendsControllers')
-const tmdb = require('../server/controllers/MovieController')
-const trend = require('../server/controllers/TrendsController.js');
+import * as googleTrends from '../server/controllers/GoogleTrendsControllers.js';
+import MovieClass, * as tmdb from '../server/controllers/MovieController.js';
+import * as trend from '../server/controllers/TrendsController.js';
+import { pageSpeed } from './controllers/GoogleCloudController.js'
 
 mongoose.connect(
     process.env.MONGODB_URI,
@@ -15,11 +17,18 @@ mongoose.connect(
     }
 );
 
-setInterval(()=>{
 
-    result = new tmdb().getTrendingMoviesWeek()
-    console.log(result)
-    }, 1000);
+
+new MovieClass().getTrendingMoviesWeek()
+    .then(data => {
+        console.log(data)
+    })
+    .catch(err => console.log(err))
+
+    
+
+// server.get('/pageSpeed', googleTrends.getRelatedTopics);
+// pageSpeed("https://developers.google.com")
 
 //const tr = new trend().getInterestOverTime("Messi").then()
 //const tr = new trend().getRelatedQueries("herogasm")
@@ -31,16 +40,16 @@ setInterval(()=>{
 
 server.use(cors());
 
-server.use(express.json());
+server.use(json());
 
-// Google Trends Area
-server.get('/relatedTopics', googleTrends.getRelatedTopics);
+// // Google Trends Area
+// server.get('/relatedTopics', googleTrends.getRelatedTopics);
 
-server.get('/relatedQueries', googleTrends.getRelatedQueries);
+// server.get('/relatedQueries', googleTrends.getRelatedQueries);
 
-// server.get('/dailyTrends', googleTrends.getDailyTrends);
+// // server.get('/dailyTrends', googleTrends.getDailyTrends);
 
-server.get('/interestOverTime', googleTrends.getInterestOverTime);
+// server.get('/interestOverTime', googleTrends.getInterestOverTime);
 
 // // Entertainment Area
 // // Trending Today

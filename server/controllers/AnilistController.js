@@ -1,4 +1,4 @@
-import fetch from "node-fetch";
+import * as nodeFetch from 'node-fetch';
 
 // TRENDING ANIME QUERY
 

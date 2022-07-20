@@ -1,7 +1,8 @@
-const googleTrends = require('google-trends-api');
+import * as googleTrends from 'google-trends-api';
 
 // Get a list of top most searched terms today
-exports.getDailyTrends = async function (request, response){
+export function getDailyTrends() { 
+    async (request, response)=>{
     const local = request.query.geo
     await googleTrends.dailyTrends({geo: local})
         .then((res) => {
@@ -16,9 +17,11 @@ exports.getDailyTrends = async function (request, response){
             console.log(err);
         })
 }
+}
 
 // Get the amount of searches over time
-exports.getInterestOverTime = async (request, response) => {
+export function getInterestOverTime() { 
+    async (request, response) => {
     const word = request.query.keyword
     info = []
      await googleTrends.interestOverTime({ keyword: word })
@@ -38,9 +41,10 @@ exports.getInterestOverTime = async (request, response) => {
             response.send(err);
         })
 }
+}
 
 // Get a list of related queries around a search-tearm
-exports.getRelatedQueries = async (request, response) => {
+export function getRelatedQueries() { async (request, response) => {
     const word = request.query.keyword
 
     await googleTrends.relatedQueries({ keyword: word })
@@ -56,9 +60,10 @@ exports.getRelatedQueries = async (request, response) => {
         response.send(err);
     })
 }
+}
 
 // Get a list of related topics around a search-tearm
-exports.getRelatedTopics = async (request, response) => {
+export function getRelatedTopics(){ async (request, response) => {
     const word = request.query.keyword
     
     const related = await googleTrends.relatedTopics({ keyword: word })
@@ -73,4 +78,5 @@ exports.getRelatedTopics = async (request, response) => {
         .catch((err) => {
             response.send(err);
         })
+}
 }

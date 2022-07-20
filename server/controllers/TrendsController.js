@@ -1,6 +1,6 @@
-const googleTrends = require('google-trends-api');
+import * as googleTrends from 'google-trends-api';
 
-module.exports = class Trends{
+export default class Trends{
     constructor(word){
         this.keyword = word;
 
@@ -8,7 +8,7 @@ module.exports = class Trends{
 
     async getInterestOverTime(keyword){ 
         let info = []
-        await googleTrends.interestOverTime({ keyword: keyword })
+        await interestOverTime({ keyword: keyword })
         .then((res) => {
             let text = JSON.parse(res).default.timelineData
             text.map((p)=>{
@@ -26,7 +26,7 @@ module.exports = class Trends{
     }
 
     async getRelatedQueries (keyword){
-        await googleTrends.relatedQueries({ keyword: keyword })
+        await relatedQueries({ keyword: keyword })
             .then((res) => {
                 let arr = []
                 let text = JSON.parse(res).default.rankedList
@@ -392,7 +392,7 @@ module.exports = class Trends{
     }
 
     async getRelatedTopics(keyword) {
-        await googleTrends.relatedTopics({ keyword: keyword })
+        await relatedTopics({ keyword: keyword })
             .then((res) => {
                 let arr = []
                 let text = JSON.parse(res).default.rankedList

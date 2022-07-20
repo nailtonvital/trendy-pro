@@ -1,5 +1,5 @@
 'use strict';
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const MovieSchema = new mongoose.Schema({
     id: Number,
@@ -30,5 +30,5 @@ const MovieSchema = new mongoose.Schema({
 
 const Movie = mongoose.model('Movie', MovieSchema)
 
-module.exports = Movie
+export default Movie
 
