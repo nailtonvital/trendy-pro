@@ -53,7 +53,7 @@ export default class MovieClass{
     }
 
     getTrendingTvShowsDay(){
-    get('https://api.themoviedb.org/3/trending/tv/day?api_key=502709b57a68d03a1d751fc801b2b4ea')
+        axios.get('https://api.themoviedb.org/3/trending/tv/day?api_key=502709b57a68d03a1d751fc801b2b4ea')
         .then(function (response) {
             // manipula o sucesso da requisição
             console.log(response.data.results);
@@ -76,7 +76,7 @@ export default class MovieClass{
     }
 
     getTrendingTvShowsWeek(){
-        get('https://api.themoviedb.org/3/trending/tv/week?api_key=502709b57a68d03a1d751fc801b2b4ea')
+        axios.get('https://api.themoviedb.org/3/trending/tv/week?api_key=502709b57a68d03a1d751fc801b2b4ea')
             .then(function (response) {
                 // manipula o sucesso da requisição
                 console.log(response.data.results);
@@ -101,7 +101,7 @@ export default class MovieClass{
 
     getMovie(movie_id){
 
-        get(`https://api.themoviedb.org/3/movie/${movie_id}?api_key=502709b57a68d03a1d751fc801b2b4ea&language=en-US`)
+        axios.get(`https://api.themoviedb.org/3/movie/${movie_id}?api_key=502709b57a68d03a1d751fc801b2b4ea&language=en-US`)
             .then(function (response) {
                 // manipula o sucesso da requisição
                 let result = {}
@@ -125,7 +125,7 @@ export default class MovieClass{
     }
 
     getTV(tv_id){
-    get(`https://api.themoviedb.org/3/tv/${tv_id}?api_key=502709b57a68d03a1d751fc801b2b4ea&language=en-US`)
+        axios.get(`https://api.themoviedb.org/3/tv/${tv_id}?api_key=502709b57a68d03a1d751fc801b2b4ea&language=en-US`)
         .then(function (response) {
             // manipula o sucesso da requisição
             let movieResult = {}

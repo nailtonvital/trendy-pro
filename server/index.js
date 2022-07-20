@@ -18,23 +18,27 @@ mongoose.connect(
 );
 
 
-
 // new MovieClass().getTrendingMoviesWeek()
 //     .then(data => {
 //         console.log(data.results)
 //     })
 //     .catch(err => console.log(err))
 
-// pageSpeed('https://www.npmjs.com')
 
-new Trends().getInterestOverTime('messi')
-    .then(data =>{
-        console.log(data)
-})
+// new Trends().getInterestOverTime('messi')
+//     .then(data =>{
+//         console.log(data)
+// })
     
 
-// server.get('/pageSpeed', googleTrends.getRelatedTopics);
-// pageSpeed("https://developers.google.com")
+server.get('/pageSpeed', (req, res)=>{
+    const {url} = req.query
+    let result
+    pageSpeed("https://google.com").then(data =>{
+        res.send(data)
+    })
+    
+});
 
 //const tr = new trend().getInterestOverTime("Messi").then()
 //const tr = new trend().getRelatedQueries("herogasm")
