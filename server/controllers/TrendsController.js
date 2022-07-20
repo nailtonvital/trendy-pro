@@ -1,4 +1,4 @@
-import * as googleTrends from 'google-trends-api';
+import googleTrends from 'google-trends-api';
 
 export default class Trends{
     constructor(word){
@@ -7,22 +7,10 @@ export default class Trends{
     }
 
     async getInterestOverTime(keyword){ 
-        let info = []
-        await interestOverTime({ keyword: keyword })
-        .then((res) => {
-            let text = JSON.parse(res).default.timelineData
-            text.map((p)=>{
-                info.push({
-                    time: p.formattedTime,
-                    value: p.value
-                })
-            })
-            
-            console.log(info)
-        })
-        .catch((err) => {
-            console.log(err);
-        })
+        
+        const data = await googleTrends.interestOverTime({ keyword: keyword }).then((res) => JSON.parse(res).default.timelineData)
+
+        return data
     }
 
     async getRelatedQueries (keyword){

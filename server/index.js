@@ -6,7 +6,7 @@ import cors from 'cors';
 const server = express();
 import * as googleTrends from '../server/controllers/GoogleTrendsControllers.js';
 import MovieClass, * as tmdb from '../server/controllers/MovieController.js';
-import * as trend from '../server/controllers/TrendsController.js';
+import Trends, * as trend from '../server/controllers/TrendsController.js';
 import { pageSpeed } from './controllers/GoogleCloudController.js'
 
 mongoose.connect(
@@ -25,7 +25,12 @@ mongoose.connect(
 //     })
 //     .catch(err => console.log(err))
 
-pageSpeed('https://www.npmjs.com')
+// pageSpeed('https://www.npmjs.com')
+
+new Trends().getInterestOverTime('messi')
+    .then(data =>{
+        console.log(data)
+})
     
 
 // server.get('/pageSpeed', googleTrends.getRelatedTopics);

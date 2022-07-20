@@ -44,7 +44,8 @@ export function getInterestOverTime() {
 }
 
 // Get a list of related queries around a search-tearm
-export function getRelatedQueries() { async (request, response) => {
+export function getRelatedQueries() { 
+    async (request, response) => {
     const word = request.query.keyword
 
     await googleTrends.relatedQueries({ keyword: word })
@@ -63,7 +64,8 @@ export function getRelatedQueries() { async (request, response) => {
 }
 
 // Get a list of related topics around a search-tearm
-export function getRelatedTopics(){ async (request, response) => {
+export function getRelatedTopics(){ 
+    async (request, response) => {
     const word = request.query.keyword
     
     const related = await googleTrends.relatedTopics({ keyword: word })
