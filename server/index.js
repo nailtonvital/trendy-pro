@@ -19,12 +19,13 @@ mongoose.connect(
 
 
 
-new MovieClass().getTrendingMoviesWeek()
-    .then(data => {
-        console.log(data)
-    })
-    .catch(err => console.log(err))
+// new MovieClass().getTrendingMoviesWeek()
+//     .then(data => {
+//         console.log(data.results)
+//     })
+//     .catch(err => console.log(err))
 
+pageSpeed('https://www.npmjs.com')
     
 
 // server.get('/pageSpeed', googleTrends.getRelatedTopics);
