@@ -1,5 +1,7 @@
+import mongoose from 'mongoose';
 import * as moviedb from '../models/Movie.js'
 import axios from 'axios'
+import * as googleTrends from './GoogleTrendsControllers.js';
 //const trend = require('../server/controllers/TrendsController.js');
 
 export default class MovieClass{
@@ -15,6 +17,10 @@ export default class MovieClass{
                 //verifica se existe no banco
                 findOne({title:result.title}, (err, data) => {
                     if(!data){
+                        let topics = []
+                        googleTrends.relatedTopics(result.title).then(res=>{
+                            topics = res
+                        })
                         let newMovie = new Movie({
                             id: result.id,
                             title:result.title,
@@ -24,7 +30,8 @@ export default class MovieClass{
                             releaseDate: result.release_date,
                             overview: result.overview,
                             genres:result.genres,
-                            voteAverage: result.vote_average
+                            voteAverage: result.vote_average,
+                            relatedTopics: topics
                         });
 
                         newMovie.save((err, data)=>{

@@ -17,12 +17,8 @@ mongoose.connect(
     }
 );
 
-
-// new MovieClass().getTrendingMoviesWeek()
-//     .then(data => {
-//         console.log(data.results)
-//     })
-//     .catch(err => console.log(err))
+new MovieClass().getTrendingMoviesDay()
+    
 
 
 // new Trends().getInterestOverTime('messi')
@@ -30,16 +26,6 @@ mongoose.connect(
 //         console.log(data)
 // })
     
-
-server.get('/pageSpeed', (req, res)=>{
-    const {url} = req.query
-    let result
-    pageSpeed("https://google.com").then(data =>{
-        res.send(data)
-    })
-    
-});
-
 //const tr = new trend().getInterestOverTime("Messi").then()
 //const tr = new trend().getRelatedQueries("herogasm")
 //const tr = new trend().getRelatedTopics("anime");
@@ -53,15 +39,43 @@ server.use(cors());
 server.use(json());
 
 // // Google Trends Area
-// server.get('/relatedTopics', googleTrends.getRelatedTopics);
+server.get('/relatedTopics', (req,res)=>{
+    const word = req.query.keyword
+    googleTrends.getRelatedTopics(word)
+        .then(data => res.send(data))
+});
 
-// server.get('/relatedQueries', googleTrends.getRelatedQueries);
+server.get('/relatedQueries', (req, res) => {
+    const word = req.query.keyword
+    googleTrends.getRelatedQueries(word)
+        .then(data => res.send(data))
+});
 
-// // server.get('/dailyTrends', googleTrends.getDailyTrends);
+server.get('/dailyTrends', (req, res) => {
+    const { geo } = req.query
+    googleTrends.getDailyTrends(geo)
+        .then(data => res.send(data))
+});
 
-// server.get('/interestOverTime', googleTrends.getInterestOverTime);
+server.get('/interestOverTime', (req, res) => {
+    const word = req.query.keyword
+    googleTrends.getInterestOverTime(word)
+        .then(data => res.send(data))
+});
+
+// Google Cloud Area
+
+server.get('/pageSpeed', (req, res) => {
+    const { url } = req.query
+               
+    pageSpeed(url).then(data => {
+        res.send(data)
+        
+    })
+});
 
 // // Entertainment Area
+
 // // Trending Today
 // server.get("/trendingMoviesToday", tmdb.getTrendingMoviesDay)
 // server.get("/trendingTVsToday", tmdb.getTrendingTvShowsDay)
@@ -78,8 +92,6 @@ server.use(json());
 // server.get('/movies', movies.getAllmovies)
 
 // server.get('/movie/:movieId', movies.getMovieSelected)
-
-
 
 server.listen(3333, (err) => {
     if (!err) {

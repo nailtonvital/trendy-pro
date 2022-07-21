@@ -13,9 +13,7 @@ const MovieSchema = new mongoose.Schema({
     runTime: Number,
     genres: String,
     relatedTopics: [{
-        geo: String,
-        date: {type:String, default: new Date()},
-        value: Number,
+        topic: String,
     }],
     relatedQueries: [{
         query: String,
