@@ -2,8 +2,9 @@ import googleTrends from 'google-trends-api';
 
 export default class Trends{
     constructor(word){
-        this.keyword = word;
-
+        this.getInterestOverTime(word)
+        setTimeout(() => { this.getRelatedQueries(word) }, 500);
+        setTimeout(() => { this.getRelatedTopics(word) }, 500);
     }
 
     async getInterestOverTime(keyword){ 

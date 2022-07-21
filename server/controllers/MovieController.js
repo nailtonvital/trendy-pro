@@ -1,5 +1,7 @@
+import mongoose from 'mongoose';
 import * as moviedb from '../models/Movie.js'
 import axios from 'axios'
+import * as googleTrends from './GoogleTrendsControllers.js';
 //const trend = require('../server/controllers/TrendsController.js');
 
 export default class MovieClass{
@@ -15,6 +17,10 @@ export default class MovieClass{
                 //verifica se existe no banco
                 findOne({title:result.title}, (err, data) => {
                     if(!data){
+                        let topics = []
+                        googleTrends.relatedTopics(result.title).then(res=>{
+                            topics = res
+                        })
                         let newMovie = new Movie({
                             id: result.id,
                             title:result.title,
@@ -24,7 +30,8 @@ export default class MovieClass{
                             releaseDate: result.release_date,
                             overview: result.overview,
                             genres:result.genres,
-                            voteAverage: result.vote_average
+                            voteAverage: result.vote_average,
+                            relatedTopics: topics
                         });
 
                         newMovie.save((err, data)=>{
@@ -53,7 +60,7 @@ export default class MovieClass{
     }
 
     getTrendingTvShowsDay(){
-    get('https://api.themoviedb.org/3/trending/tv/day?api_key=502709b57a68d03a1d751fc801b2b4ea')
+        axios.get('https://api.themoviedb.org/3/trending/tv/day?api_key=502709b57a68d03a1d751fc801b2b4ea')
         .then(function (response) {
             // manipula o sucesso da requisição
             console.log(response.data.results);
@@ -76,7 +83,7 @@ export default class MovieClass{
     }
 
     getTrendingTvShowsWeek(){
-        get('https://api.themoviedb.org/3/trending/tv/week?api_key=502709b57a68d03a1d751fc801b2b4ea')
+        axios.get('https://api.themoviedb.org/3/trending/tv/week?api_key=502709b57a68d03a1d751fc801b2b4ea')
             .then(function (response) {
                 // manipula o sucesso da requisição
                 console.log(response.data.results);
@@ -101,7 +108,7 @@ export default class MovieClass{
 
     getMovie(movie_id){
 
-        get(`https://api.themoviedb.org/3/movie/${movie_id}?api_key=502709b57a68d03a1d751fc801b2b4ea&language=en-US`)
+        axios.get(`https://api.themoviedb.org/3/movie/${movie_id}?api_key=502709b57a68d03a1d751fc801b2b4ea&language=en-US`)
             .then(function (response) {
                 // manipula o sucesso da requisição
                 let result = {}
@@ -125,7 +132,7 @@ export default class MovieClass{
     }
 
     getTV(tv_id){
-    get(`https://api.themoviedb.org/3/tv/${tv_id}?api_key=502709b57a68d03a1d751fc801b2b4ea&language=en-US`)
+        axios.get(`https://api.themoviedb.org/3/tv/${tv_id}?api_key=502709b57a68d03a1d751fc801b2b4ea&language=en-US`)
         .then(function (response) {
             // manipula o sucesso da requisição
             let movieResult = {}
