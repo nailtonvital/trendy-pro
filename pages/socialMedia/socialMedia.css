@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+.social-media {
+    width: 100vw;
+    height: 100vh;
+    background: #0D0D1F;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-media>h1 {
+    font-size: 3vw;
+    color: #ffffff;
+}
+
+.card {
+    width: 100vw;
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-google {
+    width: 375px;
+    height: 692px;
+    margin: 20px 5px;
+    background: #0D0D1F;
+    background-image: url(Card_Google.svg);
+    border: none;
+    cursor: pointer;
+}
+
+.btn-twitter {
+    width: 375px;
+    height: 692px;
+    margin: 20px 5px;
+    background: #0D0D1F;
+    background-image: url(Card_Twitter.svg);
+    border: none;
+    cursor: pointer;
+}
+
+.btn-facebook {
+    width: 375px;
+    height: 692px;
+    margin: 20px 5px;
+    background: #0D0D1F;
+    background-image: url(Card_Facebook.svg);
+    border: none;
+    cursor: pointer;
+}
+
+.btn-tiktok {
+    width: 375px;
+    height: 692px;
+    margin: 20px 5px;
+    background: #0D0D1F;
+    background-image: url(Card_TikTok.svg);
+    border: none;
+    cursor: pointer;
+}
+
+.btn-youtube {
+    width: 375px;
+    height: 692px;
+    margin: 20px 5px;
+    background: #0D0D1F;
+    background-image: url(Card_Youtube.svg);
+    border: none;
+    cursor: pointer;
+}
