@@ -3,6 +3,7 @@
 body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
+    background: #0D0D1F;
 }
 
 body * {
@@ -24,12 +25,26 @@ body * {
     color: #ffffff;
 }
 
-.card {
+.content {
     width: 100vw;
     height: 85vh;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.cards {
+    overflow: scroll;
+    list-style: none;
+    white-space: nowrap;
+    padding: 5px 50px;
+    display: block;
+    overflow: auto;
+}
+
+.btn-lista {
+    display: inline-block;
+    width: 1125px;
 }
 
 .btn-google {
@@ -80,4 +95,10 @@ body * {
     background-image: url(Card_Youtube.svg);
     border: none;
     cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+    .social-media>h1 {
+        font-size: 5vw;
+    }
 }
