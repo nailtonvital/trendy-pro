@@ -1,6 +1,7 @@
 import * as dotenv from 'dotenv'
 dotenv.config()
-import mongoose from 'mongoose';
+
+import db from './mysql.js'
 import express, { json } from 'express';
 import cors from 'cors';
 const server = express();
@@ -9,13 +10,6 @@ import MovieClass, * as tmdb from '../server/controllers/MovieController.js';
 import Trends, * as trend from '../server/controllers/TrendsController.js';
 import { pageSpeed } from './controllers/GoogleCloudController.js'
 
-mongoose.connect(
-    process.env.MONGODB_URI,
-    (err) => {
-        if (err) return console.log("Error: ", err);
-        console.log("MongoDB Connection -- Ready state is:", mongoose.connection.readyState);
-    }
-);
 
 new MovieClass().getTrendingMoviesDay()
     

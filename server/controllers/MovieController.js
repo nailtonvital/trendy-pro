@@ -3,6 +3,7 @@ import * as moviedb from '../models/Movie.js'
 import axios from 'axios'
 import * as googleTrends from './GoogleTrendsControllers.js';
 //const trend = require('../server/controllers/TrendsController.js');
+import db from '../mysql.js'
 
 export default class MovieClass{
     constructor() {}
@@ -12,37 +13,57 @@ export default class MovieClass{
         .then(function (response) {
             // manipula o sucesso da requisição
             let results = response.data.results
+            
 
-            results.map(result=>{
-                //verifica se existe no banco
-                findOne({title:result.title}, (err, data) => {
-                    if(!data){
-                        let topics = []
-                        googleTrends.relatedTopics(result.title).then(res=>{
-                            topics = res
+            // let sql = "SELECT * FROM movies WHERE";
+            // db.query(sql, (err, result) => {
+            //     if (err) {
+            //         console.log(err);
+            //     } else {
+            //         if (result.length === 0){
+            //             console.log("vazio") 
+            //         }
+            //         // typeof result === null ? console.log("vazio") : console.log("cheio")
+            //     }
+
+            // })
+
+            results.map(res=>{
+                
+                axios.get(`https://api.themoviedb.org/3/movie/${res.id}?api_key=502709b57a68d03a1d751fc801b2b4ea&language=en-US`)
+                    .then(function (resultData) {
+                        let result = resultData.data
+                        let test = result.genres.map(e => { return e.name })
+                    
+                            // console.log(test.map(e => { return e }))
+                        let sql = "INSERT INTO movies (idMovies, title, originalTitle, image, overview, originalLanguage, releaseDate, voteAverage, runTime, genres) VALUES (?,?,?,?,?,?,?,?,?,?)";
+                        db.query(sql, [result.id, result.title, result.original_title, result.poster_path, result.overview, result.original_language, result.release_date, result.vote_average, result.runtime, JSON.stringify(test) ], (err, res) => {
+                            if (err) {
+                                console.log(err);
+                            } else {
+                                if (res.length === 0) {
+                                    console.log("vazio")
+                                }
+                                // typeof result === null ? console.log("vazio") : console.log("cheio")
+                            }
                         })
-                        let newMovie = new Movie({
-                            id: result.id,
-                            title:result.title,
-                            originalTitle: result.original_title,
-                            image:result.poster_path,
-                            originalLanguage: result.original_language,
-                            releaseDate: result.release_date,
-                            overview: result.overview,
-                            genres:result.genres,
-                            voteAverage: result.vote_average,
-                            relatedTopics: topics
-                        });
+                    }).catch(function (error) {
+                        // manipula erros da requisição
+                        console.log(error);
+                    })
+                // let sql = "INSERT INTO movies (idMovies, title, originalTitle, image, overview, originalLanguage, releaseDate, voteAverage, genres) VALUES (?,?,?,?,?,?,?,?,?)";
+                // db.query(sql, [result.id, result.title, result.original_title, result.poster_path, result.overview, result.original_language, result.release_date, result.vote_average, result.genres], (err, res) => {
+                //     if (err) {
+                //         console.log(err);
+                //     } else {
+                //         if (res.length === 0) {
+                //             console.log("vazio")
+                //         }
+                //         // typeof result === null ? console.log("vazio") : console.log("cheio")
+                //     }
 
-                        newMovie.save((err, data)=>{
-                            if(err) console.log({Error: err});
-                            console.log(data);
-                        });
-                    }else{
-                        if(err) console.log(`Something went wrong, please try again. ${err}`);
-                        console.log({message:"Movie already exists"});
-                    }
-                })
+                // })
+                
             })
         })
         .catch(function (error) {
@@ -108,7 +129,7 @@ export default class MovieClass{
 
     getMovie(movie_id){
 
-        axios.get(`https://api.themoviedb.org/3/movie/${movie_id}?api_key=502709b57a68d03a1d751fc801b2b4ea&language=en-US`)
+        const movie = axios.get(`https://api.themoviedb.org/3/movie/${movie_id}?api_key=502709b57a68d03a1d751fc801b2b4ea&language=en-US`)
             .then(function (response) {
                 // manipula o sucesso da requisição
                 let result = {}
