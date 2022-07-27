@@ -13,31 +13,15 @@ export default class MovieClass{
         .then(function (response) {
             // manipula o sucesso da requisição
             let results = response.data.results
-            
-
-            // let sql = "SELECT * FROM movies WHERE";
-            // db.query(sql, (err, result) => {
-            //     if (err) {
-            //         console.log(err);
-            //     } else {
-            //         if (result.length === 0){
-            //             console.log("vazio") 
-            //         }
-            //         // typeof result === null ? console.log("vazio") : console.log("cheio")
-            //     }
-
-            // })
-
             results.map(res=>{
-                
                 axios.get(`https://api.themoviedb.org/3/movie/${res.id}?api_key=502709b57a68d03a1d751fc801b2b4ea&language=en-US`)
                     .then(function (resultData) {
                         let result = resultData.data
                         let test = result.genres.map(e => { return e.name })
                     
                             // console.log(test.map(e => { return e }))
-                        let sql = "INSERT INTO movies (idMovies, title, originalTitle, image, overview, originalLanguage, releaseDate, voteAverage, runTime, genres) VALUES (?,?,?,?,?,?,?,?,?,?)";
-                        db.query(sql, [result.id, result.title, result.original_title, result.poster_path, result.overview, result.original_language, result.release_date, result.vote_average, result.runtime, JSON.stringify(test) ], (err, res) => {
+                        let sql = "INSERT INTO movies (idMovies, title, originalTitle, image, overview, originalLanguage, releaseDate, voteAverage, runTime, genres, type) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+                        db.query(sql, [result.id, result.title, result.original_title, result.poster_path, result.overview, result.original_language, result.release_date, result.vote_average, result.runtime, JSON.stringify(test), "movie" ], (err, res) => {
                             if (err) {
                                 console.log(err);
                             } else {
@@ -50,20 +34,7 @@ export default class MovieClass{
                     }).catch(function (error) {
                         // manipula erros da requisição
                         console.log(error);
-                    })
-                // let sql = "INSERT INTO movies (idMovies, title, originalTitle, image, overview, originalLanguage, releaseDate, voteAverage, genres) VALUES (?,?,?,?,?,?,?,?,?)";
-                // db.query(sql, [result.id, result.title, result.original_title, result.poster_path, result.overview, result.original_language, result.release_date, result.vote_average, result.genres], (err, res) => {
-                //     if (err) {
-                //         console.log(err);
-                //     } else {
-                //         if (res.length === 0) {
-                //             console.log("vazio")
-                //         }
-                //         // typeof result === null ? console.log("vazio") : console.log("cheio")
-                //     }
-
-                // })
-                
+                    })                
             })
         })
         .catch(function (error) {
@@ -82,14 +53,37 @@ export default class MovieClass{
 
     getTrendingTvShowsDay(){
         axios.get('https://api.themoviedb.org/3/trending/tv/day?api_key=502709b57a68d03a1d751fc801b2b4ea')
-        .then(function (response) {
-            // manipula o sucesso da requisição
-            console.log(response.data.results);
-        })
-        .catch(function (error) {
-            // manipula erros da requisição
-            console.log(error);
-        })
+            .then(function (response) {
+                // manipula o sucesso da requisição
+                let results = response.data.results
+                results.map(res => {
+                    axios.get(`https://api.themoviedb.org/3/tv/${res.id}?api_key=502709b57a68d03a1d751fc801b2b4ea&language=en-US`)
+                        .then(function (resultData) {
+                            let result = resultData.data
+                            let test = result.genres.map(e => { return e.name })
+                            
+                            // console.log(test.map(e => { return e }))
+                            let sql = "INSERT INTO movies (idMovies, title, originalTitle, image, overview, originalLanguage, releaseDate, voteAverage, runTime, genres, type) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+                            db.query(sql, [result.id, result.name, result.original_name, result.poster_path, result.overview, result.original_language, result.release_date, result.vote_average, result.runtime, JSON.stringify(test), "tv"], (err, res) => {
+                                if (err) {
+                                    console.log(err);
+                                } else {
+                                    if (res.length === 0) {
+                                        console.log("vazio")
+                                    }
+                                    // typeof result === null ? console.log("vazio") : console.log("cheio")
+                                }
+                            })
+                        }).catch(function (error) {
+                            // manipula erros da requisição
+                            console.log(error);
+                        })
+                })
+            })
+            .catch(function (error) {
+                // manipula erros da requisição
+                console.log(error);
+            })
     }
 
     getTrendingMoviesWeek(){

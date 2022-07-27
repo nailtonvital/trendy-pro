@@ -11,7 +11,7 @@ import Trends, * as trend from '../server/controllers/TrendsController.js';
 import { pageSpeed } from './controllers/GoogleCloudController.js'
 
 
-new MovieClass().getTrendingMoviesDay()
+new MovieClass().getTrendingTvShowsDay()
     
 
 
