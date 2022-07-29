@@ -1,109 +1,49 @@
-import { useState } from 'react'
-import './App.css'
-import axios from 'axios'
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend,
-} from 'chart.js';
-import { Line } from 'react-chartjs-2';
-import faker from 'faker';
+import React from 'react'
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend
-);
-
-export const options = {
-  responsive: true,
-  plugins: {
-    legend: {
-      position: 'top' ,
-    },
-    title: {
-      display: true,
-      text: 'Chart.js Line Chart',
-    },
-  },
-};
-
-const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-
-export const data = {
-  labels,
-  datasets: [
-    {
-      label: 'Dataset 1',
-      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
-      borderColor: 'rgb(255, 99, 132)',
-      backgroundColor: 'rgba(255, 99, 132, 0.5)',
-    },
-    {
-      label: 'Dataset 2',
-      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
-      borderColor: 'rgb(53, 162, 235)',
-      backgroundColor: 'rgba(53, 162, 235, 0.5)',
-    },
-  ],
-};
-
-
-function App() {
-  const [country, setCountry] = useState()
-  const [resultados, setResultado] = useState([])
-  console.log(resultados)
-  console.log(country)
-  
-  const [ dataChart, setDataChart ] = useState ( {} );
-  console.log(dataChart)
-  
-
-  const send = async () =>{
-    let date = []
-    let value = []
-    if (country !== null)
-    await axios.get(`http://localhost:3333/interestOverTime`)
-      .then((response) => {
-        for( let objData of response.data){
-          date.push(objData.formattedAxisTime)
-          value.push(objData.value)
-        }
-      })
-       setDataChart({ 
-        labels: date, 
-        datasets: [{ 
-          label: 'Value', 
-          data: value
-        }]
-      });
-  }
-
-  
-
+export default function App() {
   return (
-    <div className="App">
-      <div className="container">
-        <h1 className='mt-5 mb-5'>Today Trends</h1>
-        <div className='input-group mb-5 form-floating'>
-          <input  id='sel' name='country' onChange={e => { setCountry(e.target.value)}} />
-          <button className="btn btn-dark" onClick={send} type="button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-          </svg></button>
+    <section class="overflow-hidden text-gray-700 ">
+      <div class="container px-5 py-2 mx-auto lg:pt-12 lg:px-32">
+        <div class="flex flex-wrap -m-1 md:-m-2">
+          <div class="flex flex-wrap w-1/3">
+            <div class="w-full p-1 md:p-2">
+              <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg"
+                src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"/>
+            </div>
+          </div>
+          <div class="flex flex-wrap w-1/3">
+            <div class="w-full p-1 md:p-2">
+              <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg"
+                src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(74).webp"/>
+            </div>
+          </div>
+          <div class="flex flex-wrap w-1/3">
+            <div class="w-full p-1 md:p-2">
+              <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg"
+                src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(75).webp"/>
+            </div>
+          </div>
+          <div class="flex flex-wrap w-1/3">
+            <div class="w-full p-1 md:p-2">
+              <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg"
+                src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(70).webp"/>
+            </div>
+          </div>
+          <div class="flex flex-wrap w-1/3">
+            <div class="w-full p-1 md:p-2">
+              <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg"
+                src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(76).webp"/>
+            </div>
+          </div>
+          <div class="flex flex-wrap w-1/3">
+            <div class="w-full p-1 md:p-2">
+              <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg"
+                src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(72).webp"/>
+            </div>
+          </div>
         </div>
-        <Line options={options} data={data} />
       </div>
-    </div>
+    </section>
   )
 }
 
-export default App

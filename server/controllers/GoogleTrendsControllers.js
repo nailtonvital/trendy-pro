@@ -1,27 +1,23 @@
-const googleTrends = require('google-trends-api');
+import googleTrends from 'google-trends-api';
 
 // Get a list of top most searched terms today
-exports.getDailyTrends = async function (request, response){
-    const local = request.query.geo
+export async function getDailyTrends(local) { 
+    let arr 
     await googleTrends.dailyTrends({geo: local})
         .then((res) => {
-            let arr = []
             let text = JSON.parse(res).default.trendingSearchesDays[0]
-            text.trendingSearches.forEach(e=>{
-                arr.push({["query"]: e.title.query,["traffic"]: e.formattedTraffic})
-            });
-            response.send(arr)
+            arr = text.trendingSearches
         })
         .catch((err) => {
             console.log(err);
         })
+    return arr
 }
 
 // Get the amount of searches over time
-exports.getInterestOverTime = async (request, response) => {
-    const word = request.query.keyword
-    info = []
-     await googleTrends.interestOverTime({ keyword: word })
+export async function getInterestOverTime(word) { 
+    let info = []
+    await googleTrends.interestOverTime({ keyword: word })
         .then((res) => {
             let arr = []
             let text = JSON.parse(res).default.timelineData
@@ -31,46 +27,45 @@ exports.getInterestOverTime = async (request, response) => {
                     value: p.value
                 })
             })
-            
-            response.send(info)
         })
         .catch((err) => {
-            response.send(err);
+            return(err);
         })
+    return info
 }
 
 // Get a list of related queries around a search-tearm
-exports.getRelatedQueries = async (request, response) => {
-    const word = request.query.keyword
+export async function getRelatedQueries(word) { 
+
+    let arr = []
 
     await googleTrends.relatedQueries({ keyword: word })
     .then((res) => {
-        let arr = []
         let text = JSON.parse(res).default.rankedList
         const result = text[0].rankedKeyword.forEach(element => {
             arr.push(element.query)
         });
-        response.send(arr)
     })
     .catch((err) => {
-        response.send(err);
+        return(err);
     })
+    return arr
 }
 
 // Get a list of related topics around a search-tearm
-exports.getRelatedTopics = async (request, response) => {
-    const word = request.query.keyword
-    
-    const related = await googleTrends.relatedTopics({ keyword: word })
+export async function getRelatedTopics(word){ 
+    let arr = [];
+    await googleTrends.relatedTopics({ keyword: word })
         .then((res) => {
-            let arr = []
+            
             let text = JSON.parse(res).default.rankedList
             const result = text[0].rankedKeyword.forEach(element => {
                arr.push(element.topic.title)
             });
-            response.send(arr)
         })
         .catch((err) => {
-            response.send(err);
+            return(err);
         })
+    return arr
 }
+

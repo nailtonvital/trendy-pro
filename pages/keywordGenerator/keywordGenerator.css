@@ -1,10 +1,13 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 * {
 	margin: 0px;
 	padding: 0px;
-	font-family: "Poppins";
+	font-family: 'Montserrat', sans-serif;
 }
 body {
+	width: 100vw;
+    height: 100vh;
  	background-image:linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)), url('keyboard.jpg');
     background-position: center;
     background-repeat: no-repeat;
