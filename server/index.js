@@ -11,7 +11,7 @@ import Trends, * as trend from '../server/controllers/TrendsController.js';
 import { pageSpeed } from './controllers/GoogleCloudController.js'
 
 
-new MovieClass().getTrendingTvShowsDay()
+new MovieClass().deleteAllMovies()
     
 
 
@@ -71,15 +71,11 @@ server.get('/pageSpeed', (req, res) => {
 // // Entertainment Area
 
 // // Trending Today
-// server.get("/trendingMoviesToday", tmdb.getTrendingMoviesDay)
-// server.get("/trendingTVsToday", tmdb.getTrendingTvShowsDay)
+server.get("/trendingMovies", )
+server.get("/trendingTV", )
 
-// // Trending This Week
-// server.get("/trendingMoviesWeek", tmdb.getTrendingMoviesWeek)
-// server.get("/trendingTVsWeek", tmdb.getTrendingTvShowsWeek)
-
-// server.get("/getMovie", tmdb.getMovie)
-// server.get("/getTV", tmdb.getTV)
+// server.get("/getMovie", )
+// server.get("/getTV/:id", )
 
 // server.get("/trendingPersons", tmdb.getTrendingPersons)
 

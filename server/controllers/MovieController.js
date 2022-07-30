@@ -8,8 +8,8 @@ import db from '../mysql.js'
 export default class MovieClass{
     constructor() {}
 
-    getTrendingMoviesDay(){
-    axios.get('https://api.themoviedb.org/3/trending/movie/day?api_key=502709b57a68d03a1d751fc801b2b4ea')
+    getTrendingMovies(){
+        axios.get('https://api.themoviedb.org/3/trending/movie/week?api_key=502709b57a68d03a1d751fc801b2b4ea')
         .then(function (response) {
             // manipula o sucesso da requisição
             let results = response.data.results
@@ -43,16 +43,22 @@ export default class MovieClass{
         })
     }
     deleteAllMovies(){
-        deleteMany({}, err => {
-            if(err) {
-                console.log({message: "Complete delete failed"});
+        let sql = "DELETE FROM movies"
+        db.query(sql, (err, res)=>{
+            if (err) {
+                console.log(err);
+            } else {
+                console.log(res)
+                if (res.length === 0) {
+                    console.log("vazio")
+                }
+                // typeof result === null ? console.log("vazio") : console.log("cheio")
             }
-            console.log({message: "Complete delete successful"});
         })
     }
 
-    getTrendingTvShowsDay(){
-        axios.get('https://api.themoviedb.org/3/trending/tv/day?api_key=502709b57a68d03a1d751fc801b2b4ea')
+    getTrendingTvShows(){
+        axios.get('https://api.themoviedb.org/3/trending/tv/week?api_key=502709b57a68d03a1d751fc801b2b4ea')
             .then(function (response) {
                 // manipula o sucesso da requisição
                 let results = response.data.results
@@ -86,28 +92,7 @@ export default class MovieClass{
             })
     }
 
-    getTrendingMoviesWeek(){
-        // create a promise for the axios request
-        const promise = axios.get('https://api.themoviedb.org/3/trending/movie/week?api_key=502709b57a68d03a1d751fc801b2b4ea')
-
-        // using .then, create a new promise which extracts the data
-        const dataPromise = promise.then((response) => response.data)
-
-        // return it
-        return dataPromise  
-    }
-
-    getTrendingTvShowsWeek(){
-        axios.get('https://api.themoviedb.org/3/trending/tv/week?api_key=502709b57a68d03a1d751fc801b2b4ea')
-            .then(function (response) {
-                // manipula o sucesso da requisição
-                console.log(response.data.results);
-            })
-            .catch(function (error) {
-                // manipula erros da requisição
-                console.log(error);
-            })
-    }
+    
 
 // exports.getTrendingPersons = (req, res)=>{
 //     axios.get('https://api.themoviedb.org/3/trending/person/day?api_key=502709b57a68d03a1d751fc801b2b4ea')
@@ -121,56 +106,4 @@ export default class MovieClass{
 //   })
 // }
 
-    getMovie(movie_id){
-
-        const movie = axios.get(`https://api.themoviedb.org/3/movie/${movie_id}?api_key=502709b57a68d03a1d751fc801b2b4ea&language=en-US`)
-            .then(function (response) {
-                // manipula o sucesso da requisição
-                let result = {}
-                let results = response.data
-                result = {
-                    'id': results.id,
-                    'title':results.title,
-                    'original_title': results.original_title,
-                    'poster_path':results.poster_path,
-                    'original_language': results.original_language,
-                    'release_date': results.release_date,
-                    'overview': results.overview,
-                    'genres':results.genres
-                }
-                console.log(results)
-            })
-            .catch(function (error) {
-                // manipula erros da requisição
-                console.log(error);
-            })
-    }
-
-    getTV(tv_id){
-        axios.get(`https://api.themoviedb.org/3/tv/${tv_id}?api_key=502709b57a68d03a1d751fc801b2b4ea&language=en-US`)
-        .then(function (response) {
-            // manipula o sucesso da requisição
-            let movieResult = {}
-            let movieResults = response.data
-
-            movieResult = {
-                'id': results.id,
-                'title':results.name,
-                'original_title': results.original_name,
-                'poster_path':results.poster_path,
-                'original_language': results.original_language,
-                'release_date': results.release_date,
-                'overview': results.overview,
-                'genres':results.genres,
-                //'interestOverTime':[],
-                //'relatedTopics':[],
-                //'relatedQueries': []
-            }
-            console.log(movieResultesult)
-        })
-        .catch(function (error) {
-            // manipula erros da requisição
-            console.log(error);
-        })
-    }
 }
