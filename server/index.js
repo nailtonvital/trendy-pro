@@ -11,7 +11,9 @@ import Trends, * as trend from '../server/controllers/TrendsController.js';
 import { pageSpeed } from './controllers/GoogleCloudController.js'
 
 
-new MovieClass().deleteAllMovies()
+//new MovieClass().getTrendingMovies()
+new MovieClass().getTrendingTvShows()
+// new MovieClass().deleteAllMovies()
     
 
 
@@ -71,8 +73,28 @@ server.get('/pageSpeed', (req, res) => {
 // // Entertainment Area
 
 // // Trending Today
-server.get("/trendingMovies", )
-server.get("/trendingTV", )
+server.get("/trendingMovies", (require,response)=>{
+    let sql = 'SELECT * FROM movies WHERE type="movie"'
+    db.query(sql, (err, res) => {
+        if (err) {
+            console.log(err);
+        } else {
+            response.send(res)
+            // typeof result === null ? console.log("vazio") : console.log("cheio")
+        }
+    })
+})
+server.get("/trendingTV", (require, response) => {
+    let sql = 'SELECT * FROM movies WHERE type="tv"'
+    db.query(sql, (err, res) => {
+        if (err) {
+            console.log(err);
+        } else {
+            response.send(res)
+            // typeof result === null ? console.log("vazio") : console.log("cheio")
+        }
+    })
+})
 
 // server.get("/getMovie", )
 // server.get("/getTV/:id", )

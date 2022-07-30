@@ -18,19 +18,24 @@ export default class MovieClass{
                     .then(function (resultData) {
                         let result = resultData.data
                         let test = result.genres.map(e => { return e.name })
-                    
+                        let interestOverTime
+                        setInterval(async()=>{
+                            googleTrends.getInterestOverTime(result.title)
+                                .then(data => console.log(data))
+                        }, 1000);
+                        
                             // console.log(test.map(e => { return e }))
-                        let sql = "INSERT INTO movies (idMovies, title, originalTitle, image, overview, originalLanguage, releaseDate, voteAverage, runTime, genres, type) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
-                        db.query(sql, [result.id, result.title, result.original_title, result.poster_path, result.overview, result.original_language, result.release_date, result.vote_average, result.runtime, JSON.stringify(test), "movie" ], (err, res) => {
-                            if (err) {
-                                console.log(err);
-                            } else {
-                                if (res.length === 0) {
-                                    console.log("vazio")
-                                }
-                                // typeof result === null ? console.log("vazio") : console.log("cheio")
-                            }
-                        })
+                        // let sql = "INSERT INTO movies (idMovies, title, originalTitle, image, overview, originalLanguage, releaseDate, voteAverage, runTime, genres, type, interestOverTime) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
+                        // db.query(sql, [result.id, result.title, result.original_title, result.poster_path, result.overview, result.original_language, result.release_date, result.vote_average, result.runtime, JSON.stringify(test), "movie", JSON.stringify(interestOverTime)  ], (err, res) => {
+                        //     if (err) {
+                        //         console.log(err);
+                        //     } else {
+                        //         if (res.length === 0) {
+                        //             console.log("vazio")
+                        //         }
+                        //         // typeof result === null ? console.log("vazio") : console.log("cheio")
+                        //     }
+                        // })
                     }).catch(function (error) {
                         // manipula erros da requisição
                         console.log(error);
