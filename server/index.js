@@ -12,7 +12,7 @@ import { pageSpeed } from './controllers/GoogleCloudController.js'
 
 
 //new MovieClass().getTrendingMovies()
-new MovieClass().getTrendingTvShows()
+//new MovieClass().getTrendingTvShows()
 // new MovieClass().deleteAllMovies()
     
 
@@ -80,10 +80,10 @@ server.get("/trendingMovies", (require,response)=>{
             console.log(err);
         } else {
             response.send(res)
-            // typeof result === null ? console.log("vazio") : console.log("cheio")
         }
     })
 })
+
 server.get("/trendingTV", (require, response) => {
     let sql = 'SELECT * FROM movies WHERE type="tv"'
     db.query(sql, (err, res) => {
@@ -91,7 +91,19 @@ server.get("/trendingTV", (require, response) => {
             console.log(err);
         } else {
             response.send(res)
-            // typeof result === null ? console.log("vazio") : console.log("cheio")
+        }
+    })
+})
+
+
+server.get("/movie/:id", (req, response) => {
+    let { id } = req.params
+    let sql = `SELECT * FROM movies WHERE idMovies=${id}`
+    db.query(sql, (err, res) => {
+        if (err) {
+            console.log(err);
+        } else {
+            response.send(res)
         }
     })
 })
