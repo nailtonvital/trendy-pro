@@ -26,7 +26,8 @@ body {
 
 nav,
 .hero,
-.proof-content {
+.proof-content,
+.item {
     display: flex;
     justify-content: space-between;
 }
@@ -42,7 +43,7 @@ nav {
 }
 
 .hero {
-    height: 90vh;
+    height: 100vh;
     align-items: center;
 }
 
@@ -139,15 +140,14 @@ nav {
     margin: 0 auto;
 }
 
-.item{
-    display: flex;
-    justify-content: space-between;
+
+.left-align{
+    align-content: center;
+    margin: auto;
 }
 
-.left-align,
-.right-align {
-    display: flex;
-    justify-content: space-between;
+.right-align img{
+    width: 100%;
 }
 
 .center-align {
