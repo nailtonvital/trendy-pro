@@ -195,6 +195,10 @@ nav {
     font-weight: 200;
 }
 
+footer {
+    text-align: center;
+    margin: 15px;
+}
 @media (max-width: 1112px) {
     .proof-content {
         flex-direction: column;
