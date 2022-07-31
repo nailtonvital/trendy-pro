@@ -2,13 +2,13 @@ import * as dotenv from 'dotenv'
 dotenv.config()
 
 import db from './mysql.js'
-import express, { json } from 'express';
+import express, { json, response } from 'express';
 import cors from 'cors';
 const server = express();
 import * as googleTrends from '../server/controllers/GoogleTrendsControllers.js';
 import MovieClass, * as tmdb from '../server/controllers/MovieController.js';
-import Trends, * as trend from '../server/controllers/TrendsController.js';
 import { pageSpeed } from './controllers/GoogleCloudController.js'
+import getFacebookInterests from './controllers/FacebookInterests.js'
 
 
 //new MovieClass().getTrendingMovies()
@@ -68,6 +68,17 @@ server.get('/pageSpeed', (req, res) => {
         res.send(data)
         
     })
+});
+
+server.get('/interests', (req, res) => {
+    const { query } = req.query
+
+    getFacebookInterests(query)
+    .then(response=>{
+        res.send(response)
+    }).catch(error => {
+        res.send(error);
+    });
 });
 
 // // Entertainment Area
