@@ -12,10 +12,10 @@
 body {
     animation: Gradient 300s ease infinite;
     background: linear-gradient(1deg,
-        #07376e, #232692, #4c0fc7, #6501e6, #220a41,
-        #b51f2c, #e3af68,
-        #00755e, #177500, #14391c, #16293e,
-        #1d1e32, #2b1f43, #35185b, #07376e);
+    #07376e, #232692, #4c0fc7, #6501e6, #220a41,
+    #b51f2c, #e3af68,
+    #00755e, #177500, #14391c, #16293e,
+    #1d1e32, #2b1f43, #35185b, #07376e);
     background-size: 300% 300%;
     font-family: sans-serif;
     color: white;
@@ -89,8 +89,7 @@ nav {
     width: 100%;
 }
 
-.banner,
-.card {
+.banner, .card {
     border-radius: 8px;
 }
 
@@ -181,7 +180,6 @@ nav {
     padding: 25px;
     border-style: none;
     border-radius: 10px;
-    
     width: 100%;
 }
 
@@ -200,7 +198,6 @@ nav {
 @media (max-width: 1112px) {
     .proof-content {
         flex-direction: column;
-
     }
 }
 
@@ -227,7 +224,6 @@ nav {
 @media (max-width: 508px) {
     .features-head h2 {
         font-size: 35px;
-
     }
 
     .banner ul li {
