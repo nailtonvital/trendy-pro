@@ -31,7 +31,8 @@
     "google-trends-api": "^4.9.2",
     "mongoose": "^6.4.1",
     "mysql": "^2.18.1",
-    "node-fetch": "^3.2.8"
+    "node-fetch": "^3.2.8",
+    "update": "^0.7.4"
   },
   "devDependencies": {
     "nodemon": "^2.0.19"

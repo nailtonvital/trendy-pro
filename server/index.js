@@ -15,12 +15,12 @@ server.use(cors());
 
 server.use(json());
 
-server.get('/', (req, res) => {
+        server.get('/', (req, res) => {
     res.send("Welcome")
 });
 
-// Billboard Top 100 songs
 
+// Billboard Top 100 songs
 server.get('/billboard-top-100', (req, res) => {
 
     getChart('hot-100', (err, chart) => {
@@ -35,43 +35,62 @@ server.get('/billboard-top-100', (req, res) => {
 
 // // Google Trends Area
 server.get('/relatedTopics', (req, res) => {
-    const word = req.query.keyword
-    googleTrends.getRelatedTopics(word)
+    if (req.query.keyword) {
+        const word = req.query.keyword
+        googleTrends.getRelatedTopics(word)
         .then(data => res.send(data))
+    } else {
+        res.sendStatus(400);
+    }
 });
 
 server.get('/relatedQueries', (req, res) => {
+    if (req.query.keyword) {
     const word = req.query.keyword
     googleTrends.getRelatedQueries(word)
         .then(data => res.send(data))
+    } else {
+        res.sendStatus(400);
+    }
 });
 
 server.get('/dailyTrends', (req, res) => {
+    if (req.query.geo) {
     const { geo } = req.query
     googleTrends.getDailyTrends(geo)
         .then(data => res.send(data))
+    } else {
+        res.sendStatus(400);
+    }
 });
 
 server.get('/interestOverTime', (req, res) => {
+    if (req.query.keyword) {
     const word = req.query.keyword
     googleTrends.getInterestOverTime(word)
         .then(data => res.send(data))
+    } else {
+        res.sendStatus(400);
+    }
 });
 
 // Google Cloud Area
 
 server.get('/pageSpeed', (req, res) => {
+    if (req.query.url) {
     const { url } = req.query
-
     pageSpeed(url).then(data => {
         res.send(data)
-
     })
+    } else {
+        res.sendStatus(400);
+    }
 });
 
 //Facebook Interests
 
 server.get('/interests', (req, res) => {
+    if (req.query.query) {
     const { query } = req.query
 
     getFacebookInterests(query)
@@ -80,6 +99,9 @@ server.get('/interests', (req, res) => {
         }).catch(error => {
             res.send(error);
         });
+    } else {
+        res.sendStatus(400);
+    }
 });
 
 // // Entertainment Area
@@ -111,6 +133,9 @@ server.get("/trendingTV", (require, res) => {
 
 
 server.get("/movie/:id", (req, res) => {
+    if (isNaN(req.params.id)) {
+        res.sendStatus(400);
+    } else {
     const movie_id = req.params.id
     axios.get(`https://api.themoviedb.org/3/movie/${movie_id}?api_key=502709b57a68d03a1d751fc801b2b4ea&language=en-US`)
         .then(function (response) {
@@ -121,9 +146,13 @@ server.get("/movie/:id", (req, res) => {
             // manipula erros da requisição
             console.log(error);
         })
+    }
 })
 
 server.get("/TV/:id", (req, res) => {
+    if (isNaN(req.params.id)) {
+        res.sendStatus(400);
+    } else {
     const tv_id = req.params.id
     axios.get(`https://api.themoviedb.org/3/tv/${tv_id}?api_key=502709b57a68d03a1d751fc801b2b4ea&language=en-US`)
         .then(function (response) {
@@ -134,6 +163,7 @@ server.get("/TV/:id", (req, res) => {
             // manipula erros da requisição
             console.log(error);
         })
+    }
 })
 
 
