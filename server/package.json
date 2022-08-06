@@ -23,6 +23,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.27.2",
+    "bcrypt": "^5.0.1",
     "billboard-top-100": "^2.6.5",
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",

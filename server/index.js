@@ -1,7 +1,7 @@
 import * as dotenv from 'dotenv'
 dotenv.config()
 
-import express, { json, response } from 'express';
+import express, { json} from 'express';
 import cors from 'cors';
 const server = express();
 import axios from 'axios'
@@ -9,15 +9,53 @@ import { listCharts, getChart } from 'billboard-top-100'
 import * as googleTrends from './controllers/GoogleTrendsControllers.js';
 import { pageSpeed } from './controllers/GoogleCloudController.js'
 import getFacebookInterests from './controllers/FacebookInterests.js'
+import mysql from 'mysql'
+import * as bcrypt from 'bcrypt'
 
+const db = mysql.createPool({
+    host: "localhost",
+    user: "root",
+    password: "nailton123",
+    database: "trendypro",
+});
 
 server.use(cors());
-
 server.use(json());
 
-        server.get('/', (req, res) => {
-    res.send("Welcome")
+server.get('/', (req, res) => {
+    res.send("Welcome to the TrendyPro")
 });
+
+// AUTH
+
+// create user
+server.post("/register", (req, res) => {
+    const { name } = req.body;
+    const { email } = req.body;
+    const { occupation } = req.body;
+    const { password } = req.body;
+    
+    if ( name, email, password){
+        let hashPassword = bcrypt.hashSync(password, 10);
+
+        let sql = "INSERT INTO user (name, occupation, email, password, date_joined) VALUES (?,?,?,?,?)"
+        db.query(sql, [name, occupation, email, hashPassword, new Date()], (err, result) => {
+            if (err) {
+                res.status(206)
+                console.log(err);
+            } else {
+                res.status(201)
+                res.send("User created");
+            }
+        })
+    } else{
+        res.status(400)
+    }
+
+});
+
+// auth
+
 
 
 // Billboard Top 100 songs
@@ -25,10 +63,7 @@ server.get('/billboard-top-100', (req, res) => {
 
     getChart('hot-100', (err, chart) => {
         if (err) console.log(err);
-
         res.send(chart.songs);
-        // song with rank: 4 for week of August 27, 2016
-
     });
 
 });
