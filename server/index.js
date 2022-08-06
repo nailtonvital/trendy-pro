@@ -1,41 +1,40 @@
 import * as dotenv from 'dotenv'
 dotenv.config()
 
-import db from './mysql.js'
 import express, { json, response } from 'express';
 import cors from 'cors';
 const server = express();
-import * as googleTrends from '../server/controllers/GoogleTrendsControllers.js';
-import MovieClass, * as tmdb from '../server/controllers/MovieController.js';
+import axios from 'axios'
+import { listCharts, getChart } from 'billboard-top-100'
+import * as googleTrends from './controllers/GoogleTrendsControllers.js';
 import { pageSpeed } from './controllers/GoogleCloudController.js'
 import getFacebookInterests from './controllers/FacebookInterests.js'
 
-
-//new MovieClass().getTrendingMovies()
-//new MovieClass().getTrendingTvShows()
-// new MovieClass().deleteAllMovies()
-    
-
-
-// new Trends().getInterestOverTime('messi')
-//     .then(data =>{
-//         console.log(data)
-// })
-    
-//const tr = new trend().getInterestOverTime("Messi").then()
-//const tr = new trend().getRelatedQueries("herogasm")
-//const tr = new trend().getRelatedTopics("anime");
-//const tr = new tmdb().getTV(66732)
-//const tr = new tmdb().getMovie(414906)
-//const tr  = new tmdb().getTrendingMoviesDay()
-//const tr  = new tmdb().deleteAllMovies()
 
 server.use(cors());
 
 server.use(json());
 
+server.get('/', (req, res) => {
+    res.send("Welcome")
+});
+
+// Billboard Top 100 songs
+
+server.get('/billboard-top-100', (req, res) => {
+
+    getChart('hot-100', (err, chart) => {
+        if (err) console.log(err);
+
+        res.send(chart.songs);
+        // song with rank: 4 for week of August 27, 2016
+
+    });
+
+});
+
 // // Google Trends Area
-server.get('/relatedTopics', (req,res)=>{
+server.get('/relatedTopics', (req, res) => {
     const word = req.query.keyword
     googleTrends.getRelatedTopics(word)
         .then(data => res.send(data))
@@ -63,73 +62,84 @@ server.get('/interestOverTime', (req, res) => {
 
 server.get('/pageSpeed', (req, res) => {
     const { url } = req.query
-               
+
     pageSpeed(url).then(data => {
         res.send(data)
-        
+
     })
 });
+
+//Facebook Interests
 
 server.get('/interests', (req, res) => {
     const { query } = req.query
 
     getFacebookInterests(query)
-    .then(response=>{
-        res.send(response)
-    }).catch(error => {
-        res.send(error);
-    });
+        .then(response => {
+            res.send(response)
+        }).catch(error => {
+            res.send(error);
+        });
 });
 
 // // Entertainment Area
 
 // // Trending Today
-server.get("/trendingMovies", (require,response)=>{
-    let sql = 'SELECT * FROM movies WHERE type="movie"'
-    db.query(sql, (err, res) => {
-        if (err) {
-            console.log(err);
-        } else {
-            response.send(res)
-        }
-    })
+server.get("/trendingMovies", (req, res) => {
+    axios.get('https://api.themoviedb.org/3/trending/movie/day?api_key=502709b57a68d03a1d751fc801b2b4ea')
+        .then(function (response) {
+            // manipula o sucesso da requisição
+            res.send(response.data.results);
+        })
+        .catch(function (error) {
+            // manipula erros da requisição
+            console.log(error);
+        })
 })
 
-server.get("/trendingTV", (require, response) => {
-    let sql = 'SELECT * FROM movies WHERE type="tv"'
-    db.query(sql, (err, res) => {
-        if (err) {
-            console.log(err);
-        } else {
-            response.send(res)
-        }
-    })
+server.get("/trendingTV", (require, res) => {
+    axios.get('https://api.themoviedb.org/3/trending/tv/day?api_key=502709b57a68d03a1d751fc801b2b4ea')
+        .then(function (response) {
+            // manipula o sucesso da requisição
+            res.send(response.data.results);
+        })
+        .catch(function (error) {
+            // manipula erros da requisição
+            console.log(error);
+        })
 })
 
 
-server.get("/movie/:id", (req, response) => {
-    let { id } = req.params
-    let sql = `SELECT * FROM movies WHERE idMovies=${id}`
-    db.query(sql, (err, res) => {
-        if (err) {
-            console.log(err);
-        } else {
-            response.send(res)
-        }
-    })
+server.get("/movie/:id", (req, res) => {
+    const movie_id = req.params.id
+    axios.get(`https://api.themoviedb.org/3/movie/${movie_id}?api_key=502709b57a68d03a1d751fc801b2b4ea&language=en-US`)
+        .then(function (response) {
+            // manipula o sucesso da requisição
+            res.send(response.data);
+        })
+        .catch(function (error) {
+            // manipula erros da requisição
+            console.log(error);
+        })
 })
 
-// server.get("/getMovie", )
-// server.get("/getTV/:id", )
+server.get("/TV/:id", (req, res) => {
+    const tv_id = req.params.id
+    axios.get(`https://api.themoviedb.org/3/tv/${tv_id}?api_key=502709b57a68d03a1d751fc801b2b4ea&language=en-US`)
+        .then(function (response) {
+            // manipula o sucesso da requisição
+            res.send(response.data);
+        })
+        .catch(function (error) {
+            // manipula erros da requisição
+            console.log(error);
+        })
+})
 
-// server.get("/trendingPersons", tmdb.getTrendingPersons)
 
-// server.get('/movies', movies.getAllmovies)
-
-// server.get('/movie/:movieId', movies.getMovieSelected)
-
-server.listen(3333, (err) => {
+let port = process.env.PORT || 3333
+server.listen(port, (err) => {
     if (!err) {
-        console.log('Port: 3333')
+        console.log(`Port: ${port}`)
     }
 })
