@@ -25,6 +25,27 @@ const JWTSecret = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkw
 server.use(cors());
 server.use(json());
 
+const auth = (req,res,next)=>{
+    const authToken = req.headers['authorization'];
+    if(authToken){
+        const bearer = authToken.split(' ');
+        var token = bearer[1];
+
+        jwt.verify(token,JWTSecret,(err,data)=>{
+            if(!err){
+                next()
+            } else{
+                res.status(401);
+                res.json({ err: "Token inválido!" });
+            }
+        })
+
+    } else{
+        res.status(401);
+        res.json({ err: "Token inválido!" });
+    }
+}
+
 server.get('/', (req, res) => {
     res.send("Welcome to the TrendyPro")
 });
@@ -71,7 +92,7 @@ server.post('/auth', (req, res)=>{
                 res.status(200)
                 if(password){
                     if (bcrypt.compareSync(password, result[0].password)) {
-                        jwt.sign({ id: result[0].idUser, email: result[0].email},JWTSecret,(error,token)=>{
+                        jwt.sign({ id: result[0].idUser, email: result[0].email }, JWTSecret, { expiresIn: '48h' },(error,token)=>{
                             if(!error){
                                 res.status(200);
                                 res.json({ token: token });
@@ -183,7 +204,8 @@ server.get('/interests', (req, res) => {
 // // Entertainment Area
 
 // // Trending Today
-server.get("/trendingMovies", (req, res) => {
+server.get("/trendingMovies", auth, (req, res) => {
+    
     axios.get('https://api.themoviedb.org/3/trending/movie/day?api_key=502709b57a68d03a1d751fc801b2b4ea')
         .then(function (response) {
             // manipula o sucesso da requisição
