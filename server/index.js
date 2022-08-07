@@ -1,7 +1,7 @@
 import * as dotenv from 'dotenv'
 dotenv.config()
 
-import express, { json} from 'express';
+import express, { application, json} from 'express';
 import cors from 'cors';
 const server = express();
 import axios from 'axios'
@@ -10,6 +10,7 @@ import * as googleTrends from './controllers/GoogleTrendsControllers.js';
 import { pageSpeed } from './controllers/GoogleCloudController.js'
 import getFacebookInterests from './controllers/FacebookInterests.js'
 import mysql from 'mysql'
+import jwt from 'jsonwebtoken'
 import * as bcrypt from 'bcrypt'
 
 const db = mysql.createPool({
@@ -18,6 +19,8 @@ const db = mysql.createPool({
     password: "nailton123",
     database: "trendypro",
 });
+
+const JWTSecret = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
 
 server.use(cors());
 server.use(json());
@@ -42,7 +45,7 @@ server.post("/register", (req, res) => {
         db.query(sql, [name, occupation, email, hashPassword, new Date()], (err, result) => {
             if (err) {
                 res.status(206)
-                console.log(err);
+                res.send(err.sqlMessage);
             } else {
                 res.status(201)
                 res.send("User created");
@@ -55,7 +58,45 @@ server.post("/register", (req, res) => {
 });
 
 // auth
+server.post('/auth', (req, res)=>{
+    var { email, password } = req.body;
 
+    if(email){
+        let sql = `SELECT * FROM user WHERE email='${email}'`
+        db.query(sql, (err, result) => {
+            if (err) {
+                res.status(400)
+                res.send(err.sqlMessage);
+            } else {
+                res.status(200)
+                if(password){
+                    if (bcrypt.compareSync(password, result[0].password)) {
+                        jwt.sign({ id: result[0].idUser, email: result[0].email},JWTSecret,(error,token)=>{
+                            if(!error){
+                                res.status(200);
+                                res.json({ token: token });
+                            }else{
+                                res.status(400);
+                                res.json({ err: "Falha interna" });
+                            }
+                        })
+                    } else {
+                        res.status(400)
+                        res.send("dont match");
+                    }
+                } else{
+                    res.status(400)
+                    res.send("senha invalida")
+                }
+                
+
+            }
+        })
+    } else {
+        res.status(400)
+        res.send({ err: "O E-mail enviado é inválido" });
+    }
+})
 
 
 // Billboard Top 100 songs
