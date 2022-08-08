@@ -14,13 +14,13 @@ import jwt from 'jsonwebtoken'
 import * as bcrypt from 'bcrypt'
 
 const db = mysql.createPool({
-    host: "localhost",
-    user: "root",
-    password: "nailton123",
-    database: "trendypro",
+    host: process.env.MYSQL_HOST,
+    user: process.env.MYSQL_USER,
+    password: process.env.MYSQL_PASSWORD,
+    database: process.env.MYSQL_DATABASE,
 });
 
-const JWTSecret = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
+const JWTSecret = process.env.JWT_SECRET
 
 server.use(cors());
 server.use(json());
@@ -35,19 +35,17 @@ const auth = (req,res,next)=>{
             if(!err){
                 next()
             } else{
-                res.status(401);
-                res.json({ err: "Token inválido!" });
+                res.status(401).json({ err: "Token inválido!" });
             }
         })
 
     } else{
-        res.status(401);
-        res.json({ err: "Token inválido!" });
+        res.status(401).json({ err: "Token inválido!" });
     }
 }
 
 server.get('/', (req, res) => {
-    res.send("Welcome to the TrendyPro")
+    res.status(200).json("Welcome to the TrendyPro");
 });
 
 // AUTH
@@ -65,17 +63,14 @@ server.post("/register", (req, res) => {
         let sql = "INSERT INTO user (name, occupation, email, password, date_joined) VALUES (?,?,?,?,?)"
         db.query(sql, [name, occupation, email, hashPassword, new Date()], (err, result) => {
             if (err) {
-                res.status(206)
-                res.send(err.sqlMessage);
+                res.status(406).json(err.sqlMessage);
             } else {
-                res.status(201)
-                res.send("User created");
+                res.status(201).json("User created");
             }
         })
     } else{
         res.status(400)
     }
-
 });
 
 // auth
@@ -94,34 +89,27 @@ server.post('/auth', (req, res)=>{
                     if (bcrypt.compareSync(password, result[0].password)) {
                         jwt.sign({ id: result[0].idUser, email: result[0].email }, JWTSecret, { expiresIn: '48h' },(error,token)=>{
                             if(!error){
-                                res.status(200);
-                                res.json({ token: token });
+                                res.status(200).json({ token: token });
                             }else{
-                                res.status(400);
-                                res.json({ err: "Falha interna" });
+                                res.status(400).json({ err: "Falha interna" });
                             }
                         })
                     } else {
-                        res.status(400)
-                        res.send("dont match");
+                        res.status(400).json("dont match");
                     }
                 } else{
-                    res.status(400)
-                    res.send("senha invalida")
+                    res.status(400).json("senha invalida")
                 }
-                
-
             }
         })
     } else {
-        res.status(400)
-        res.send({ err: "O E-mail enviado é inválido" });
+        res.status(400).json({ err: "O E-mail enviado é inválido" });
     }
 })
 
 
 // Billboard Top 100 songs
-server.get('/billboard-top-100', (req, res) => {
+server.get('/billboard-top-100', auth, (req, res) => {
 
     getChart('hot-100', (err, chart) => {
         if (err) console.log(err);
@@ -131,7 +119,7 @@ server.get('/billboard-top-100', (req, res) => {
 });
 
 // // Google Trends Area
-server.get('/relatedTopics', (req, res) => {
+server.get('/relatedTopics', auth, (req, res) => {
     if (req.query.keyword) {
         const word = req.query.keyword
         googleTrends.getRelatedTopics(word)
@@ -141,7 +129,7 @@ server.get('/relatedTopics', (req, res) => {
     }
 });
 
-server.get('/relatedQueries', (req, res) => {
+server.get('/relatedQueries', auth, (req, res) => {
     if (req.query.keyword) {
     const word = req.query.keyword
     googleTrends.getRelatedQueries(word)
@@ -151,7 +139,7 @@ server.get('/relatedQueries', (req, res) => {
     }
 });
 
-server.get('/dailyTrends', (req, res) => {
+server.get('/dailyTrends', auth, (req, res) => {
     if (req.query.geo) {
     const { geo } = req.query
     googleTrends.getDailyTrends(geo)
@@ -161,7 +149,7 @@ server.get('/dailyTrends', (req, res) => {
     }
 });
 
-server.get('/interestOverTime', (req, res) => {
+server.get('/interestOverTime', auth, (req, res) => {
     if (req.query.keyword) {
     const word = req.query.keyword
     googleTrends.getInterestOverTime(word)
@@ -173,7 +161,7 @@ server.get('/interestOverTime', (req, res) => {
 
 // Google Cloud Area
 
-server.get('/pageSpeed', (req, res) => {
+server.get('/pageSpeed', auth, (req, res) => {
     if (req.query.url) {
     const { url } = req.query
     pageSpeed(url).then(data => {
@@ -186,7 +174,7 @@ server.get('/pageSpeed', (req, res) => {
 
 //Facebook Interests
 
-server.get('/interests', (req, res) => {
+server.get('/interests', auth, (req, res) => {
     if (req.query.query) {
     const { query } = req.query
 
@@ -217,7 +205,7 @@ server.get("/trendingMovies", auth, (req, res) => {
         })
 })
 
-server.get("/trendingTV", (require, res) => {
+server.get("/trendingTV", auth, (require, res) => {
     axios.get('https://api.themoviedb.org/3/trending/tv/day?api_key=502709b57a68d03a1d751fc801b2b4ea')
         .then(function (response) {
             // manipula o sucesso da requisição

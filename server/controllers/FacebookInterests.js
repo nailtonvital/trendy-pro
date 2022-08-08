@@ -1,6 +1,8 @@
 import { FacebookAdsApi } from 'facebook-nodejs-business-sdk';
+import * as dotenv from 'dotenv'
+dotenv.config()
 
-const access_token = 'EAAGa9VLMH9oBACV0CVclSl6Nqsj5qtlHZAEG3DGvCF98U0oPDAxRUFAoaRA1ZA9L6mQ0tBp4BlbTMtspOQ79t8tjYNQWZBnL2aU3BdJ163DYMVF1NXvZBKI9zZBoBZBX8Od3Bjt4ZBhBjagLLKEbsklV9PssXF6OEjwB9vdAla43gf5Bq2McObbCkISpLhUtwP42vp0GO4WAwZDZD';
+const access_token = process.env.FACEBOOK_ACESS_TOKEN;
 
 
 const getFacebookInterests = (query)=>{
