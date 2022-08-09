@@ -48,7 +48,7 @@ server.get('/', (req, res) => {
     res.status(200).json("Welcome to the TrendyPro");
 });
 
-// AUTH
+// USER
 
 // create user
 server.post("/register", (req, res) => {
@@ -78,34 +78,43 @@ server.post('/auth', (req, res)=>{
     var { email, password } = req.body;
 
     if(email){
-        let sql = `SELECT * FROM user WHERE email='${email}'`
-        db.query(sql, (err, result) => {
+        let sql = `SELECT * FROM user WHERE email= ?`
+        db.query(sql,[email], (err, result) => {
             if (err) {
-                res.status(400)
-                res.send(err.sqlMessage);
+                res.status(400).json(err);
             } else {
-                res.status(200)
-                if(password){
-                    if (bcrypt.compareSync(password, result[0].password)) {
-                        jwt.sign({ id: result[0].idUser, email: result[0].email }, JWTSecret, { expiresIn: '48h' },(error,token)=>{
-                            if(!error){
-                                res.status(200).json({ token: token });
-                            }else{
-                                res.status(400).json({ err: "Falha interna" });
-                            }
-                        })
-                    } else {
-                        res.status(400).json("dont match");
-                    }
+                console.log(result)
+                if (result.length == 0) {                    
+                    res.status(404);
+                    res.json({ err: "The e-mail sent does not exist in the database!" });
                 } else{
-                    res.status(400).json("senha invalida")
+                    res.status(200)
+                    if (password) {
+                        if (bcrypt.compareSync(password, result[0].password)) {
+                            jwt.sign({ id: result[0].idUser, email: result[0].email }, JWTSecret, { expiresIn: '48h' }, (error, token) => {
+                                if (!error) {
+                                    res.status(200).json({ token: token });
+                                } else {
+                                    res.status(400).json({ err: "Falha interna" });
+                                }
+                            })
+                        } else {
+                            res.status(400).json("The passwords don't match");
+                        }
+                    } else {
+                        res.status(401).json("The password sent is invalid")
+                    }
                 }
             }
         })
     } else {
-        res.status(400).json({ err: "O E-mail enviado é inválido" });
+        res.status(400).json({ err: "The e-mail sent is invalid" });
     }
 })
+
+// update profile picture
+
+
 
 
 // Billboard Top 100 songs
