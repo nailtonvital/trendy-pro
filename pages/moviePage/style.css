@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --light: 80;
+    --threshold: 60;
+}
+
+.container{
+    background-image: url('https://image.tmdb.org/t/p/original/ocUp7DJBIc8VJgLEw1prcyK1dYv.jpg');
+    min-height: 100vh;
+    min-width: 100vw;
+    max-width: 100vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+.column {
+    display: flex;
+}
+
+.cardinfo{
+    width: 400px;
+}
+
+.cardinfo img{
+    width: 100%;
+}
+
+.people{
+    display: flex;
+}
+
+.peoplecard{
+    width: 100px;
+    height: 130px;
+    background-color: white;
+    margin-inline: 8px;
+}
+
+.interest img{
+    width: 100%;
+}

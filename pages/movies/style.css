@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.title {
+    margin-bottom: 0;
+}
+.subtitle{
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.cards{
+    display: flex;
+}
+
+.card{
+    margin-right: 20px;
+}
+
+.card img{
+    width: 300px;
+    margin-bottom: 0;
+}
+
+.card h4{
+    margin-top: 2px;
+}

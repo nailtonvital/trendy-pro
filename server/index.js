@@ -108,7 +108,7 @@ server.post('/auth', (req, res)=>{
             }
         })
     } else {
-        res.status(400).json({ err: "The e-mail sent is invalid" });
+        res.status(401).json({ err: "The e-mail sent is invalid" });
     }
 })
 
