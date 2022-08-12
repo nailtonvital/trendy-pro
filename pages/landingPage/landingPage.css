@@ -198,16 +198,37 @@ nav {
     font-weight: 200;
 }
 
+
+.product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
 .product img {
     width: 100%;
     right: 100%;
 }
 
+.macpro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
 .macpro img{
+    margin-top: 20px;
     width: 75%;
     right: 75%;
 }
 
+.filmes {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
 .filmes img{
     width: 100%;
     right: 100%;
