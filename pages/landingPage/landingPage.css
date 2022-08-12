@@ -157,9 +157,12 @@ nav {
     text-align: center;
 }
 
-
+.center-align img{
+    width: 30%;
+}
 
 .social-proof {
+    margin-top: 20px;
     margin-bottom: 100px;
 }
 
@@ -193,6 +196,26 @@ nav {
 
 .people-info p {
     font-weight: 200;
+}
+
+.product img {
+    width: 100%;
+    right: 100%;
+}
+
+.macpro img{
+    width: 75%;
+    right: 75%;
+}
+
+.filmes img{
+    width: 100%;
+    right: 100%;
+}
+
+.component img{
+    width: 100%;
+    right: 100%;
 }
 
 footer {
