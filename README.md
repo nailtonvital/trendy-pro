@@ -27,7 +27,7 @@
 <h3>
   <a href="https://github.com/nailtonvital/trendy-pro/wiki">
     <div className="wiki-container">
-      <p className="wiki-contact-link">Documentação
+      <p className="wiki-contact-link">Documentação.
       <img align="center" alt="TPicon" height="100" width="100" src="https://user-images.githubusercontent.com/89430801/182031457-bb70cb04-73a8-4762-a633-1aeeeea8ba40.svg"/>
       </p>
     </div>
