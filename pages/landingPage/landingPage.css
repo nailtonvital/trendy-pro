@@ -52,26 +52,37 @@ nav {
     flex-direction: column;
     width: 50%;
 }
-
-.left-hero button {
+button{
+    width: 10rem;
+    height: 4rem;
+    text-align: center;
     margin-top: 20px;
-    font-weight: 7 00;
-    width: 9rem;
-    height: 3rem;
-    margin-bottom: 60px;
-    border-color: white;
-    border-style: solid;
-    background-color: transparent;
-    color: white;
     border-radius: 25px;
+    border:2px solid #fff;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    font-size: 18px;
 }
-
-.left-hero button:hover {
-    background-color: #ffffff;
-    color: #070713;
+span{
+    background: rgba(255, 255, 255, 0.52);
+    height: 100%;
+    width: 0;
     border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
 }
-
+button:hover span{
+    width:100%;
+}
+button:hover{
+    border: 2px solid;
+}
 .left-hero h3 {
     font-weight: 700;
     font-size: 50px;
@@ -157,9 +168,12 @@ nav {
     text-align: center;
 }
 
-
+.center-align img{
+    width: 30%;
+}
 
 .social-proof {
+    margin-top: 20px;
     margin-bottom: 100px;
 }
 
@@ -193,6 +207,47 @@ nav {
 
 .people-info p {
     font-weight: 200;
+}
+
+
+.product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.product img {
+    width: 100%;
+    right: 100%;
+}
+
+.macpro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.macpro img{
+    margin-top: 20px;
+    width: 75%;
+    right: 75%;
+}
+
+.filmes {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.filmes img{
+    width: 100%;
+    right: 100%;
+}
+
+.component img{
+    width: 100%;
+    right: 100%;
 }
 
 footer {
