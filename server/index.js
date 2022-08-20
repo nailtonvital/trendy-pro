@@ -12,6 +12,10 @@ import getFacebookInterests from './controllers/FacebookInterests.js'
 import mysql from 'mysql'
 import jwt from 'jsonwebtoken'
 import * as bcrypt from 'bcrypt'
+import { getTrendingAnimes, getAnimes } from './controllers/AnilistController.js';
+import { backlink } from './controllers/BacklinkController.js';
+// import { getTrendingTopics } from './controllers/TwitterController.js';
+import * as twitter from '@killovsky/trendings'
 
 const db = mysql.createPool({
     host: process.env.MYSQL_HOST,
@@ -21,6 +25,17 @@ const db = mysql.createPool({
 });
 
 const JWTSecret = process.env.JWT_SECRET
+
+const isValidUrl = urlString => {
+    var urlPattern = new RegExp('^(https?:\\/\\/)?' + // validate protocol
+        '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // validate domain name
+        '((\\d{1,3}\\.){3}\\d{1,3}))' + // validate OR ip (v4) address
+        '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // validate port and path
+        '(\\?[;&a-z\\d%_.~+=-]*)?' + // validate query string
+        '(\\#[-a-z\\d_]*)?$', 'i'); // validate fragment locator
+    return !!urlPattern.test(urlString);
+}
+
 
 server.use(cors());
 server.use(json());
@@ -112,11 +127,6 @@ server.post('/auth', (req, res)=>{
     }
 })
 
-// update profile picture
-
-
-
-
 // Billboard Top 100 songs
 server.get('/billboard-top-100', auth, (req, res) => {
 
@@ -129,8 +139,8 @@ server.get('/billboard-top-100', auth, (req, res) => {
 
 // // Google Trends Area
 server.get('/relatedTopics', auth, (req, res) => {
-    if (req.query.keyword) {
-        const word = req.query.keyword
+    const word = req.query.keyword
+    if (word) {
         googleTrends.getRelatedTopics(word)
         .then(data => res.send(data))
     } else {
@@ -139,8 +149,8 @@ server.get('/relatedTopics', auth, (req, res) => {
 });
 
 server.get('/relatedQueries', auth, (req, res) => {
-    if (req.query.keyword) {
     const word = req.query.keyword
+    if (word) {
     googleTrends.getRelatedQueries(word)
         .then(data => res.send(data))
     } else {
@@ -149,8 +159,8 @@ server.get('/relatedQueries', auth, (req, res) => {
 });
 
 server.get('/dailyTrends', auth, (req, res) => {
-    if (req.query.geo) {
     const { geo } = req.query
+    if (geo) {
     googleTrends.getDailyTrends(geo)
         .then(data => res.send(data))
     } else {
@@ -159,9 +169,10 @@ server.get('/dailyTrends', auth, (req, res) => {
 });
 
 server.get('/interestOverTime', auth, (req, res) => {
-    if (req.query.keyword) {
-    const word = req.query.keyword
-    googleTrends.getInterestOverTime(word)
+    const { keyword } = req.query
+    
+    if (keyword) {
+    googleTrends.getInterestOverTime(keyword)
         .then(data => res.send(data))
     } else {
         res.sendStatus(400);
@@ -171,13 +182,13 @@ server.get('/interestOverTime', auth, (req, res) => {
 // Google Cloud Area
 
 server.get('/pageSpeed', auth, (req, res) => {
-    if (req.query.url) {
     const { url } = req.query
-    pageSpeed(url).then(data => {
-        res.send(data)
+    if (isValidUrl(url)){
+        pageSpeed(url).then(data => {
+            res.status(200).json(data)
     })
     } else {
-        res.sendStatus(400);
+        res.status(400);
     }
 });
 
@@ -227,7 +238,7 @@ server.get("/trendingTV", auth, (require, res) => {
 })
 
 
-server.get("/movie/:id", (req, res) => {
+server.get("/movie/:id", auth, (req, res) => {
     if (isNaN(req.params.id)) {
         res.sendStatus(400);
     } else {
@@ -244,7 +255,7 @@ server.get("/movie/:id", (req, res) => {
     }
 })
 
-server.get("/TV/:id", (req, res) => {
+server.get("/TV/:id", auth, (req, res) => {
     if (isNaN(req.params.id)) {
         res.sendStatus(400);
     } else {
@@ -259,6 +270,129 @@ server.get("/TV/:id", (req, res) => {
             console.log(error);
         })
     }
+})
+
+
+server.get("/moviecredit/:id", auth, (req, res) => {
+    if (isNaN(req.params.id)) {
+        res.sendStatus(400);
+    } else {
+        const movie_id = req.params.id
+        axios.get(`https://api.themoviedb.org/3/movie/${movie_id}/credits?api_key=502709b57a68d03a1d751fc801b2b4ea&language=en-US`)
+            .then(function (response) {
+                // manipula o sucesso da requisição
+                res.send(response.data);
+            })
+            .catch(function (error) {
+                // manipula erros da requisição
+                console.log(error);
+            })
+    }
+})
+
+server.get("/moviekeywords/:id", auth, (req, res) => {
+    if (isNaN(req.params.id)) {
+        res.sendStatus(400);
+    } else {
+        const movie_id = req.params.id
+        axios.get(`https://api.themoviedb.org/3/movie/${movie_id}/keywords?api_key=502709b57a68d03a1d751fc801b2b4ea&language=en-US`)
+            .then(function (response) {
+                // manipula o sucesso da requisição
+                res.send(response.data);
+            })
+            .catch(function (error) {
+                // manipula erros da requisição
+                console.log(error);
+            })
+    }
+})
+
+server.get("/tvcredit/:id", auth, (req, res) => {
+    if (isNaN(req.params.id)) {
+        res.sendStatus(400);
+    } else {
+        const tv_id = req.params.id
+        axios.get(`https://api.themoviedb.org/3/tv/${tv_id}/credits?api_key=502709b57a68d03a1d751fc801b2b4ea&language=en-US`)
+            .then(function (response) {
+                // manipula o sucesso da requisição
+                res.send(response.data);
+            })
+            .catch(function (error) {
+                // manipula erros da requisição
+                console.log(error);
+            })
+    }
+})
+
+server.get("/tvkeywords/:id", auth, (req, res) => {
+    if (isNaN(req.params.id)) {
+        res.sendStatus(400);
+    } else {
+        const tv_id = req.params.id
+        axios.get(`https://api.themoviedb.org/3/tv/${tv_id}/keywords?api_key=502709b57a68d03a1d751fc801b2b4ea&language=en-US`)
+            .then(function (response) {
+                // manipula o sucesso da requisição
+                res.send(response.data);
+            })
+            .catch(function (error) {
+                // manipula erros da requisição
+                console.log(error);
+            })
+    }
+})
+
+// Anilist
+
+server.get("/trendingAnimes", auth, (req, res)=>{
+    getTrendingAnimes().then((e)=>{
+        res.json(e.data.Page.media)
+    })
+    .catch(err => {
+        res.status(400).json(err)
+    })
+})
+
+server.get("/anime/:id", auth, (req, res) => {
+    if (isNaN(req.params.id)) {
+        res.sendStatus(400);
+    } else {
+        getAnimes(req.params.id).then((e) => {
+            res.status(200).json(e)
+        })
+        .catch(err=>{
+            res.status(400).json(err)
+        })
+    }
+})
+
+server.get("/backlink", auth, (req,res)=>{
+    const { url } = req.query
+
+    if(isValidUrl(url)){
+    backlink(url).then(data => {
+        res.status(200).json(data)
+    })
+    } else{
+        res.status(400).json({error: "Invalid URL"})
+    }
+
+    
+})
+
+server.get("/twitter", auth, (req, res) => {
+    const { country } = req.query
+
+    if (country){
+        twitter.info(country)
+            .then(data => {
+                res.status(200).json(data)
+            })
+    } else {
+        res.status(400).json({ error: "Invalid Country" })
+    }
+
+    
+    
 })
 
 
