@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
@@ -8,7 +8,7 @@
     --threshold: 60;
 }
 
-.container{
+.container {
     background-image: url('https://image.tmdb.org/t/p/original/ocUp7DJBIc8VJgLEw1prcyK1dYv.jpg');
     min-height: 100vh;
     min-width: 100vw;
@@ -23,25 +23,25 @@
     display: flex;
 }
 
-.cardinfo{
+.cardinfo {
     width: 400px;
 }
 
-.cardinfo img{
+.cardinfo img {
     width: 100%;
 }
 
-.people{
+.people {
     display: flex;
 }
 
-.peoplecard{
+.peoplecard {
     width: 100px;
     height: 130px;
     background-color: white;
     margin-inline: 8px;
 }
 
-.interest img{
+.interest img {
     width: 100%;
 }
