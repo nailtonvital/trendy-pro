@@ -36,7 +36,6 @@ const isValidUrl = urlString => {
     return !!urlPattern.test(urlString);
 }
 
-
 server.use(cors());
 server.use(json());
 
@@ -212,7 +211,7 @@ server.get('/interests', auth, (req, res) => {
 // // Entertainment Area
 
 // // Trending Today
-server.get("/trendingMovies", auth, (req, res) => {
+server.get("/trendingMovies", (req, res) => {
     
     axios.get('https://api.themoviedb.org/3/trending/movie/day?api_key=502709b57a68d03a1d751fc801b2b4ea')
         .then(function (response) {
@@ -225,7 +224,7 @@ server.get("/trendingMovies", auth, (req, res) => {
         })
 })
 
-server.get("/trendingTV", auth, (require, res) => {
+server.get("/trendingTV", (req, res) => {
     axios.get('https://api.themoviedb.org/3/trending/tv/day?api_key=502709b57a68d03a1d751fc801b2b4ea')
         .then(function (response) {
             // manipula o sucesso da requisição
@@ -237,8 +236,7 @@ server.get("/trendingTV", auth, (require, res) => {
         })
 })
 
-
-server.get("/movie/:id", auth, (req, res) => {
+server.get("/movie/:id", (req, res) => {
     if (isNaN(req.params.id)) {
         res.sendStatus(400);
     } else {
@@ -255,7 +253,7 @@ server.get("/movie/:id", auth, (req, res) => {
     }
 })
 
-server.get("/TV/:id", auth, (req, res) => {
+server.get("/TV/:id", (req, res) => {
     if (isNaN(req.params.id)) {
         res.sendStatus(400);
     } else {
@@ -273,7 +271,7 @@ server.get("/TV/:id", auth, (req, res) => {
 })
 
 
-server.get("/moviecredit/:id", auth, (req, res) => {
+server.get("/moviecredit/:id", (req, res) => {
     if (isNaN(req.params.id)) {
         res.sendStatus(400);
     } else {
@@ -290,7 +288,7 @@ server.get("/moviecredit/:id", auth, (req, res) => {
     }
 })
 
-server.get("/moviekeywords/:id", auth, (req, res) => {
+server.get("/moviekeywords/:id", (req, res) => {
     if (isNaN(req.params.id)) {
         res.sendStatus(400);
     } else {
@@ -307,7 +305,7 @@ server.get("/moviekeywords/:id", auth, (req, res) => {
     }
 })
 
-server.get("/tvcredit/:id", auth, (req, res) => {
+server.get("/tvcredit/:id", (req, res) => {
     if (isNaN(req.params.id)) {
         res.sendStatus(400);
     } else {
@@ -324,7 +322,7 @@ server.get("/tvcredit/:id", auth, (req, res) => {
     }
 })
 
-server.get("/tvkeywords/:id", auth, (req, res) => {
+server.get("/tvkeywords/:id", (req, res) => {
     if (isNaN(req.params.id)) {
         res.sendStatus(400);
     } else {
@@ -394,7 +392,6 @@ server.get("/twitter", auth, (req, res) => {
     
     
 })
-
 
 let port = process.env.PORT || 3333
 server.listen(port, (err) => {
