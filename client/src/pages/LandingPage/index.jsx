@@ -208,5 +208,6 @@ export default function LandingPage() {
           <footer>© 2022 TrendyPro | All Rights Reserved</footer>
         </div>
       </div>
-</Fragment>  );
+</Fragment>
+  );
 }
