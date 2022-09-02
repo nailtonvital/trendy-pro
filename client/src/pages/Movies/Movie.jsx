@@ -1,99 +1,101 @@
-import React, { Fragment } from 'react';
+import React, { Fragment } from "react";
 import style from "./style.module.scss";
 import interest from "./assets/interest.png";
-import api from '../../services/api';
-import { useEffect } from 'react';
+import api from "../../services/api";
+import { useEffect } from "react";
+import { useState } from "react";
 
 export default function Movie() {
-    useEffect(() => {
-        api.get("movies")
-    }, [])
+  const [movie, setMovie] = useState([]);
+  const [actors, setActors] = useState([]);
+  const [keywords, setKeywords] = useState([]);
+  
+  useEffect(() => {
+    api.get("/movie/634649").then((response) => setMovie(response.data), console.log(movie)).catch((err) => {
+        console.error("ops! ocorreu um erro" + err);
+      });
+    api.get("/moviecredit/634649").then((response) => {setActors(response.data), console.log(response.data)}).catch((err) => {
+        console.error("ops! ocorreu um erro" + err);
+        
+      });
+    api.get("/moviekeywords/634649").then((response) => {setKeywords(response.data), console.log(response.data)}).catch((err) => {
+        console.error("ops! ocorreu um erro" + err);
+        
+      });
+  }, []);
 
   return (
-<Fragment>
-    <div className={style.container}>
+    <Fragment>
+      <div className={style.container}>
         <div className={style.column}>
-            <div className={style.cardinfo}>
-                <img src="https://image.tmdb.org/t/p/original/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg" alt=""/>
-                <div className={style.information}>
-                    <h5>Original Language</h5>
-                    <p>English</p>
+          <div className={style.cardinfo}>
+            <img
+              src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
+              alt=""
+            />
+            <div className={style.information}>
+              <h5>Original Language</h5>
+              <p>{movie.original_language}</p>
 
-                    <h5>Budget</h5>
-                    <p>$200,000,000.00</p>
+              <h5>Budget</h5>
+              <p>$200,000,000.00</p>
 
-                    <h5>Revenue</h5>
-                    <p>$1,901,000,000.00</p>
+              <h5>Revenue</h5>
+              <p>$1,901,000,000.00</p>
 
-                    <h5>Tags</h5>
-                    <p>new york city,
-                        loss of loved one,
-                        showdown,
-                        secret identity,
-                        hero,
-                        magic,
-                        villain,
-                        vigilante,
-                        portal,
-                        sequel,
-                        superhero,
-                        based on comic,
-                        alternate reality,
-                        masked vigilante,
-                        aftercreditsstinger,
-                        duringcreditsstinger,
-                        marvel cinematic universe (mcu),
-                        teenage hero,
-                        multiverse,
-                        alternate universe,
-                        superhero teamup,
-                        returning hero,
-                        crossover,
-                        teamwork</p>
-                </div>
+              <h5>Tags</h5>
+              <p>
+                new york city, loss of loved one, showdown, secret identity,
+                hero, magic, villain, vigilante, portal, sequel, superhero,
+                based on comic, alternate reality, masked vigilante,
+                aftercreditsstinger, duringcreditsstinger, marvel cinematic
+                universe (mcu), teenage hero, multiverse, alternate universe,
+                superhero teamup, returning hero, crossover, teamwork
+              </p>
             </div>
-            <div className={style.movieinfo}>
-                <h2>Spider-Man: No Way Home (2021)</h2>
-                <p>12 16/12/2021 (BR) Ação, Aventura, Ficção científica 2h 29m</p>
-                <h3>Sinopsys</h3>
-                <p>Peter Parker is unmasked and no longer able to separate his normal life from the high-stakes of being
-                    a super-hero. When
-                    he asks for help from Doctor Strange the stakes become even more dangerous, forcing him to discover
-                    what it truly means
-                    to be Spider-Man.</p>
+          </div>
+          <div className={style.movieinfo}>
+            <h2>{movie.title}</h2>
+            <p>
+              {movie.release_date} (BR) Ação, Aventura, Ficção científica 2h 29m
+            </p>
+            <h3>Sinopsys</h3>
+            <p>{movie.overview}</p>
 
-                <h3>Cast</h3>
-                <div className={style.people}>
-                    <div className={style.peoplecard}></div>
-                    <div className={style.peoplecard}></div>
-                    <div className={style.peoplecard}></div>
-                    <div className={style.peoplecard}></div>
-                    <div className={style.peoplecard}></div>
-                </div>
-
-                <h3>Related Queries</h3>
-                <div className={style.keywords}>
-                    <button>fesdfdsfg</button>
-                    <button>fesdfdsfg</button>
-                    <button>fesdfdsfg</button>
-                </div>
-
-                <h3>Topics</h3>
-                <div className={style.keywords}>
-                    <button>fesdfdsfg</button>
-                    <button>fesdfdsfg</button>
-                    <button>fesdfdsfg</button>
-                    <button>fesdfdsfg</button>
-                </div>
-
-                <h3>Interest Over Time</h3>
-                <div className={style.interest}>
-                    <img src={interest} alt="" srcset=""/>
-                </div>
+            <h3>Cast</h3>
+            <div className={style.people}>
+                {/* {actors.cast.map(item => (
+                    console.log(item)
+                ))} */}
+              <div className={style.peoplecard}></div>
+              <div className={style.peoplecard}></div>
+              <div className={style.peoplecard}></div>
+              <div className={style.peoplecard}></div>
+              <div className={style.peoplecard}></div>
             </div>
 
+            <h3>Related Queries</h3>
+            <div className={style.keywords}>
+              <button>fesdfdsfg</button>
+              <button>fesdfdsfg</button>
+              <button>fesdfdsfg</button>
+            </div>
+
+            <h3>Topics</h3>
+            <div className={style.keywords}>
+              <button>fesdfdsfg</button>
+              <button>fesdfdsfg</button>
+              <button>fesdfdsfg</button>
+              <button>fesdfdsfg</button>
+            </div>
+
+            <h3>Interest Over Time</h3>
+            <div className={style.interest}>
+              <img src={interest} alt="" srcset="" />
+            </div>
+          </div>
         </div>
-    </div>
-</Fragment>
-  )
+      </div>
+    </Fragment>
+  );
 }

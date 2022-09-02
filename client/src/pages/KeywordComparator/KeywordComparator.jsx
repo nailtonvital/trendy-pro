@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import './App.css'
 import axios from 'axios'
 import {
   Chart as ChartJS,
@@ -58,7 +57,7 @@ export const data = {
 };
 
 
-function App() {
+export default function Keyword() {
   const [country, setCountry] = useState()
   const [resultados, setResultado] = useState([])
   console.log(resultados)
@@ -105,5 +104,3 @@ function App() {
     </div>
   )
 }
-
-export default App
