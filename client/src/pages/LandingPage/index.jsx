@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { useState } from "react";
 import style from "./style.module.scss";
 import Fox from "./assets/Fox.svg";
 import Mundo from "./assets/Mundo.svg";
@@ -17,9 +17,16 @@ import Mac from "./assets/MacBookPro.svg";
 import Filmes from "./assets/Filmes.svg";
 import Component from "./assets/Component.svg";
 
+
 export default function LandingPage() {
+  const [sidebar, setSidebar] = useState(false)
+
+  function handleNavbar() {
+    setSidebar(!sidebar)
+  }
+
   return (
-    <Fragment>
+    <>
       <div className={style.body}>
         <div className={style.container}>
           <nav>
@@ -27,24 +34,33 @@ export default function LandingPage() {
               <img src={Fox} alt="imgFox" />
               {/* <img src="img/TrendyPro.svg" alt="imgTrendyPro"/> */}
             </div>
-            <div className={style.hamburguer}>
-              <svg
-                width="40"
-                height="40"
-                viewBox="0 0 72 57"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M26.6862 53.0698H67.9999M3.52942 28.5H67.9999M15.4587 3.93018H67.9999"
-                  stroke="white"
-                  stroke-width="6.5625"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </div>
+
+              <button className={style.hamburguer} onClick={handleNavbar}>
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 72 57"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M26.6862 53.0698H67.9999M3.52942 28.5H67.9999M15.4587 3.93018H67.9999"
+                    stroke="white"
+                    stroke-width="6.5625"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
           </nav>
+          <div className={sidebar ? style.navbar : style.navbarClosed}>
+              <ul>
+                <li>Features</li>
+                <li>About Us</li>
+              </ul>
+            </div>
+
+
 
           <div className={style.hero}>
             <div className={style["left-hero"]}>
@@ -53,10 +69,9 @@ export default function LandingPage() {
                 We track every topic across the internet to identify growing
                 trends.
               </p>
-              <a href="/trendy-pro/pages/404/404.html">
-                <button type="button">
-                  <span></span>
-                  <b>GET STARTED</b>
+              <a>
+                <button type="button" className={style.getStarted}>
+                  <b>Get Started</b>
                 </button>
               </a>
             </div>
@@ -85,7 +100,7 @@ export default function LandingPage() {
           </div>
 
           <div className={style.item}>
-            <div classname={style["left-align"]}>
+            <div className={style["left-align"]}>
               <h3>Know what's going on around the world</h3>
               <p>
                 Acess to all trending topics on the social media Acess to all
@@ -208,6 +223,6 @@ export default function LandingPage() {
           <footer>© 2022 TrendyPro | All Rights Reserved</footer>
         </div>
       </div>
-</Fragment>
+</>
   );
 }

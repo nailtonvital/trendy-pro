@@ -9,6 +9,7 @@
     font-family: 'Outfit';
 }
 
+
 .body {
     animation: Gradient 300s ease infinite;
     background: linear-gradient(1deg,
@@ -21,7 +22,7 @@
     color: white;
     height: 400vh;
     font-size: 100%;
-    overflow-x: hidden;
+
 }
 
 nav,
@@ -35,6 +36,22 @@ nav,
 nav {
     padding-top: 3%;
     align-items: center;
+}
+
+
+.navbar{
+    position: relative;
+    top: 25%;
+    /* 25% from the top */
+    width: 100%;
+    /* 100% width */
+    text-align: center;
+    /* Centered text/links */
+    margin-top: 30px;
+}
+
+.navbarClosed{
+    display: none;
 }
 
 .logo {
@@ -54,39 +71,19 @@ nav {
     width: 50%;
 }
 
-button {
+.getStarted {
     width: 10rem;
-    height: 4rem;
+    height: 3.5rem;
     text-align: center;
     margin-top: 20px;
-    border-radius: 25px;
-    border: 2px solid #fff;
+    border-radius: 50px;
+    border: 1.5px solid #fff;
     background: transparent;
-    color: #fff;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    font-size: 18px;
 }
 
-span {
-    background: rgba(255, 255, 255, 0.52);
-    height: 100%;
-    width: 0;
-    border-radius: 25px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    z-index: -1;
-    transition: 0.5s;
-}
-
-button:hover span {
-    width: 100%;
-}
-
-button:hover {
-    border: 2px solid;
+.getStarted:hover {
+    background-color: white;
+    color: black;
 }
 
 .left-hero h3 {
@@ -157,6 +154,7 @@ button:hover {
 .container {
     width: 80vw;
     margin: 0 auto;
+    
 }
 
 
