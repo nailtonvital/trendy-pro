@@ -9,14 +9,14 @@
 }
 
 .container {
-    background-image: url('https://image.tmdb.org/t/p/original/ocUp7DJBIc8VJgLEw1prcyK1dYv.jpg');
-    min-height: 100vh;
-    min-width: 100vw;
+    max-height: 100vh;
+    max-width: 100vw;
     max-width: 100vw;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
+    overflow: hidden;
 }
 
 .column {

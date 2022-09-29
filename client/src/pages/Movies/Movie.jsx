@@ -9,28 +9,28 @@ export default function Movie() {
   const [movie, setMovie] = useState([]);
   const [actors, setActors] = useState([]);
   const [keywords, setKeywords] = useState([]);
-  
+
   useEffect(() => {
-    api.get("/movie/634649").then((response) => setMovie(response.data), console.log(movie)).catch((err) => {
-        console.error("ops! ocorreu um erro" + err);
-      });
-    api.get("/moviecredit/634649").then((response) => {setActors(response.data), console.log(response.data)}).catch((err) => {
-        console.error("ops! ocorreu um erro" + err);
-        
-      });
-    api.get("/moviekeywords/634649").then((response) => {setKeywords(response.data), console.log(response.data)}).catch((err) => {
-        console.error("ops! ocorreu um erro" + err);
-        
-      });
+    api.get("/tv/60574").then((response) => setMovie(response.data), console.log(movie)).catch((err) => {
+      console.error("ops! ocorreu um erro" + err);
+    });
+    api.get("/moviecredit/634649").then((response) => { setActors(response.data), console.log(response.data) }).catch((err) => {
+      console.error("ops! ocorreu um erro" + err);
+
+    });
+    api.get("/moviekeywords/634649").then((response) => { setKeywords(response.data), console.log(response.data) }).catch((err) => {
+      console.error("ops! ocorreu um erro" + err);
+
+    });
   }, []);
 
   return (
     <Fragment>
-      <div className={style.container}>
+      <div className={style.container} style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original/${movie.backdrop_path})` }}>
         <div className={style.column}>
           <div className={style.cardinfo}>
             <img
-              src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
+              src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
               alt=""
             />
             <div className={style.information}>
@@ -55,7 +55,7 @@ export default function Movie() {
             </div>
           </div>
           <div className={style.movieinfo}>
-            <h2>{movie.title}</h2>
+            <h1>{movie.title ? movie.title : movie.name}</h1>
             <p>
               {movie.release_date} (BR) Ação, Aventura, Ficção científica 2h 29m
             </p>
@@ -64,7 +64,7 @@ export default function Movie() {
 
             <h3>Cast</h3>
             <div className={style.people}>
-                {/* {actors.cast.map(item => (
+              {/* {actors.cast.map(item => (
                     console.log(item)
                 ))} */}
               <div className={style.peoplecard}></div>
@@ -91,7 +91,7 @@ export default function Movie() {
 
             <h3>Interest Over Time</h3>
             <div className={style.interest}>
-              <img src={interest} alt="" srcset="" />
+              <img src={interest} alt="" />
             </div>
           </div>
         </div>

@@ -60,8 +60,6 @@ export default function LandingPage() {
               </ul>
             </div>
 
-
-
           <div className={style.hero}>
             <div className={style["left-hero"]}>
               <h3>Discover trends while it trending</h3>
