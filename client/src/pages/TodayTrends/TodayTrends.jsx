@@ -73,4 +73,4 @@ function TodayTrends() {
     )
 }
 
-export default App
+export default TodayTrends

@@ -1,9 +1,7 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import style from "./movie.module.scss";
 import interest from "./assets/interest.png";
 import api from "../../services/api";
-import { useEffect } from "react";
-import { useState } from "react";
 import Sidebar from "../../components/sidebar/Sidebar";
 
 export default function Movie() {
