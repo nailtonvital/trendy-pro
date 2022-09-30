@@ -16,7 +16,7 @@ body {
 }
 
 nav {
-    background-color: rgb(23, 20, 32);
+    background-color: #2C2C2C;
     color: white;
     width: 7%;
     height: 100vh;
@@ -35,10 +35,12 @@ li {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
+    width: 100%;
+}
 
+li p {
     text-align: center;
-
-
 }
 
 li img {
@@ -78,4 +80,8 @@ header {
     border-color: rgba(228, 233, 247, 0.8);
     border-style: solid;
     margin-inline: 8px;
+}
+
+svg{
+    width: 100%;
 }

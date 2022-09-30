@@ -1,0 +1,24 @@
+.sidebar {
+    background-color: #2C2C2C;
+    color: white;
+    width: 7%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 12px;
+}
+
+li i{
+    width: 115px;
+}

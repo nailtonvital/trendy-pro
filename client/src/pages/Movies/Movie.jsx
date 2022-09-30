@@ -1,9 +1,10 @@
 import React, { Fragment } from "react";
-import style from "./style.module.scss";
+import style from "./movie.module.scss";
 import interest from "./assets/interest.png";
 import api from "../../services/api";
 import { useEffect } from "react";
 import { useState } from "react";
+import Sidebar from "../../components/sidebar/Sidebar";
 
 export default function Movie() {
   const [movie, setMovie] = useState([]);
@@ -25,7 +26,8 @@ export default function Movie() {
   }, []);
 
   return (
-    <Fragment>
+    <div className="page">
+
       <div className={style.container} style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original/${movie.backdrop_path})` }}>
         <div className={style.column}>
           <div className={style.cardinfo}>
@@ -91,6 +93,6 @@ export default function Movie() {
           </div>
         </div>
       </div>
-    </Fragment>
+    </div>
   );
 }

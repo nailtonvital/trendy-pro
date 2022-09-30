@@ -8,14 +8,16 @@
     --threshold: 60;
 }
 
-.container {
+.page{
+    display: flex;
+}
 
-    max-width: 100vw;
+.container {
+    width: 90%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
-    overflow: hidden;
 }
 
 .column {
