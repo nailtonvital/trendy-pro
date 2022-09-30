@@ -20,9 +20,7 @@
     background-size: 300% 300%;
     font-family: sans-serif;
     color: white;
-    height: 400vh;
     font-size: 100%;
-
 }
 
 nav,
@@ -48,6 +46,11 @@ nav {
     text-align: center;
     /* Centered text/links */
     margin-top: 30px;
+}
+
+nav button{
+    background-color: transparent;
+    border-style: none;
 }
 
 .navbarClosed{
@@ -79,14 +82,16 @@ nav {
     border-radius: 50px;
     border: 1.5px solid #fff;
     background: transparent;
+    color: white;
 }
+
 
 .getStarted:hover {
     background-color: white;
     color: black;
 }
 
-.left-hero h3 {
+.titleHeader{
     font-weight: 700;
     font-size: 50px;
 }
@@ -121,7 +126,7 @@ nav {
     margin-bottom: 100px;
 }
 
-.banner h1 {
+.banner h3 {
     text-align: center;
     margin-bottom: 20px;
 }
@@ -163,7 +168,14 @@ nav {
     margin: auto;
 }
 
-.right-align img {
+.subtitle{
+    font-size: 30px;
+}
+.left-align img{
+    
+}
+
+.right-align img, .left-align img {
     width: 100%;
 }
 
@@ -191,7 +203,7 @@ nav {
 }
 
 .social-card {
-    /* From https://css.glass */
+
     background: rgba(255, 255, 255, 0.1);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);

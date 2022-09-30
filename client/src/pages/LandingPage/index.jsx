@@ -1,21 +1,11 @@
 import React, { useState } from "react";
 import style from "./style.module.scss";
-import Fox from "./assets/Fox.svg";
-import Mundo from "./assets/Mundo.svg";
-import GoogleLogo from "./assets/GoogleLogo.svg";
-import SlackLogo from "./assets/SlackLogo.svg";
-import NetflixLogo from "./assets/NetflixLogo.svg";
-import AmazonLogo from "./assets/AmazonLogo.svg";
-import MapaMundi from "./assets/MapaMundi.svg";
-import User from "./assets/User.svg";
-import Rate from "./assets/rate.svg";
-import Anne from "./assets/anne.svg";
-import Michael from "./assets/michael.svg";
-import Sarah from "./assets/sarah.svg";
-import Product from "./assets/ProductPresentation.svg";
-import Mac from "./assets/MacBookPro.svg";
-import Filmes from "./assets/Filmes.svg";
-import Component from "./assets/Component.svg";
+import Fox from "./assets/Fox.webp";
+import Mundo from "./assets/Mundo.webp";
+import MapaMundi from "./assets/MapaMundi.webp";
+import User from "./assets/User.webp";
+import hamburger from "./assets/hamburger.webp"
+
 
 
 export default function LandingPage() {
@@ -24,6 +14,8 @@ export default function LandingPage() {
   function handleNavbar() {
     setSidebar(!sidebar)
   }
+
+  console.log(style)
 
   return (
     <>
@@ -36,21 +28,7 @@ export default function LandingPage() {
             </div>
 
               <button className={style.hamburguer} onClick={handleNavbar}>
-                <svg
-                  width="40"
-                  height="40"
-                  viewBox="0 0 72 57"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M26.6862 53.0698H67.9999M3.52942 28.5H67.9999M15.4587 3.93018H67.9999"
-                    stroke="white"
-                    stroke-width="6.5625"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
+                <img src={hamburger} alt="hamburger"/>
               </button>
           </nav>
           <div className={sidebar ? style.navbar : style.navbarClosed}>
@@ -62,7 +40,7 @@ export default function LandingPage() {
 
           <div className={style.hero}>
             <div className={style["left-hero"]}>
-              <h3>Discover trends while it trending</h3>
+              <h3 className={style.titleHeader}>Discover trends while it trending</h3>
               <p>
                 We track every topic across the internet to identify growing
                 trends.
@@ -80,119 +58,60 @@ export default function LandingPage() {
           </div>
 
           <div className={style.banner}>
-            <h1>Helping companies around the world</h1>
+            <h3>Our Main Features</h3>
             <ul>
               <li>
-                <img src={GoogleLogo} alt="imgGoogle" />
+                <i class='bx bx-timer'></i>
+                <p>Real-time tracking Trends</p> 
               </li>
               <li>
-                <img src={SlackLogo} alt="imgSlack" />
+                <i class='bx bxl-meta'></i>
+                <p>Acesso a todos os interesses do Meta Ads</p> 
               </li>
               <li>
-                <img src={NetflixLogo} alt="imgNetflix" />
+                <i class='bx bx-search'></i>
+                <p>Explorador de palavras-chaves para SEO</p>
               </li>
               <li>
-                <img src={AmazonLogo} alt="imgAmazon" />
+                <i class='bx bx-bar-chart-square'></i>
+                <p>Gráficos de interesse</p>
               </li>
             </ul>
           </div>
 
           <div className={style.item}>
             <div className={style["left-align"]}>
-              <h3>Know what's going on around the world</h3>
-              <p>
-                Acess to all trending topics on the social media Acess to all
-                trending topics on the social media Acess to all trending topics
-                on the social media Acess to all trending topics on the social
-                media Acess to all trending topics on the social media Acess to
-                all trending topics on the social media
+              <h3 className={style.titleHeader}>Know what's going on around the world</h3>
+              <p className={style.subtitle}>
+                We provide an overview of what is happening in the world
               </p>
               <img src="" alt="" />
             </div>
-            <div classname={style["right-align"]}>
+            <div className={style["right-align"]}>
               <img src={MapaMundi} alt="imgMapaMundi" />
             </div>
           </div>
 
-          <div classname={style["center-align"]}>
-            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
-            <p>
-              Nullam lorem elit, faucibus non tellus ut, tempor posuere arcu.
-            </p>
-            <img src={User} alt="imgUser" />
+          <div className={style.item}>
+            <div className={style["right-align"]}>
+              <h3 className={style.titleHeader}>Acess to all trending topics on the social media</h3>
+              <p className={style.subtitle}>
+                Nullam lorem elit, faucibus non tellus ut, tempor posuere arcu.
+              </p>
+            </div>
+            <div className={style["left-align"]}>
+              <img src={User} alt="imgUser" />
+            </div>
           </div>
 
           <div classname={style["left-align"]}>
-            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
-            <p>
+            <h3 className={style.titleHeader}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+            <p className={style.subtitle}>
               Nullam lorem elit, faucibus non tellus ut, tempor posuere arcu.
             </p>
           </div>
 
-          <div classname={style["social-proof"]}>
-            <h2>What are people saying?</h2>
-            <div classname={style["social-cards"]}>
-              <div classname={style["social-card"]}>
-                <img src={Rate} alt="rate" />
-                <div classname={style["social-quote"]}>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et,
-                    quis quis sem odio ultricies eu maecenas ante ut. Fames
-                    luctus tempor eu diam ut quam. Malesuada risus turpis ante
-                    rhoncus viverra ipsum vel scelerisque. Arcu urna, aliquam
-                    elit amet.
-                  </p>
-                </div>
-                <div classname={style.people}>
-                  <img src={Anne} alt="" />
-                  <div classname={style["people-info"]}>
-                    <h2>Anne Gorchakov</h2>
-                    <p>Digital Marketer</p>
-                  </div>
-                </div>
-              </div>
-
-              <div classname={style["social-card"]}>
-                <img src={Rate} alt="rate" />
-                <div classname={style["social-quote"]}>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et,
-                    quis quis sem odio ultricies eu maecenas ante ut. Fames
-                    luctus tempor eu diam ut quam. Malesuada risus turpis ante
-                    rhoncus viverra ipsum vel scelerisque. Arcu urna, aliquam
-                    elit amet.
-                  </p>
-                </div>
-                <div className={style.people}>
-                  <img src={Michael} alt="" />
-                  <div classname={style["people-info"]}>
-                    <h2>Michael Turner</h2>
-                    <p>Entrepreneur</p>
-                  </div>
-                </div>
-              </div>
-
-              <div classname={style["social-card"]}>
-                <img src={Rate} alt="rate" />
-                <div classname={style["social-quote"]}>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et,
-                    quis quis sem odio ultricies eu maecenas ante ut. Fames
-                    luctus tempor eu diam ut quam. Malesuada risus turpis ante
-                    rhoncus viverra ipsum vel scelerisque. Arcu urna, aliquam
-                    elit amet.
-                  </p>
-                </div>
-                <div className={style.people}>
-                  <img src={Sarah} alt="" />
-                  <div classname={style["people-info"]}>
-                    <h2>Sarah Borba</h2>
-                    <p>Digital Influencer</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+         
           <div classname={style.product}>
             <div>
               <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
@@ -200,14 +119,14 @@ export default function LandingPage() {
                 Nullam lorem elit, faucibus non tellus ut, tempor posuere arcu.
               </p>
             </div>
-            <img src={Product} alt="imgProductPresentation" />
+
           </div>
           <div classname={style.macpro}>
             <div>
               <h1>Access most relevant information whats popular</h1>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
             </div>
-            <img src={Mac} alt="imgMacBookPro" />
+
           </div>
           <div className={style.filmes}>
             <div>
@@ -216,7 +135,7 @@ export default function LandingPage() {
                 Nullam lorem elit, faucibus non tellus ut, tempor posuere arcu.
               </p>
             </div>
-            <img src={Filmes} alt="imgFilmes" />
+
           </div>
           <footer>© 2022 TrendyPro | All Rights Reserved</footer>
         </div>

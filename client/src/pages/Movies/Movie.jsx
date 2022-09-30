@@ -18,7 +18,7 @@ export default function Movie() {
       console.error("ops! ocorreu um erro" + err);
 
     });
-    api.get("/moviekeywords/634649").then((response) => { setKeywords(response.data), console.log(response.data) }).catch((err) => {
+    api.get("/tvkeywords/60574").then((response) => { setKeywords(response.data.results), console.log(response.data.keywords) }).catch((err) => {
       console.error("ops! ocorreu um erro" + err);
 
     });
@@ -43,21 +43,16 @@ export default function Movie() {
               <h5>Revenue</h5>
               <p>$1,901,000,000.00</p>
 
-              <h5>Tags</h5>
-              <p>
-                new york city, loss of loved one, showdown, secret identity,
-                hero, magic, villain, vigilante, portal, sequel, superhero,
-                based on comic, alternate reality, masked vigilante,
-                aftercreditsstinger, duringcreditsstinger, marvel cinematic
-                universe (mcu), teenage hero, multiverse, alternate universe,
-                superhero teamup, returning hero, crossover, teamwork
-              </p>
+              <h5>Keywords</h5>
+              {keywords.map((item, index)=>(
+                <button key={index}>{item.name}</button>
+              ))}
             </div>
           </div>
           <div className={style.movieinfo}>
             <h1>{movie.title ? movie.title : movie.name}</h1>
             <p>
-              {movie.release_date} (BR) Ação, Aventura, Ficção científica 2h 29m
+              {movie.release_date} Ação, Aventura, Ficção científica | 2h 29m
             </p>
             <h3>Sinopsys</h3>
             <p>{movie.overview}</p>
