@@ -10,23 +10,20 @@ export default function Movie() {
   const [keywords, setKeywords] = useState([]);
 
   useEffect(() => {
-    api.get("/tv/60574").then((response) => setMovie(response.data), console.log(movie)).catch((err) => {
+    api.get("/tv/76479").then((response) => setMovie(response.data), console.log(movie)).catch((err) => {
       console.error("ops! ocorreu um erro" + err);
     });
-    api.get("/moviecredit/634649").then((response) => { setActors(response.data), console.log(response.data) }).catch((err) => {
+    api.get("/tvcredit/76479").then((response) => { setActors(response.data), console.log(response.data) }).catch((err) => {
       console.error("ops! ocorreu um erro" + err);
-
     });
-    api.get("/tvkeywords/60574").then((response) => { setKeywords(response.data.results), console.log(response.data.keywords) }).catch((err) => {
+    api.get("/tvkeywords/76479").then((response) => { response.data.results ? setKeywords(response.data.results) : setKeywords(response.data.keywords), console.log(response.data.keywords) }).catch((err) => {
       console.error("ops! ocorreu um erro" + err);
 
     });
   }, []);
-
   return (
     <div className="page">
-
-      <div className={style.container} style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original/${movie.backdrop_path})` }}>
+      <div className={style.container} style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original/${movie.backdrop_path})`  }}>
         <div className={style.column}>
           <div className={style.cardinfo}>
             <img
@@ -34,49 +31,53 @@ export default function Movie() {
               alt=""
             />
             <div className={style.information}>
-              <h5>Original Language</h5>
+              <h6>Original Language</h6>
               <p>{movie.original_language}</p>
 
-              <h5>Budget</h5>
-              <p>$200,000,000.00</p>
+              {movie.budget ? 
+              <>
+                <h6>Budget</h6>
+                <p>{movie.budget}</p> 
+                <h6>Revenue</h6>
+                <p>${movie.revenue}</p>
+              </> : null}
 
-              <h5>Revenue</h5>
-              <p>$1,901,000,000.00</p>
-
-              <h5>Keywords</h5>
+              <h6>Keywords</h6>
               {keywords.map((item, index)=>(
                 <button key={index}>{item.name}</button>
               ))}
             </div>
           </div>
           <div className={style.movieinfo}>
-            <h1>{movie.title ? movie.title : movie.name}</h1>
+            
+            <h2>{movie.title ? movie.title : movie.name} <span className={style.year}>({movie.release_date ? movie.release_date.substr(0, 4) : movie.first_air_date.substr(0, 4)})</span></h2>
             <p>
-              {movie.release_date} Ação, Aventura, Ficção científica | 2h 29m
+              {movie.genres.map(genre => <span>{genre.name+" "}</span>)}| {movie.runtime ? movie.runtime + "Minutes" : movie.number_of_seasons + " Seasons " +  movie.number_of_episodes+ " Episodes"}
             </p>
-            <h3>Sinopsys</h3>
+
             <p>{movie.overview}</p>
 
-            <h3>Cast</h3>
+            <h5>Cast</h5>
             <div className={style.people}>
-              {/* {actors.cast.map(item => (
-                    console.log(item)
-                ))} */}
-              <div className={style.peoplecard}></div>
-              <div className={style.peoplecard}></div>
-              <div className={style.peoplecard}></div>
-              <div className={style.peoplecard}></div>
-              <div className={style.peoplecard}></div>
+              
+              {actors.cast.map(item => (
+                <div className={style.peoplecard}>
+                  <img className={style.peoplecardimg} src={`https://image.tmdb.org/t/p/original/${item.profile_path}`} alt="" />
+                  <h6>{item.character}</h6>
+                  <p>{item.original_name}</p>
+                </div>
+                ))}
+              
             </div>
 
-            <h3>Related Queries</h3>
+            <h5>Related Queries</h5>
             <div className={style.keywords}>
               <button>fesdfdsfg</button>
               <button>fesdfdsfg</button>
               <button>fesdfdsfg</button>
             </div>
 
-            <h3>Topics</h3>
+            <h5>Topics</h5>
             <div className={style.keywords}>
               <button>fesdfdsfg</button>
               <button>fesdfdsfg</button>
@@ -84,7 +85,7 @@ export default function Movie() {
               <button>fesdfdsfg</button>
             </div>
 
-            <h3>Interest Over Time</h3>
+            <h5>Interest Over Time</h5>
             <div className={style.interest}>
               <img src={interest} alt="" />
             </div>
