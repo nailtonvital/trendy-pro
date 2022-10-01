@@ -53,7 +53,8 @@ export async function getAnimes(id) {
     title {
       romaji
       english
-    }
+    }, 
+    countryOfOrigin,
     genres,
     coverImage {
       extraLarge
@@ -65,7 +66,7 @@ export async function getAnimes(id) {
       day
     },
     averageScore,
-    duration,
+    episodes,
     bannerImage,
     description,
     tags {

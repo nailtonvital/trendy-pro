@@ -71,6 +71,10 @@ button{
     color: white;
     margin-right: 3px;
     margin-bottom: 10px;
+    &:hover{
+    background-color: white;
+    color: black;       
+    }
 }
 
 h5,h6{
