@@ -42,10 +42,10 @@ export default function Movie() {
                 ? movie.countryOfOrigin === "JP"
                  ?
                   <>
-                    <h6>Country of Origin</h6>
+                    <h6>Country of origin</h6>
                     <p>{movie.countryOfOrigin}</p>
 
-                    <h6>Original Language</h6>
+                    <h6>Original language</h6>
                     <p>Japanese</p>
                   </>
                   : null
@@ -55,7 +55,7 @@ export default function Movie() {
               {movie.title.native 
                 ? 
                   <>
-                    <h6>Country of Origin</h6>
+                    <h6>Original title</h6>
                     <p>{movie.title.native}</p>
                   </> 
                 : null

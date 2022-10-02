@@ -1,7 +1,7 @@
 import fetch from 'node-fetch';
 
 // TRENDING ANIME QUERY
-export async function getTrendingAnimes(){
+export async function getTrendingAnimes() {
 
   var query = `
   query  {
@@ -10,6 +10,7 @@ export async function getTrendingAnimes(){
         id
       title {
         romaji
+        english
       }
       coverImage {
         extraLarge
@@ -19,30 +20,30 @@ export async function getTrendingAnimes(){
     }
   }
   `;
-  
+
   // Define the config we'll need for our Api request
   var url = 'https://graphql.anilist.co',
-      options = {
-          method: 'POST',
-          headers: {
-              'Content-Type': 'application/json',
-              'Accept': 'application/json',
-          },
-          body: JSON.stringify({
-              query: query,
-              
-          })
-      };
-  
+    options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
+      body: JSON.stringify({
+        query: query,
+
+      })
+    };
+
   // Make the HTTP Api request
   return fetch(url, options).then(handleResponse)
-      
+
   function handleResponse(response) {
-      return response.json().then(function (json) {
-          return response.ok ? json : Promise.reject(json);
-      });
+    return response.json().then(function (json) {
+      return response.ok ? json : Promise.reject(json);
+    });
   }
-}  
+}
 
 export async function getAnimes(id) {
 
@@ -98,5 +99,5 @@ export async function getAnimes(id) {
       return response.ok ? json : Promise.reject(json);
     });
   }
-}  
+}
 
