@@ -1,4 +1,4 @@
-.sidebar {
+nav {
     background-color: #2C2C2C;
     color: white;
     width: 7%;
@@ -9,16 +9,19 @@
     justify-content: space-between;
 }
 
+ul {
+    width: 100%;
+}
 
 li {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    font-size: 12px;
+
+    width: 100%;
 }
 
-li i{
-    width: 115px;
+li p {
+    text-align: center;
 }

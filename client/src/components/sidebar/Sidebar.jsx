@@ -1,12 +1,13 @@
 import React from 'react'
 import "./style.module.scss"
+import logo from '../../img/logo.webp'
 
 function Sidebar() {
   return (
       <nav className='sidebar'>
           <div className="logo">
               <li>
-                  <img src="../src/img/Fox.webp" alt="" srcset="" />
+                  <img src={logo} alt="" srcset="" />
               </li>
           </div>
           <div className="items">

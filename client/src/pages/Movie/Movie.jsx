@@ -2,7 +2,7 @@ import React, { Fragment, useEffect, useState } from "react";
 import style from "./movie.module.scss";
 import interest from "./assets/interest.png";
 import api from "../../services/api";
-import Sidebar from "../../components/sidebar/Sidebar";
+import Sidebar from "../../components/Sidebar/Sidebar";
 
 export default function Movie() {
   const [movie, setMovie] = useState([]);
@@ -21,20 +21,22 @@ export default function Movie() {
     // api.get("/tvkeywords/76479").then((response) => { response.data.results ? setKeywords(response.data.results) : setKeywords(response.data.keywords), console.log(response.data.keywords) }).catch((err) => {
     //   console.error("ops! ocorreu um erro" + err);
     // });
-    if(movie !== undefined){
-      api.get(`/relatedQueries?keyword=${movie.title.romaji ? movie.title.romaji : movie.title ? movie.title : movie.name}`).then((response) => { setQueries(response.data), console.log(queries) }).catch((err) => {
-        console.error("ops! ocorreu um erro" + err);
-      });
-      api.get(`/relatedTopics?keyword=${movie.title.romaji ? movie.title.romaji : movie.title ? movie.title : movie.name}`).then((response) => { setTopics(response.data), console.log(queries) }).catch((err) => {
-        console.error("ops! ocorreu um erro" + err);
-      });
-    }
-  }, []);
+    // if(movie !== undefined){
+    //   api.get(`/relatedQueries?keyword=${movie.title.romaji ? movie.title.romaji : movie.title ? movie.title : movie.name}`).then((response) => { setQueries(response.data), console.log(queries) }).catch((err) => {
+    //     console.error("ops! ocorreu um erro" + err);
+    //   });
+    //   api.get(`/relatedTopics?keyword=${movie.title.romaji ? movie.title.romaji : movie.title ? movie.title : movie.name}`).then((response) => { setTopics(response.data), console.log(queries) }).catch((err) => {
+    //     console.error("ops! ocorreu um erro" + err);
+    //   });
+    // }
+  });
 
 
 
   return (
-    <div className="page">
+    <div className = {style.page} >
+    <Sidebar/>
+    <div >
       <div className={style.container} style={
         movie.backdrop_path 
           ? { backgroundImage: `url(https://image.tmdb.org/t/p/original/${movie.backdrop_path})`}
@@ -165,6 +167,7 @@ export default function Movie() {
           </div>
         </div>
       </div>
+    </div>
     </div>
   )
 }
