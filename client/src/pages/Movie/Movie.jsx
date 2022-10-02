@@ -8,6 +8,8 @@ export default function Movie() {
   const [movie, setMovie] = useState([]);
   const [actors, setActors] = useState([]);
   const [keywords, setKeywords] = useState([]);
+  const [queries, setQueries] = useState([]);
+  const [topics, setTopics] = useState([]);
 
   useEffect(() => {
     api.get("/anime/127230").then((response) => setMovie(response.data.data.Media)).catch((err) => {
@@ -19,9 +21,17 @@ export default function Movie() {
     // api.get("/tvkeywords/76479").then((response) => { response.data.results ? setKeywords(response.data.results) : setKeywords(response.data.keywords), console.log(response.data.keywords) }).catch((err) => {
     //   console.error("ops! ocorreu um erro" + err);
     // });
+    if(movie !== undefined){
+      api.get(`/relatedQueries?keyword=${movie.title.romaji ? movie.title.romaji : movie.title ? movie.title : movie.name}`).then((response) => { setQueries(response.data), console.log(queries) }).catch((err) => {
+        console.error("ops! ocorreu um erro" + err);
+      });
+      api.get(`/relatedTopics?keyword=${movie.title.romaji ? movie.title.romaji : movie.title ? movie.title : movie.name}`).then((response) => { setTopics(response.data), console.log(queries) }).catch((err) => {
+        console.error("ops! ocorreu um erro" + err);
+      });
+    }
   }, []);
 
-  console.log(movie)
+
 
   return (
     <div className="page">
@@ -120,20 +130,33 @@ export default function Movie() {
           }
             
 
-            <h5>Related Queries</h5>
-            <div className={style.keywords}>
-              <button>fesdfdsfg</button>
-              <button>fesdfdsfg</button>
-              <button>fesdfdsfg</button>
-            </div>
+            {
+              queries
+                ?
+                <>
+                <h5>Related Queries</h5>
+                <div className={style.keywords}>
+                  {queries.map((item, index) => (
+                    <button key={index}>{item}</button>
+                  ))}
+                </div>
+                </>
+                : null
+            }
 
-            <h5>Topics</h5>
-            <div className={style.keywords}>
-              <button>fesdfdsfg</button>
-              <button>fesdfdsfg</button>
-              <button>fesdfdsfg</button>
-              <button>fesdfdsfg</button>
-            </div>
+            {
+              topics
+                ?
+                <>
+                <h5>Related Topics</h5>
+                <div className={style.keywords}>
+                  {topics.map((item, index) => (
+                    <button key={index}>{item}</button>
+                  ))}
+                </div>
+                </>
+                : null
+            }
 
             <h5>Interest Over Time</h5>
             <div className={style.interest}>
