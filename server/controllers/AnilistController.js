@@ -52,7 +52,7 @@ export async function getAnimes(id) {
     id
     title {
       romaji
-      english
+      native
     }, 
     countryOfOrigin,
     genres,

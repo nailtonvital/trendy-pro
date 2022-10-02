@@ -10,7 +10,7 @@ export default function Movie() {
   const [keywords, setKeywords] = useState([]);
 
   useEffect(() => {
-    api.get("/anime/127230").then((response) => setMovie(response.data.data.Media), console.log(movie)).catch((err) => {
+    api.get("/anime/127230").then((response) => setMovie(response.data.data.Media)).catch((err) => {
       console.error("ops! ocorreu um erro" + err);
     });
     // api.get("/tvcredit/76479").then((response) => { setActors(response.data), console.log(response.data) }).catch((err) => {
@@ -20,6 +20,8 @@ export default function Movie() {
     //   console.error("ops! ocorreu um erro" + err);
     // });
   }, []);
+
+  console.log(movie)
 
   return (
     <div className="page">
@@ -35,8 +37,30 @@ export default function Movie() {
               alt=""
             />
             <div className={style.information}>
-              <h6>Original Language</h6>
-              <p>{movie.original_language}</p>
+
+              {movie.countryOfOrigin
+                ? movie.countryOfOrigin === "JP"
+                 ?
+                  <>
+                    <h6>Country of Origin</h6>
+                    <p>{movie.countryOfOrigin}</p>
+
+                    <h6>Original Language</h6>
+                    <p>Japanese</p>
+                  </>
+                  : null
+                : null
+              }
+
+              {movie.title.native 
+                ? 
+                  <>
+                    <h6>Country of Origin</h6>
+                    <p>{movie.title.native}</p>
+                  </> 
+                : null
+                }
+              
 
               {movie.budget ? 
               <>
@@ -62,34 +86,39 @@ export default function Movie() {
           </div>
           <div className={style.movieinfo}>
 
-            {/* <h2>{movie.title ? movie.title : movie.name} <span className={style.year}>({movie.release_date ? movie.release_date.substr(0, 4) : movie.first_air_date.substr(0, 4)})</span></h2> */}
-            <h2>{movie.title.romaji ? movie.title.romaji : movie.title ? movie.title : movie.name} <span className={style.year}>()</span></h2>
+            <h2>{movie.title.romaji ? movie.title.romaji : movie.title ? movie.title : movie.name} <span className={style.year}>({movie.release_date ? movie.release_date.substr(0, 4) : movie.startDate.year})</span></h2>
             <p>
               {
                 movie.genres.name
-                ? movie.genres.map(genre => <span>{genre.name+" "}</span>)
-                : movie.genres.map(genre => <span>{genre + ", "}</span>)
+                ? movie.genres.map((genre,index) => <span key={index}>{genre.name+" "}</span>)
+                : movie.genres.map((genre,index) => <span key={index}>{genre + ", "}</span>)
               }
-              | 
-              {
-              movie.runtime ? movie.runtime + "Minutes" : movie.number_of_seasons + " Seasons " +  movie.number_of_episodes+ " Episodes"
+              |  {
+                movie.runtime ? movie.runtime + "Minutes" : movie.number_of_seasons ? movie.number_of_seasons + " Seasons " + movie.number_of_episodes + " Episodes" : movie.episodes + " Episodes"
               }
             </p>
 
             <p>{movie.overview ? movie.overview : movie.description.replace(/<\/?[^>]+(>|$)/g, "")}</p>
 
-            <h5>Cast</h5>
-            <div className={style.people}>
-              
-              {/* {actors.cast.map(item => (
+            {actors.length !== 0 
+            ? 
+            <>
+                <h5>Cast</h5>
+                <div className={style.people}>
+
+                  {actors.cast.map(item => (
                 <div className={style.peoplecard}>
                   <img className={style.peoplecardimg} src={`https://image.tmdb.org/t/p/original/${item.profile_path}`} alt="" />
                   <h6>{item.character}</h6>
                   <p>{item.original_name}</p>
                 </div>
-                ))} */}
-              
-            </div>
+                ))}
+
+                </div>
+            </>
+            : null
+          }
+            
 
             <h5>Related Queries</h5>
             <div className={style.keywords}>
@@ -114,5 +143,5 @@ export default function Movie() {
         </div>
       </div>
     </div>
-  );
+  )
 }
