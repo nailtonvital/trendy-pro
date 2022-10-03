@@ -1,11 +1,15 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { MoonLoader } from 'react-spinners'
-import { Line } from 'react-chartjs-2';
 import style from "./movie.module.scss";
 import interest from "./assets/interest.png";
 import api from "../../services/api";
 import Sidebar from "../../components/sidebar/Sidebar";
 
+import { Line } from 'react-chartjs-2';
+import Chart from 'chart.js/auto';
+import { CategoryScale } from 'chart.js';
+
+Chart.register(CategoryScale);
 export default function Movie() {
   const [isLoading, setIsLoading] = useState(true);
   const [movie, setMovie] = useState([]);
@@ -14,6 +18,28 @@ export default function Movie() {
   const [queries, setQueries] = useState([]);
   const [topics, setTopics] = useState([]);
   const [error, setError] = useState([]);
+
+  const data = {
+    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+    datasets: [
+      {
+        label: "First dataset",
+        lineTension: 0.2,
+        data: [33, 53, 85, 41, 44, 65],
+        fill: true,
+        backgroundColor: "rgba(75,192,192,0.2)",
+        borderColor: "rgba(75,192,192,1)",
+        
+      },
+      {
+        label: "Second dataset",
+        lineTension: 0.2,
+        data: [33, 25, 35, 51, 54, 76],
+        fill: false,
+        borderColor: "#742774"
+      }
+    ]
+  };
   
 
   useEffect(() => {
@@ -187,7 +213,7 @@ export default function Movie() {
 
             <h5>Interest Over Time</h5>
             <div className={style.interest}>
-              <img src={interest} alt="" />
+              <Line data={data}/>
             </div>
           </div>
         </div>
