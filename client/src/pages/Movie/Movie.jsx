@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from "react";
-import { BarLoader } from 'react-spinners'
+import { MoonLoader } from 'react-spinners'
 import { Line } from 'react-chartjs-2';
 import style from "./movie.module.scss";
 import interest from "./assets/interest.png";
@@ -26,6 +26,7 @@ export default function Movie() {
       setError(err)
     })
     .finally(() => setIsLoading(!isLoading));
+
     // api.get("/tvcredit/76479").then((response) => { setActors(response.data), console.log(response.data) }).catch((err) => {
     //   console.error("ops! ocorreu um erro" + err);
     //   setError(err)
@@ -46,7 +47,7 @@ export default function Movie() {
 
 
   if (isLoading) {
-    return <BarLoader/>
+    return <div className={style.spin}><MoonLoader  /></div> 
   }
 
   return (
