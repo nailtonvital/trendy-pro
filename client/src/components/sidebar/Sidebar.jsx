@@ -1,10 +1,10 @@
 import React from 'react'
-import "./style.module.scss"
+import style from "./style.module.scss"
 import logo from '../../img/logo.webp'
 
 function Sidebar() {
   return (
-      <nav className='sidebar'>
+      <nav className={style.sidebar}>
           <div className="logo">
               <li>
                   <img src={logo} alt="" srcset="" />

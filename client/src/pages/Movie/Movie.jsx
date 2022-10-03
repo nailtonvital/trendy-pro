@@ -1,25 +1,39 @@
 import React, { Fragment, useEffect, useState } from "react";
+import { BarLoader } from 'react-spinners'
+import { Line } from 'react-chartjs-2';
 import style from "./movie.module.scss";
 import interest from "./assets/interest.png";
 import api from "../../services/api";
-import Sidebar from "../../components/Sidebar/Sidebar";
+import Sidebar from "../../components/sidebar/Sidebar";
 
 export default function Movie() {
+  const [isLoading, setIsLoading] = useState(false);
   const [movie, setMovie] = useState([]);
   const [actors, setActors] = useState([]);
   const [keywords, setKeywords] = useState([]);
   const [queries, setQueries] = useState([]);
   const [topics, setTopics] = useState([]);
+  const [error, setError] = useState([]);
+  
 
   useEffect(() => {
-    api.get("/anime/127230").then((response) => setMovie(response.data.data.Media)).catch((err) => {
+    setIsLoading(true);
+    api.get("/anime/20850")
+    .then((response) => {
+      setMovie(response.data.data.Media)
+    })
+    .catch((err) => {
       console.error("ops! ocorreu um erro" + err);
-    });
+      setError(err)
+    })
+    .finally(() => setIsLoading(!isLoading));
     // api.get("/tvcredit/76479").then((response) => { setActors(response.data), console.log(response.data) }).catch((err) => {
     //   console.error("ops! ocorreu um erro" + err);
+    //   setError(err)
     // });
     // api.get("/tvkeywords/76479").then((response) => { response.data.results ? setKeywords(response.data.results) : setKeywords(response.data.keywords), console.log(response.data.keywords) }).catch((err) => {
     //   console.error("ops! ocorreu um erro" + err);
+    //   setError(err)
     // });
     // if(movie !== undefined){
     //   api.get(`/relatedQueries?keyword=${movie.title.romaji ? movie.title.romaji : movie.title ? movie.title : movie.name}`).then((response) => { setQueries(response.data), console.log(queries) }).catch((err) => {
@@ -29,13 +43,12 @@ export default function Movie() {
     //     console.error("ops! ocorreu um erro" + err);
     //   });
     // }
-  });
+  }, []);
 
 
-
+  if (isLoading)  <BarLoader/>
+  console.log(movie)
   return (
-    <div className = {style.page} >
-    <Sidebar/>
     <div >
       <div className={style.container} style={
         movie.backdrop_path 
@@ -44,10 +57,14 @@ export default function Movie() {
         }>
         <div className={style.column}>
           <div className={style.cardinfo}>
-            <img
-              src={movie.poster_path ? `https://image.tmdb.org/t/p/original/${movie.poster_path}` : movie.coverImage.extraLarge }
-              alt=""
-            />
+
+            {movie.poster_path 
+              ? <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt="" /> 
+            : movie.coverImage 
+                ? <img src={movie.coverImage.extraLarge} alt="" />  
+            : null}
+            
+
             <div className={style.information}>
 
               {movie.countryOfOrigin
@@ -97,8 +114,14 @@ export default function Movie() {
             </div>
           </div>
           <div className={style.movieinfo}>
-
-            <h2>{movie.title.romaji ? movie.title.romaji : movie.title ? movie.title : movie.name} <span className={style.year}>({movie.release_date ? movie.release_date.substr(0, 4) : movie.startDate.year})</span></h2>
+            {movie.title.romaji !== 0
+              ? <h2> {movie.title.romaji} <span className={style.year}>({movie.release_date ? movie.release_date.substr(0, 4) : movie.startDate.year})</span></h2>
+            : movie.title 
+                ? <h2>{movie.title} <span className={style.year}>({movie.release_date ? movie.release_date.substr(0, 4) : movie.startDate.year})</span></h2>
+            : movie.name 
+                  ? <h2>{movie.name} <span className={style.year}>({movie.release_date ? movie.release_date.substr(0, 4) : movie.startDate.year})</span></h2>
+            : null}
+            
             <p>
               {
                 movie.genres.name
@@ -167,7 +190,6 @@ export default function Movie() {
           </div>
         </div>
       </div>
-    </div>
     </div>
   )
 }

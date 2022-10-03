@@ -9,12 +9,13 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
-    "chart.js": "^3.7.1",
+    "chart.js": "^3.9.1",
     "faker": "^5.5.3",
     "react": "^18.0.0",
-    "react-chartjs-2": "^4.1.0",
+    "react-chartjs-2": "^4.3.1",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.3.0",
+    "react-spinners": "^0.13.4",
     "sass": "^1.54.6"
   },
   "devDependencies": {
