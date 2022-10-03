@@ -7,7 +7,7 @@ import api from "../../services/api";
 import Sidebar from "../../components/sidebar/Sidebar";
 
 export default function Movie() {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [movie, setMovie] = useState([]);
   const [actors, setActors] = useState([]);
   const [keywords, setKeywords] = useState([]);
@@ -17,7 +17,6 @@ export default function Movie() {
   
 
   useEffect(() => {
-    setIsLoading(true);
     api.get("/anime/20850")
     .then((response) => {
       setMovie(response.data.data.Media)
@@ -46,8 +45,10 @@ export default function Movie() {
   }, []);
 
 
-  if (isLoading)  <BarLoader/>
-  console.log(movie)
+  if (isLoading) {
+    return <BarLoader/>
+  }
+
   return (
     <div >
       <div className={style.container} style={
