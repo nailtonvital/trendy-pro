@@ -30,6 +30,8 @@ function Movies() {
                         key={index}
                         poster_img={item.poster_path}
                         title={item.title}
+                        id={item.id}
+                        type="movie"
                     />
                 )
             })}
@@ -43,6 +45,8 @@ function Movies() {
                         key={index}
                         poster_img={item.poster_path}
                         title={item.name}
+                        id={item.id}
+                        type="tv"
                     />
                 )
             })}
@@ -57,6 +61,8 @@ function Movies() {
                         anime={true}
                         poster_img={item.coverImage.extraLarge}
                         title={item.title.romaji}
+                        id={item.id}
+                        type="anime"
                     />
                 )
             })}

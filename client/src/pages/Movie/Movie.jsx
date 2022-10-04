@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect, useState } from "react";
+import { useParams, useLocation } from "react-router-dom";
 import { MoonLoader } from 'react-spinners'
 import style from "./movie.module.scss";
 import interest from "./assets/interest.png";
@@ -11,6 +12,9 @@ import { CategoryScale } from 'chart.js';
 
 Chart.register(CategoryScale);
 export default function Movie() {
+  const location = useLocation()
+  console.log(location.state.id)
+
   const [isLoading, setIsLoading] = useState(true);
   const [movie, setMovie] = useState([]);
   const [actors, setActors] = useState([]);
@@ -56,7 +60,7 @@ export default function Movie() {
   
 
   useEffect(() => {
-    api.get("/anime/140439")
+    api.get(`/anime/${location.state.id}`)
     .then((response) => {
       setMovie(response.data.data.Media)
     })
@@ -64,7 +68,18 @@ export default function Movie() {
       console.error("ops! ocorreu um erro" + err);
       setError(err)
     })
-    .finally(() => setIsLoading(!isLoading));
+    .finally(() => {
+      setIsLoading(!isLoading)
+      api.get(`/relatedQueries?keyword=${location.state.title}`).then((response) => { setQueries(response.data), console.log(queries) }).catch((err) => {
+        console.error("ops! ocorreu um erro" + err);
+      })
+
+      api.get(`/relatedTopics?keyword=${location.state.title}`).then((response) => { setTopics(response.data), console.log(queries) }).catch((err) => {
+        console.error("ops! ocorreu um erro" + err);
+      })
+    });
+
+
 
     // api.get("/tvcredit/76479").then((response) => { setActors(response.data), console.log(response.data) }).catch((err) => {
     //   console.error("ops! ocorreu um erro" + err);
@@ -74,14 +89,6 @@ export default function Movie() {
     //   console.error("ops! ocorreu um erro" + err);
     //   setError(err)
     // });
-    // if(movie !== undefined){
-    //   api.get(`/relatedQueries?keyword=${movie.title.romaji ? movie.title.romaji : movie.title ? movie.title : movie.name}`).then((response) => { setQueries(response.data), console.log(queries) }).catch((err) => {
-    //     console.error("ops! ocorreu um erro" + err);
-    //   });
-    //   api.get(`/relatedTopics?keyword=${movie.title.romaji ? movie.title.romaji : movie.title ? movie.title : movie.name}`).then((response) => { setTopics(response.data), console.log(queries) }).catch((err) => {
-    //     console.error("ops! ocorreu um erro" + err);
-    //   });
-    // }
   }, []);
 
 
