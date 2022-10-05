@@ -70,26 +70,92 @@ export default function Movie() {
   
 
   useEffect(() => {
-    api.get(`/anime/${location.state.id}`)
-    .then((response) => {
-      setMovie(response.data.data.Media)
-    })
-    .catch((err) => {
-      console.error("ops! ocorreu um erro" + err);
-      setError(err)
-    })
-    .finally(() => {
-      setIsLoading(!isLoading)
-      api.get(`/relatedQueries?keyword=${location.state.title}`).then((response) => { setQueries(response.data), console.log(queries) }).catch((err) => {
-        console.error("ops! ocorreu um erro" + err);
+    if (location.state.type == "anime"){
+      
+      api.get(`/anime/${location.state.id}`)
+      .then((response) => {
+        setMovie(response.data.data.Media)
       })
-
-      api.get(`/relatedTopics?keyword=${location.state.title}`).then((response) => { setTopics(response.data), console.log(queries) }).catch((err) => {
+      .catch((err) => {
         console.error("ops! ocorreu um erro" + err);
+        setError(err)
       })
+      .finally(() => {
+       
+        api.get(`/relatedQueries?keyword=${location.state.title}`).then((response) => { setQueries(response.data), console.log(queries) }).catch((err) => {
+          console.error("ops! ocorreu um erro" + err);
+        })
+  
+        api.get(`/relatedTopics?keyword=${location.state.title}`).then((response) => { setTopics(response.data), console.log(queries) }).catch((err) => {
+          console.error("ops! ocorreu um erro" + err);
+        })
+  
+        chart()
+        setIsLoading(!isLoading)
+      });
+    } else if (location.state.type == "movie") {
+      api.get(`/movie/${location.state.id}`)
+        .then((response) => {
+          setMovie(response.data)
+        })
+        .catch((err) => {
+          console.error("ops! ocorreu um erro" + err);
+          setError(err)
+        })
+        .finally(() => {
+          
+          api.get(`/moviecredit/${location.state.id}`).then((response) => { setActors(response.data) }).catch((err) => {
+            console.error("ops! ocorreu um erro" + err);
+            setError(err)
+          });
+          api.get(`/moviekeywords/${location.state.id}`).then((response) => { response.data.results ? setKeywords(response.data.results) : setKeywords(response.data.keywords), console.log(response.data.keywords) }).catch((err) => {
+            console.error("ops! ocorreu um erro" + err);
+            setError(err)
+          });
+          api.get(`/relatedQueries?keyword=${location.state.title}`).then((response) => { setQueries(response.data) }).catch((err) => {
+              console.error("ops! ocorreu um erro" + err);
+            })
+            
+            api.get(`/relatedTopics?keyword=${location.state.title}`).then((response) => { setTopics(response.data) }).catch((err) => {
+                console.error("ops! ocorreu um erro" + err);
+              })
+              
+          chart()
 
-      chart()
-    });
+          setIsLoading(!isLoading)
+        });
+    } else{
+      api.get(`/TV/${location.state.id}`)
+        .then((response) => {
+          setMovie(response.data)
+        })
+        .catch((err) => {
+          console.error("ops! ocorreu um erro" + err);
+          setError(err)
+        })
+        .finally(() => {
+          // chart()
+
+          api.get(`/tvcredit/${location.state.id}`).then((response) => { setActors(response.data) }).catch((err) => {
+            console.error("ops! ocorreu um erro" + err);
+            setError(err)
+          });
+          api.get(`/tvkeywords/${location.state.id}`).then((response) => { response.data.results ? setKeywords(response.data.results) : setKeywords(response.data.keywords), console.log(response.data.keywords) }).catch((err) => {
+            console.error("ops! ocorreu um erro" + err);
+            setError(err)
+          });
+          // api.get(`/relatedQueries?keyword=${location.state.title}`).then((response) => { setQueries(response.data) }).catch((err) => {
+          //   console.error("ops! ocorreu um erro" + err);
+          // })
+
+          // api.get(`/relatedTopics?keyword=${location.state.title}`).then((response) => { setTopics(response.data) }).catch((err) => {
+          //   console.error("ops! ocorreu um erro" + err);
+          // })
+
+
+          setIsLoading(!isLoading)
+        });
+    }
 
 
 
@@ -107,12 +173,13 @@ export default function Movie() {
   if (isLoading) {
     return <div className={style.spin}><MoonLoader  /></div> 
   }
-
-  return (
-    <div >
+  
+  return ( 
+  <div >
+      {console.log(movie)}
       <div className={style.container} style={
         movie.backdrop_path 
-          ? { backgroundImage: `url(https://image.tmdb.org/t/p/original/${movie.backdrop_path})`}
+        ? { backgroundImage: `url(https://image.tmdb.org/t/p/original/${movie.backdrop_path})`}
           : { backgroundImage: `url(${movie.bannerImage})`  }
         }>
         <div className={style.column}>
@@ -174,22 +241,22 @@ export default function Movie() {
             </div>
           </div>
           <div className={style.movieinfo}>
-            {movie.title.romaji !== 0
+            {movie.title.romaji 
               ? <h2> {movie.title.romaji} <span className={style.year}>({movie.release_date ? movie.release_date.substr(0, 4) : movie.startDate.year})</span></h2>
+              : movie.name 
+                    ? <h2>{movie.name} <span className={style.year}>({movie.release_date ? movie.release_date.substr(0, 4) : movie.startDate.year})</span></h2>
             : movie.title 
                 ? <h2>{movie.title} <span className={style.year}>({movie.release_date ? movie.release_date.substr(0, 4) : movie.startDate.year})</span></h2>
-            : movie.name 
-                  ? <h2>{movie.name} <span className={style.year}>({movie.release_date ? movie.release_date.substr(0, 4) : movie.startDate.year})</span></h2>
             : null}
             
             <p>
               {
-                movie.genres.name
-                ? movie.genres.map((genre,index) => <span key={index}>{genre.name+" "}</span>)
-                : movie.genres.map((genre,index) => <span key={index}>{genre + ", "}</span>)
+                movie.genres
+                  ? movie.genres[0].name ? movie.genres.map((genre, index) => <span key={index}>{genre.name + " "}</span>) : movie.genres.map((genre, index) => <span key={index}>{genre + ", "}</span>)
+                : null
               }
               |  {
-                movie.runtime ? movie.runtime + "Minutes" : movie.number_of_seasons ? movie.number_of_seasons + " Seasons " + movie.number_of_episodes + " Episodes" : movie.episodes + " Episodes"
+                movie.runtime ? movie.runtime + " Minutes" : movie.number_of_seasons ? movie.number_of_seasons + " Seasons " + movie.number_of_episodes + " Episodes" : movie.episodes + " Episodes"
               }
             </p>
 
@@ -245,7 +312,8 @@ export default function Movie() {
 
             <h5>Interest Over Time</h5>
             <div className={style.interest}>
-              <Line data={chartData} options={options} />
+              {chartData.length !== 0 ? <Line data={chartData} options={options} /> : <div className={style.spin}><MoonLoader /></div>}
+              {/* <Line data={chartData} options={options} /> */}
             </div>
           </div>
         </div>
