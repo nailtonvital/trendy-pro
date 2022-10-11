@@ -1,7 +1,7 @@
 import * as dotenv from 'dotenv'
 dotenv.config()
 
-import express, { application, json} from 'express';
+import express, { application, json } from 'express';
 import cors from 'cors';
 const server = express();
 import axios from 'axios'
@@ -39,21 +39,21 @@ const isValidUrl = urlString => {
 server.use(cors());
 server.use(json());
 
-const auth = (req,res,next)=>{
+const auth = (req, res, next) => {
     const authToken = req.headers['authorization'];
-    if(authToken){
+    if (authToken) {
         const bearer = authToken.split(' ');
         var token = bearer[1];
 
-        jwt.verify(token,JWTSecret,(err,data)=>{
-            if(!err){
+        jwt.verify(token, JWTSecret, (err, data) => {
+            if (!err) {
                 next()
-            } else{
+            } else {
                 res.status(401).json({ err: "Token inválido!" });
             }
         })
 
-    } else{
+    } else {
         res.status(401).json({ err: "Token inválido!" });
     }
 }
@@ -70,8 +70,8 @@ server.post("/register", (req, res) => {
     const { email } = req.body;
     const { occupation } = req.body;
     const { password } = req.body;
-    
-    if ( name, email, password){
+
+    if (name, email, password) {
         let hashPassword = bcrypt.hashSync(password, 10);
 
         let sql = "INSERT INTO user (name, occupation, email, password, date_joined) VALUES (?,?,?,?,?)"
@@ -82,26 +82,26 @@ server.post("/register", (req, res) => {
                 res.status(201).json("User created");
             }
         })
-    } else{
+    } else {
         res.status(400)
     }
 });
 
 // auth
-server.post('/auth', (req, res)=>{
+server.post('/auth', (req, res) => {
     var { email, password } = req.body;
 
-    if(email){
+    if (email) {
         let sql = `SELECT * FROM user WHERE email= ?`
-        db.query(sql,[email], (err, result) => {
+        db.query(sql, [email], (err, result) => {
             if (err) {
                 res.status(400).json(err);
             } else {
                 console.log(result)
-                if (result.length == 0) {                    
+                if (result.length == 0) {
                     res.status(404);
                     res.json({ err: "The e-mail sent does not exist in the database!" });
-                } else{
+                } else {
                     res.status(200)
                     if (password) {
                         if (bcrypt.compareSync(password, result[0].password)) {
@@ -127,7 +127,7 @@ server.post('/auth', (req, res)=>{
 })
 
 // Billboard Top 100 songs
-server.get('/billboard-top-100', auth, (req, res) => {
+server.get('/billboard-top-100', (req, res) => {
 
     getChart('hot-100', (err, chart) => {
         if (err) console.log(err);
@@ -137,42 +137,42 @@ server.get('/billboard-top-100', auth, (req, res) => {
 });
 
 // // Google Trends Area
-server.get('/relatedTopics', auth, (req, res) => {
+server.get('/relatedTopics', (req, res) => {
     const word = req.query.keyword
     if (word) {
         googleTrends.getRelatedTopics(word)
-        .then(data => res.send(data))
+            .then(data => res.send(data))
     } else {
         res.sendStatus(400);
     }
 });
 
-server.get('/relatedQueries', auth, (req, res) => {
+server.get('/relatedQueries', (req, res) => {
     const word = req.query.keyword
     if (word) {
-    googleTrends.getRelatedQueries(word)
-        .then(data => res.send(data))
+        googleTrends.getRelatedQueries(word)
+            .then(data => res.send(data))
     } else {
         res.sendStatus(400);
     }
 });
 
-server.get('/dailyTrends', auth, (req, res) => {
+server.get('/dailyTrends', (req, res) => {
     const { geo } = req.query
     if (geo) {
-    googleTrends.getDailyTrends(geo)
-        .then(data => res.send(data))
+        googleTrends.getDailyTrends(geo)
+            .then(data => res.send(data))
     } else {
         res.sendStatus(400);
     }
 });
 
-server.get('/interestOverTime', auth, (req, res) => {
+server.get('/interestOverTime', (req, res) => {
     const { keyword } = req.query
-    
+
     if (keyword) {
-    googleTrends.getInterestOverTime(keyword)
-        .then(data => res.send(data))
+        googleTrends.getInterestOverTime(keyword)
+            .then(data => res.send(data))
     } else {
         res.sendStatus(400);
     }
@@ -180,12 +180,12 @@ server.get('/interestOverTime', auth, (req, res) => {
 
 // Google Cloud Area
 
-server.get('/pageSpeed', auth, (req, res) => {
+server.get('/pageSpeed', (req, res) => {
     const { url } = req.query
-    if (isValidUrl(url)){
+    if (isValidUrl(url)) {
         pageSpeed(url).then(data => {
             res.status(200).json(data)
-    })
+        })
     } else {
         res.status(400);
     }
@@ -193,16 +193,16 @@ server.get('/pageSpeed', auth, (req, res) => {
 
 //Facebook Interests
 
-server.get('/interests', auth, (req, res) => {
+server.get('/interests', (req, res) => {
     if (req.query.query) {
-    const { query } = req.query
+        const { query } = req.query
 
-    getFacebookInterests(query)
-        .then(response => {
-            res.send(response)
-        }).catch(error => {
-            res.send(error);
-        });
+        getFacebookInterests(query)
+            .then(response => {
+                res.send(response)
+            }).catch(error => {
+                res.send(error);
+            });
     } else {
         res.sendStatus(400);
     }
@@ -212,7 +212,7 @@ server.get('/interests', auth, (req, res) => {
 
 // // Trending Today
 server.get("/trendingMovies", (req, res) => {
-    
+
     axios.get('https://api.themoviedb.org/3/trending/movie/day?api_key=502709b57a68d03a1d751fc801b2b4ea')
         .then(function (response) {
             // manipula o sucesso da requisição
@@ -240,16 +240,16 @@ server.get("/movie/:id", (req, res) => {
     if (isNaN(req.params.id)) {
         res.sendStatus(400);
     } else {
-    const movie_id = req.params.id
-    axios.get(`https://api.themoviedb.org/3/movie/${movie_id}?api_key=502709b57a68d03a1d751fc801b2b4ea&language=en-US`)
-        .then(function (response) {
-            // manipula o sucesso da requisição
-            res.send(response.data);
-        })
-        .catch(function (error) {
-            // manipula erros da requisição
-            console.log(error);
-        })
+        const movie_id = req.params.id
+        axios.get(`https://api.themoviedb.org/3/movie/${movie_id}?api_key=502709b57a68d03a1d751fc801b2b4ea&language=en-US`)
+            .then(function (response) {
+                // manipula o sucesso da requisição
+                res.send(response.data);
+            })
+            .catch(function (error) {
+                // manipula erros da requisição
+                console.log(error);
+            })
     }
 })
 
@@ -257,16 +257,16 @@ server.get("/TV/:id", (req, res) => {
     if (isNaN(req.params.id)) {
         res.sendStatus(400);
     } else {
-    const tv_id = req.params.id
-    axios.get(`https://api.themoviedb.org/3/tv/${tv_id}?api_key=502709b57a68d03a1d751fc801b2b4ea&language=en-US`)
-        .then(function (response) {
-            // manipula o sucesso da requisição
-            res.send(response.data);
-        })
-        .catch(function (error) {
-            // manipula erros da requisição
-            console.log(error);
-        })
+        const tv_id = req.params.id
+        axios.get(`https://api.themoviedb.org/3/tv/${tv_id}?api_key=502709b57a68d03a1d751fc801b2b4ea&language=en-US`)
+            .then(function (response) {
+                // manipula o sucesso da requisição
+                res.send(response.data);
+            })
+            .catch(function (error) {
+                // manipula erros da requisição
+                console.log(error);
+            })
     }
 })
 
@@ -341,46 +341,46 @@ server.get("/tvkeywords/:id", (req, res) => {
 
 // Anilist
 
-server.get("/trendingAnimes", auth, (req, res)=>{
-    getTrendingAnimes().then((e)=>{
+server.get("/trendingAnimes", (req, res) => {
+    getTrendingAnimes().then((e) => {
         res.json(e.data.Page.media)
     })
-    .catch(err => {
-        res.status(400).json(err)
-    })
+        .catch(err => {
+            res.status(400).json(err)
+        })
 })
 
-server.get("/anime/:id", auth, (req, res) => {
+server.get("/anime/:id", (req, res) => {
     if (isNaN(req.params.id)) {
         res.sendStatus(400);
     } else {
         getAnimes(req.params.id).then((e) => {
             res.status(200).json(e)
         })
-        .catch(err=>{
-            res.status(400).json(err)
-        })
+            .catch(err => {
+                res.status(400).json(err)
+            })
     }
 })
 
-server.get("/backlink", auth, (req,res)=>{
+server.get("/backlink", (req, res) => {
     const { url } = req.query
 
-    if(isValidUrl(url)){
-    backlink(url).then(data => {
-        res.status(200).json(data)
-    })
-    } else{
-        res.status(400).json({error: "Invalid URL"})
+    if (isValidUrl(url)) {
+        backlink(url).then(data => {
+            res.status(200).json(data)
+        })
+    } else {
+        res.status(400).json({ error: "Invalid URL" })
     }
 
-    
+
 })
 
-server.get("/twitter", auth, (req, res) => {
+server.get("/twitter", (req, res) => {
     const { country } = req.query
 
-    if (country){
+    if (country) {
         twitter.info(country)
             .then(data => {
                 res.status(200).json(data)
@@ -389,8 +389,8 @@ server.get("/twitter", auth, (req, res) => {
         res.status(400).json({ error: "Invalid Country" })
     }
 
-    
-    
+
+
 })
 
 let port = process.env.PORT || 3333

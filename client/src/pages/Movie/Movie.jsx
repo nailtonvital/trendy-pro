@@ -134,7 +134,7 @@ export default function Movie() {
           setError(err)
         })
         .finally(() => {
-          // chart()
+          chart()
 
           api.get(`/tvcredit/${location.state.id}`).then((response) => { setActors(response.data) }).catch((err) => {
             console.error("ops! ocorreu um erro" + err);
@@ -144,13 +144,13 @@ export default function Movie() {
             console.error("ops! ocorreu um erro" + err);
             setError(err)
           });
-          // api.get(`/relatedQueries?keyword=${location.state.title}`).then((response) => { setQueries(response.data) }).catch((err) => {
-          //   console.error("ops! ocorreu um erro" + err);
-          // })
+          api.get(`/relatedQueries?keyword=${location.state.title}`).then((response) => { setQueries(response.data) }).catch((err) => {
+            console.error("ops! ocorreu um erro" + err);
+          })
 
-          // api.get(`/relatedTopics?keyword=${location.state.title}`).then((response) => { setTopics(response.data) }).catch((err) => {
-          //   console.error("ops! ocorreu um erro" + err);
-          // })
+          api.get(`/relatedTopics?keyword=${location.state.title}`).then((response) => { setTopics(response.data) }).catch((err) => {
+            console.error("ops! ocorreu um erro" + err);
+          })
 
 
           setIsLoading(!isLoading)
@@ -208,7 +208,7 @@ export default function Movie() {
                 : null
               }
 
-              {movie.title.native 
+              {/* {movie.title.native 
                 ? 
                   <>
                     <h6>Original title</h6>
@@ -216,7 +216,7 @@ export default function Movie() {
                   </> 
                 : null
                 }
-              
+               */}
 
               {movie.budget ? 
               <>
@@ -241,10 +241,10 @@ export default function Movie() {
             </div>
           </div>
           <div className={style.movieinfo}>
-            {movie.title.romaji 
+            { movie.name 
+              ? <h2>{movie.name} <span className={style.year}>({movie.release_date ? movie.release_date.substr(0, 4) : movie.first_air_date.substr(0, 4)})</span></h2>
+            :movie.title.romaji 
               ? <h2> {movie.title.romaji} <span className={style.year}>({movie.release_date ? movie.release_date.substr(0, 4) : movie.startDate.year})</span></h2>
-              : movie.name 
-                    ? <h2>{movie.name} <span className={style.year}>({movie.release_date ? movie.release_date.substr(0, 4) : movie.startDate.year})</span></h2>
             : movie.title 
                 ? <h2>{movie.title} <span className={style.year}>({movie.release_date ? movie.release_date.substr(0, 4) : movie.startDate.year})</span></h2>
             : null}
