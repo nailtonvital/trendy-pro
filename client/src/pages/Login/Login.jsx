@@ -5,7 +5,7 @@ import logo from "../../img/logotipo.webp"
 import style from "./Login.module.scss"
 
 function LoginPage() {
-    const [ login, setLogin] = useState(true)
+    const [ login, setLogin] = useState(false)
 
     function handleLogin(){
         setLogin(!login)
