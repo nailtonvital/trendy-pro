@@ -1,4 +1,3 @@
-body {
-    overflow-x: hidden;
-    height: fit-content;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

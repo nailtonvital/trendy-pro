@@ -14,12 +14,12 @@ export default function RoutingApp() {
       <Routes>
         <Route exact path="/" element={<LandingPage />} />
         <Route exact path="/*" element={<Error />} />
+        <Route exact path="/" element={<LandingPage />} />
         <Route exact path="/Login" element={<LoginPage />} />
         <Route exact path="/SocialMedia" element={<SocialMedia />} />
         <Route exact path="/Movies" element={<Movies />} />
         <Route exact path="/Movie" element={<Movie />} />
         <Route exact path="/todaytrends" element={<TodayTrends />} />
-
       </Routes>
     </Router>
   );

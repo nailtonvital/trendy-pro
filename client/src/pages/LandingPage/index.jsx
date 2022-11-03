@@ -5,6 +5,7 @@ import Mundo from "./assets/Mundo.webp";
 import MapaMundi from "./assets/MapaMundi.webp";
 import User from "./assets/User.webp";
 import hamburger from "./assets/hamburger.webp"
+import Sidebar from "../../components/Sidebar/Sidebar";
 
 
 
@@ -15,10 +16,12 @@ export default function LandingPage() {
     setSidebar(!sidebar)
   }
 
+
   console.log(style)
 
   return (
     <>
+    <Sidebar></Sidebar>
       <div className={style.body}>
         <div className={style.container}>
           <nav>
