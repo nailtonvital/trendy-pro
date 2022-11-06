@@ -19,7 +19,14 @@ export default function RoutingApp() {
         <Route exact path="/SocialMedia" element={<SocialMedia />} />
         <Route exact path="/Movies" element={<Movies />} />
         <Route exact path="/Movie" element={<Movie />} />
+<<<<<<< Updated upstream
         <Route exact path="/todaytrends" element={<TodayTrends />} />
+=======
+        <Route exact path="/keywordComparator" element={ <Keyword/> } />
+        <Route exact path="/FacebookInterests" element={ <FacebookInterests/> } />
+
+
+>>>>>>> Stashed changes
       </Routes>
     </Router>
   );
