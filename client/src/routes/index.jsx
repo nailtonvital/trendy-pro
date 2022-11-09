@@ -3,30 +3,27 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from "../pages/LandingPage";
 import SocialMedia from "../pages/socialMedia";
 import Error from "../pages/notFound";
-import Movie from "../pages/Movie/Movie"
+import Movie from "../pages/Movie/Movie";
 import LoginPage from "../pages/Login/Login";
 import TodayTrends from "../pages/TodayTrends/TodayTrends";
 import Movies from "../pages/Movies/Movies";
+import RelatedKeywords from "../pages/RelatedKeywords/RelatedKeywords";
 
 export default function RoutingApp() {
   return (
     <Router>
       <Routes>
-        <Route exact path="/" element={<LandingPage />} />
-        <Route exact path="/*" element={<Error />} />
-        <Route exact path="/" element={<LandingPage />} />
-        <Route exact path="/Login" element={<LoginPage />} />
-        <Route exact path="/SocialMedia" element={<SocialMedia />} />
-        <Route exact path="/Movies" element={<Movies />} />
-        <Route exact path="/Movie" element={<Movie />} />
-<<<<<<< Updated upstream
-        <Route exact path="/todaytrends" element={<TodayTrends />} />
-=======
-        <Route exact path="/keywordComparator" element={ <Keyword/> } />
-        <Route exact path="/FacebookInterests" element={ <FacebookInterests/> } />
-
-
->>>>>>> Stashed changes
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/*" element={<Error />} />
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/Login" element={<LoginPage />} />
+        <Route path="/dashboard/*">
+          <Route path="SocialMedia" element={<SocialMedia />} />
+          <Route path="Movies" element={<Movies />} />
+          <Route path="Movie" element={<Movie />} />
+          <Route path="todaytrends" element={<TodayTrends />} />
+          <Route path="relatedKeywords" element={<RelatedKeywords />} />
+        </Route>
       </Routes>
     </Router>
   );

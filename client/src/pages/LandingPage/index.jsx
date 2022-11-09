@@ -1,31 +1,25 @@
 import React, { useState } from "react";
 import style from "./style.module.scss";
-<<<<<<< Updated upstream
 import Fox from "./assets/Fox.webp";
 import Mundo from "./assets/Mundo.webp";
 import MapaMundi from "./assets/MapaMundi.webp";
 import User from "./assets/User.webp";
-import hamburger from "./assets/hamburger.webp"
-import Sidebar from "../../components/Sidebar/Sidebar";
+import hamburger from "./assets/hamburger.webp";
+import rate from "./assets/rate.webp";
+import Filmes from "./assets/Filmes.webp";
+import Michael from "./assets/michael.webp";
+import Anne from "./assets/anne.webp";
+import Sarah from "./assets/sarah.webp";
+import Product from "./assets/ProductPresentation.webp";
 
 
-=======
-import Fox from "./assets/Fox.svg";
-import Mundo from "./assets/Mundo.svg";
-import GoogleLogo from "./assets/GoogleLogo.svg";
-import SlackLogo from "./assets/SlackLogo.svg";
-import NetflixLogo from "./assets/NetflixLogo.svg";
-import AmazonLogo from "./assets/AmazonLogo.svg";
-import MapaMundi from "./assets/MapaMundi.svg";
-import User from "./assets/User.svg";
-import Rate from "./assets/rate.svg";
-import Anne from "./assets/anne.svg";
-import Michael from "./assets/michael.svg";
-import Sarah from "./assets/sarah.svg";
-import Product from "./assets/ProductPresentation.svg";
-import Mac from "./assets/MacBookPro.svg";
-import Filmes from "./assets/Filmes.svg";
->>>>>>> Stashed changes
+
+
+
+
+
+
+
 
 export default function LandingPage() {
   const [sidebar, setSidebar] = useState(false)
@@ -39,7 +33,7 @@ export default function LandingPage() {
 
   return (
     <>
-    <Sidebar></Sidebar>
+    
       <div className={style.body}>
         <div className={style.container}>
           <nav>
@@ -65,16 +59,10 @@ export default function LandingPage() {
                 We track every topic across the internet to identify growing
                 trends.
               </p>
-<<<<<<< Updated upstream
-              <a>
-                <button type="button" className={style.getStarted}>
-                  <b>Get Started</b>
-=======
               <a href="../notFound">
                 <button type="button">
                   <span></span>
                   <b>GET STARTED</b>
->>>>>>> Stashed changes
                 </button>
               </a>
             </div>
@@ -108,11 +96,6 @@ export default function LandingPage() {
 
           <div className={style.item}>
             <div className={style["left-align"]}>
-<<<<<<< Updated upstream
-              <h3 className={style.titleHeader}>Know what's going on around the world</h3>
-              <p className={style.subtitle}>
-                We provide an overview of what is happening in the world
-=======
               <h3>Know what's going on around the world</h3>
               <p>
                 Acess to all trending topics on the social media Acess to all
@@ -120,7 +103,6 @@ export default function LandingPage() {
                 on the social media Acess to all trending topics on the social
                 media Acess to all trending topics on the social media Acess to
                 all trending topics on the social media
->>>>>>> Stashed changes
               </p>
               <img src="" alt="" />
             </div>
@@ -129,23 +111,6 @@ export default function LandingPage() {
             </div>
           </div>
 
-<<<<<<< Updated upstream
-          <div className={style.item}>
-            <div className={style["right-align"]}>
-              <h3 className={style.titleHeader}>Acess to all trending topics on the social media</h3>
-              <p className={style.subtitle}>
-                Nullam lorem elit, faucibus non tellus ut, tempor posuere arcu.
-              </p>
-            </div>
-            <div className={style["left-align"]}>
-              <img src={User} alt="imgUser" />
-            </div>
-          </div>
-
-          <div classname={style["left-align"]}>
-            <h3 className={style.titleHeader}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
-            <p className={style.subtitle}>
-=======
           <div className={style["center-align"]}>
             <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
             <p>
@@ -157,20 +122,15 @@ export default function LandingPage() {
           <div className={style["left-align"]}>
             <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
             <p>
->>>>>>> Stashed changes
               Nullam lorem elit, faucibus non tellus ut, tempor posuere arcu.
             </p>
           </div>
 
-<<<<<<< Updated upstream
-         
-          <div classname={style.product}>
-=======
           <div className={style["social-proof"]}>
             <h2>What are people saying?</h2>
             <div className={style["social-cards"]}>
               <div className={style["social-card"]}>
-                <img src={Rate} alt="rate" />
+                <img src={rate} alt="rate" />
                 <div className={style["social-quote"]}>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et,
@@ -190,7 +150,7 @@ export default function LandingPage() {
               </div>
 
               <div className={style["social-card"]}>
-                <img src={Rate} alt="rate" />
+                <img src={rate} alt="rate" />
                 <div className={style["social-quote"]}>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et,
@@ -210,7 +170,7 @@ export default function LandingPage() {
               </div>
 
               <div className={style["social-card"]}>
-                <img src={Rate} alt="rate" />
+                <img src={rate} alt="rate" />
                 <div className={style["social-quote"]}>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et,
@@ -230,7 +190,7 @@ export default function LandingPage() {
               </div>
 
               <div className={style["social-card"]}>
-                <img src={Rate} alt="rate" />
+                <img src={rate} alt="rate" />
                 <div className={style["social-quote"]}>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et,
@@ -251,46 +211,24 @@ export default function LandingPage() {
             </div>
           </div>
           <div className={style.filmes}>
->>>>>>> Stashed changes
             <div>
               <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
               <p>
                 Nullam lorem elit, faucibus non tellus ut, tempor posuere arcu.
               </p>
             </div>
-<<<<<<< Updated upstream
-
-=======
             <img src={Filmes} alt="imgFilmes" />
->>>>>>> Stashed changes
           </div>
           <div className={style.product}>
             <div>
               <h1>Access most relevant information whats popular</h1>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
             </div>
-<<<<<<< Updated upstream
-
-          </div>
-          <div className={style.filmes}>
-            <div>
-              <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
-              <p>
-                Nullam lorem elit, faucibus non tellus ut, tempor posuere arcu.
-              </p>
-            </div>
-
-=======
             <img src={Product} alt="imgProductPresentation" />
->>>>>>> Stashed changes
           </div>
           <footer>© 2022 TrendyPro | All Rights Reserved</footer>
         </div>
       </div>
-<<<<<<< Updated upstream
-</>
-=======
-    </Fragment>
->>>>>>> Stashed changes
+    </>
   );
 }
