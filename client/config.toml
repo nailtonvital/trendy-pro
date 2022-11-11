@@ -1,0 +1,7 @@
+#baseURL = "/"
+relativeURLs = true
+
+[[headers]]
+  for = "/*.webmanifest"
+  [headers.values]
+    Content-Type = "application/manifest+json"

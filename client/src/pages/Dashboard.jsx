@@ -1,25 +1,62 @@
 import React from "react";
+import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Sidebar from "../components/Sidebar/Sidebar";
-import Movie from "./Movie/Movie";
-import Movies from "./Movies/Movies";
-import Error from "./notFound";
-import RelatedKeywords from "./RelatedKeywords/RelatedKeywords";
-import SocialMedia from "./socialMedia";
-import TodayTrends from "./TodayTrends/TodayTrends";
+import Home from "../components/Home";
+import Sidebar from "../components/Sidebar";
+import BacklinkChecker from "./BacklinkChecker";
+import DailyTrends from "./DailyTrends";
+import Interests from "./Interests";
+import KeywordGenerator from "./KeywordGenerator";
+import MoviePage from "./MoviePage";
+import MoviesPage from "./MoviesPage";
+import RelatedQueries from "./RelatedQueries";
+import RelatedTopics from "./RelatedTopics";
+import SeoTools from "./SeoTools";
+import SocialMedia from "./SocialMedia";
+import Songs from "./Songs";
+import Twitter from "./Twitter";
 
 export default function Dashboard() {
+  const [sidebarHover, setSidebarHover] = useState(false)
+
+  function toggleSidebar() {
+    console.log(sidebarHover)
+    setSidebarHover(!sidebarHover)
+  }
+
   return (
-    <div className="flex flex-row ">
+    <div className="flex bg-[#262631] h-full overflow-x-hidden" id="scrollbar">
       <Sidebar />
-      <div className="flex-1 bg-white pl-7 pr-4 ml-20">
+      <div className="w-full mr-5 ml-8">
         <Routes>
-          <Route exact path="/*" element={<Error/>} />
+          <Route path="" element={<Home />} />
+          <Route path="movies" element={<MoviesPage />} />
+          <Route path="movie" element={<MoviePage />} />
+          <Route path="songs" element={<Songs />} />
           <Route path="social-media" element={<SocialMedia />} />
-          <Route path="movies" element={<Movies />} />
-          <Route path="movie" element={<Movie />} />
-          <Route path="todaytrends" element={<TodayTrends />} />
-          <Route path="related-keywords" element={<RelatedKeywords />} />
+          <Route path="social-media/google" element={<DailyTrends />} />
+          <Route path="social-media/twitter" element={<Twitter />} />
+          <Route path="social-media/reddit" />
+          <Route path="social-media/youtube" />
+          <Route path="seo-tools" element={<SeoTools />} />
+          <Route
+            path="seo-tools/related-queries"
+            element={<RelatedQueries />}
+          />
+          <Route path="seo-tools/related-topics" element={<RelatedTopics />} />
+          <Route path="seo-tools/interest-overtime" />
+          <Route path="seo-tools/facebook-interests" element={<Interests />} />
+          <Route path="seo-tools/pagespeed-insights" />
+          <Route
+            path="seo-tools/backlink-checker"
+            element={<BacklinkChecker />}
+          />
+          <Route
+            path="seo-tools/keyword-generator"
+            element={<KeywordGenerator />}
+          />
+          <Route path="seo-tools/seo-checker" />
+          <Route path="rss-feed" />
         </Routes>
       </div>
     </div>
