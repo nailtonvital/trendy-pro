@@ -11,6 +11,7 @@ import MoviePage from "./MoviePage";
 import MoviesPage from "./MoviesPage";
 import RelatedQueries from "./RelatedQueries";
 import RelatedTopics from "./RelatedTopics";
+import RelatedInterest from "./RelatedInterest";
 import SeoTools from "./SeoTools";
 import SocialMedia from "./SocialMedia";
 import Songs from "./Songs";
@@ -44,7 +45,10 @@ export default function Dashboard() {
             element={<RelatedQueries />}
           />
           <Route path="seo-tools/related-topics" element={<RelatedTopics />} />
-          <Route path="seo-tools/interest-overtime" />
+          <Route
+            path="seo-tools/interest-overtime"
+            element={<RelatedInterest />}
+          />
           <Route path="seo-tools/facebook-interests" element={<Interests />} />
           <Route path="seo-tools/pagespeed-insights" />
           <Route
