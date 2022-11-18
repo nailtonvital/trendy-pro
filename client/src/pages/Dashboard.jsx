@@ -17,6 +17,7 @@ import SeoTools from "./SeoTools";
 import SocialMedia from "./SocialMedia";
 import Songs from "./Songs";
 import Twitter from "./Twitter";
+import LoginPage from "./Login";
 
 export default function Dashboard() {
   const [sidebarHover, setSidebarHover] = useState(false)

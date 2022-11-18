@@ -5,15 +5,16 @@ import { useLocation } from "react-router-dom";
 import { Line } from "react-chartjs-2";
 
 export default function RelatedInterest() {
-  const location = useLocation();
 
   const inputRef = useRef(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
   const [value, setValue] = useState("");
-  const [results, setResults] = useState([]);
+  const [results, setResults] = useState(false);
   const [chartData, setChartData] = useState("");
 
+  document.title = `TrendyPro | Interest Overtime`;
+  
   const chart = (keyword) => {
     let time = [];
     let valueData = [];
@@ -26,9 +27,16 @@ export default function RelatedInterest() {
           time.push(item.time);
           valueData.push(item.value[0]);
         });
+
+
+        setError(false);
+        setResults(true)
+        setIsLoading(false);
       })
       .catch((err) => {
         console.error("ops! ocorreu um erro" + err);
+        setIsLoading(false);
+        setError(true);
       });
 
     setChartData({
@@ -55,29 +63,14 @@ export default function RelatedInterest() {
       },
     },
   };
-
-  const handleSearch = (keyword) => {
-    api
-      .get(`/interestOverTime?keyword=${keyword}`)
-      .then((response) => {
-        setResults(response.data);
-        setError(false);
-        setIsLoading(false);
-      })
-      .catch((err) => {
-        setIsLoading(false);
-        setError(true);
-      });
-  };
-
   const handleChange = () => {
     setValue(inputRef.current.value);
   };
 
   const handleClick = () => {
-    handleSearch(value);
     setIsLoading(true);
-    chart();
+    chart(value);
+    console.log("asdasda", value)
   };
 
   return (
@@ -130,14 +123,11 @@ export default function RelatedInterest() {
           robot="sad"
           message="For some reason we can't find any result."
         />
-      ) : results.length > 0 ? (
+      ) : results? (
         <div class="flex flex-col ">
           <div class="overflow-x-auto sm:-mx-6 lg:-mx-8 ">
             <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
               <div class="overflow-hidden rounded-lg">
-                <h3 className="capitalize text-lg font-semibold flex my-2">
-                  {results.length} results found
-                </h3>
                 <table class="min-w-full overflow-auto">
                   
                   <div className="">
@@ -148,7 +138,7 @@ export default function RelatedInterest() {
                         <MoonLoader />
                       </div>
                     )}
-                    {/* <Line data={chartData} options={options} /> */}
+                    
                   </div>
                 </table>
               </div>
