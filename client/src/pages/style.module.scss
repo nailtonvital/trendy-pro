@@ -11,12 +11,13 @@
 
 
 .body {
-    animation: Gradient 300s ease infinite;
-    background: linear-gradient(1deg,
-            #07376e, #232692, #4c0fc7, #6501e6, #220a41,
-            #b51f2c, #e3af68,
-            #00755e, #177500, #14391c, #16293e,
-            #1d1e32, #2b1f43, #35185b, #07376e);
+    animation: Gradient 150s ease infinite;
+    background: linear-gradient(5deg,
+    #3F9BC0, #435BD9, #3D44DA, 
+    #C07EAE, #763FBF, #6530DA, 
+    #220A41, #6501E6, #4C0FC7, #232692, #07376E,
+    #16293E, #1D1E32, #2B1F43, #35185B,
+    #0D1458, #3D4AD0, #2274A5);
     background-size: 300% 300%;
     color: white;
     font-size: 100%;
