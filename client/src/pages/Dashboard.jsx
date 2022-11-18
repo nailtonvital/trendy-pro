@@ -12,6 +12,7 @@ import MoviesPage from "./MoviesPage";
 import RelatedQueries from "./RelatedQueries";
 import RelatedTopics from "./RelatedTopics";
 import RelatedInterest from "./RelatedInterest";
+import PageSpeed from "./RelatedPageSpeed";
 import SeoTools from "./SeoTools";
 import SocialMedia from "./SocialMedia";
 import Songs from "./Songs";
@@ -50,7 +51,7 @@ export default function Dashboard() {
             element={<RelatedInterest />}
           />
           <Route path="seo-tools/facebook-interests" element={<Interests />} />
-          <Route path="seo-tools/pagespeed-insights" />
+          <Route path="seo-tools/pagespeed-insights" element={<PageSpeed/>} />
           <Route
             path="seo-tools/backlink-checker"
             element={<BacklinkChecker />}

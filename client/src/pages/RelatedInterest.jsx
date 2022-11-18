@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import Message from "../components/Message";
 import api from "../services/api";
 import { useLocation } from "react-router-dom";
+import { Line } from "react-chartjs-2";
 
 export default function RelatedInterest() {
   const location = useLocation();
@@ -13,6 +14,47 @@ export default function RelatedInterest() {
   const [results, setResults] = useState([]);
   const [chartData, setChartData] = useState("");
 
+  const chart = (keyword) => {
+    let time = [];
+    let valueData = [];
+    api
+      .get(`/interestOverTime?keyword=${keyword}`)
+      .then((response) => {
+        let interestData = response.data;
+
+        interestData.map((item) => {
+          time.push(item.time);
+          valueData.push(item.value[0]);
+        });
+      })
+      .catch((err) => {
+        console.error("ops! ocorreu um erro" + err);
+      });
+
+    setChartData({
+      labels: time,
+      datasets: [
+        {
+          label: "",
+          lineTension: 0.2,
+          data: valueData,
+          fill: true,
+          backgroundColor: "rgba(103,53,294,0.2)",
+          borderColor: "white",
+        },
+      ],
+    });
+  };
+
+  var options = {
+    scales: {
+      xAxis: {
+        ticks: {
+          maxTicksLimit: 8.1,
+        },
+      },
+    },
+  };
 
   const handleSearch = (keyword) => {
     api
@@ -35,48 +77,7 @@ export default function RelatedInterest() {
   const handleClick = () => {
     handleSearch(value);
     setIsLoading(true);
-  };
-
-  const chart = () => {
-    let time = [];
-    let valueData = [];
-    api
-      .get(`/interestOverTime?keyword=${location.state.title}`)
-      .then((response) => {
-        let interestData = response.data;
-
-        interestData.map((item) => {
-          time.push(item.time);
-          valueData.push(item.value[0]);
-        });
-      })
-      .catch((err) => {
-        console.error("ops! ocorreu um erro" + err);
-      });
-
-    setChartData({
-      labels: time,
-      datasets: [
-        {
-          label: location.state.title,
-          lineTension: 0.2,
-          data: valueData,
-          fill: true,
-          backgroundColor: "rgba(103,53,294,0.2)",
-          borderColor: "white",
-        },
-      ],
-    });
-  };
-
-  var options = {
-    scales: {
-      xAxis: {
-        ticks: {
-          maxTicksLimit: 8.1,
-        },
-      },
-    },
+    chart();
   };
 
   return (
@@ -138,37 +139,17 @@ export default function RelatedInterest() {
                   {results.length} results found
                 </h3>
                 <table class="min-w-full overflow-auto">
-                  <thead class="bg-[#1B1A20] border-b">
-                    <tr>
-                      <th
-                        scope="col"
-                        class="text-sm font-medium text-slate-200 pl-6 py-4 text-left"
-                      >
-                        Keyword
-                      </th>
-                      <th
-                        scope="col"
-                        class="text-sm font-medium text-slate-200 pl-6 py-4 text-left"
-                      >
-                        Actions
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <h5 className="text-xl font-bold mb-2 mt-5">
-                      Interest Over Time
-                    </h5>
-                    <div className="">
-                      {chartData.length !== 0 ? (
-                        <Line id="canvas" data={chartData} options={options} />
-                      ) : (
-                        <div className="">
-                          <MoonLoader />
-                        </div>
-                      )}
-                      {/* <Line data={chartData} options={options} /> */}
-                    </div>
-                  </tbody>
+                  
+                  <div className="">
+                    {chartData.length !== 0 ? (
+                      <Line id="canvas" data={chartData} options={options} />
+                    ) : (
+                      <div className="">
+                        <MoonLoader />
+                      </div>
+                    )}
+                    {/* <Line data={chartData} options={options} /> */}
+                  </div>
                 </table>
               </div>
             </div>
@@ -178,5 +159,5 @@ export default function RelatedInterest() {
         <Message robot="normal" message="Insert a keyword and explore." />
       )}
     </div>
-  )
+  );
 }
