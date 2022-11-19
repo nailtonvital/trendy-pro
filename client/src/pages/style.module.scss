@@ -143,8 +143,6 @@ nav button {
     width: 100%;
 }
 
-i {}
-
 .banner ul li,
 .people {
     font-style: none;
@@ -174,7 +172,10 @@ i {}
     font-size: 30px;
 }
 
-.left-align img {}
+.left-align img {
+    align-content: center;
+    margin: auto;  
+}
 
 .right-align img,
 .left-align img {
@@ -245,14 +246,14 @@ i {}
 .macpro {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: left;
+    text-align: right;
 }
 
 .macpro img {
     margin-top: 20px;
-    width: 75%;
-    right: 75%;
+    width: 50%;
+    right: 50%;
 }
 
 .filmes {
