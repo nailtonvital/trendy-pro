@@ -6,7 +6,7 @@ import MapaMundi from "../assets/MapaMundi.webp";
 import User from "../assets/User.webp";
 import hamburger from "../assets/hamburger.webp";
 import rate from "../assets/rate.webp";
-import Filmes from "../../assets/filmes.webp";
+import Filmes from "../assets/filmes.webp";
 import Michael from "../assets/michael.webp";
 import Anne from "../assets/anne.webp";
 // import Sarah from "../../assets/sarah.webp";
