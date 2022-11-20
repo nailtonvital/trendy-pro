@@ -2,7 +2,7 @@ import React from 'react'
 import stars from '../assets/stars.png'
 
 export default function Home() {
-  document.title = 'KEIKO | Home'
+  document.title = 'TrendyPro | Home'
   return (
     <div>
       <div className="bg-gradient-to-r flex from-purple-800 to-pink-700 h-48 rounded-xl w-full text-white font-sans p-4">

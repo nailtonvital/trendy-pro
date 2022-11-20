@@ -12,7 +12,7 @@ export default function MoviePage() {
   const location = useLocation();
   console.log(location.state.id);
 
-  document.title = `KEIKO | ${location.state.title}`;
+  document.title = `TrendyPro | ${location.state.title}`;
 
   const [isLoading, setIsLoading] = useState(true);
   const [movie, setMovie] = useState([]);

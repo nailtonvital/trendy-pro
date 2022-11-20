@@ -29,10 +29,10 @@ export default function LandingPage() {
             <div className={style.logo}>
               <img src={Fox} alt="imgFox" />
             </div>
-
             <button className={style.hamburguer} onClick={handleNavbar}>
               <img src={hamburger} alt="hamburger" />
             </button>
+            
           </nav>
           <div className={sidebar ? style.navbar : style.navbarClosed}>
             <ul>
@@ -51,7 +51,8 @@ export default function LandingPage() {
                 trends.
               </p>
               <a href="/login">
-                <button type="button" className="text-xl font-bold p-7">GET STARTED</button>
+                <button className="w-2/4 h-16 mt-7 px-2.5 rounded-3xl border-solid border-2 text-lg font-semibold bg-transparent hover:bg-glass"
+                type="button">GET STARTED</button>
               </a>
             </div>
 

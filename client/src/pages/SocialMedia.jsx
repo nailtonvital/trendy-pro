@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 
 export default function SocialMedia() {
     
-    document.title = 'Social Media'
+    document.title = 'TrendyPro | Social Media'
 
     const socialFeatures = [
         {img: google, name:"Google", description: "Access the Google Daily Trends", link: 'google'},

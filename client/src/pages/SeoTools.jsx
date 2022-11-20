@@ -10,7 +10,7 @@ import keyGen from "../assets/keyGen.png";
 import { Link } from "react-router-dom";
 
 export default function SeoTools() {
-  document.title = "KEIKO | SEO Tools";
+  document.title = "TrendyPro | SEO Tools";
 
   const seoFeatures = [
     {

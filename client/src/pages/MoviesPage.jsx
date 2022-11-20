@@ -4,7 +4,7 @@ import api from '../services/api'
 
 
 export default function MoviesPage() {
-    document.title = 'KEIKO | Movies'
+    document.title = 'TrendyPro | Movies'
 
     const [movies, setMovies] = useState([]);
     const [tvs, setTvs] = useState([]);
