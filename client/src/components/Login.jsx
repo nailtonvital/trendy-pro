@@ -10,7 +10,7 @@ function Login() {
         <span>Email:</span>
         <input type="text" className="text-black rounded-lg font-medium"/>
         <span>Password:</span>
-        <input type="password" className="text-black rounded-lg font-medium"/>
+        <input type="password" className="text-black rounded-lg font-semibold"/>
         <a href="/Dashboard">
           <button type="button" className={style.login_button}>Login Now</button>
         </a>    
