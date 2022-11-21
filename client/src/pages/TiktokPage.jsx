@@ -29,10 +29,10 @@ export default function TiktokPage() {
      
     }, []);
 //trendy-tiktok-api.herokuapp.com/trend-api/wsgeral/hastag
-https: return (
+return (
   <div className="text-white mt-5">
     <h3 className="font-bold text-4xl">Tiktok</h3>
-    <p className="font-bold text-xl https://trendy-tiktok-api.herokuapp.com/trend-api/wsgeral/hastaghttps://trendy-tiktok-api.herokuapp.com/trend-api/wsgeral/hastagtext-[#CBCBCB]">
+    <p className="font-bold text-xl ">
       Trending Now
     </p>
     {/* Hashtag */}
