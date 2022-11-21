@@ -4,20 +4,46 @@ import style from "./style.module.scss";
 function Login() {
   return (
     <div className={style.login_area} id="login">
-      <p className={style.heading}>Welcome Back!</p>
+      <div className="mb-2 font-light">
+        <p className={style.heading}>Welcome Back!</p>
+       </div>
+       <div className="mb-10 text-4xl font-semibold">
       <h3 className={style.login_title}>Login to your account</h3>
+      </div>
       <form action="">
-        <span>Email:</span>
-        <input type="text" className="text-black rounded-lg font-medium"/>
-        <span>Password:</span>
-        <input type="password" className="text-black rounded-lg font-semibold"/>
-        <a href="/Dashboard">
-          <button type="button" className={style.login_button}>Login Now</button>
-        </a>    
+
+        <div className="text-xl font-light mb-1">
+          <p><span>Email:</span>
+          </p></div>
+
+        <input type="text" value="contact@trendypro.app" className="rounded-lg font-medium bg-glass border-white border-2 text-slate-100"/>
+
+        <div className="text-xl font-light mb-1 my-4">
+          <p><span>Password:</span>
+          </p></div>
+
+        <input type="password" value="*******" className="rounded-lg font-medium bg-glass border-white border-2 text-slate-100"/>
+
+        <div className="text-right text-base font-light mr-1 ">
+          <a href="#">
+            <p className="underline decoration-3">Forgot password?</p>
+          </a>
+        </div>
+
+        <div className="my-4">
+          <a href="/Dashboard">
+            <button type="button" className={style.login_button}>Login Now</button>
+          </a>
+        </div>
+
       </form>
-      <p>Don't have a account yet? 
-        <a href="/Dashboard"> <u>Sign Up</u></a>
-      </p>
+
+      <div>
+        <p>Dont have an account? 
+          <a href="#"> <u>Join free today</u></a>
+        </p>
+      </div>
+
     </div>
   );
 }
