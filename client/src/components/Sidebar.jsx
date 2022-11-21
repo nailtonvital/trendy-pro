@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+import logo from "../assets/logo.webp";
 
 export default function Sidebar() {
   return (
@@ -50,8 +51,8 @@ export default function Sidebar() {
                 </li>
                 </Link>
                 <Link to='/login'>
-                <li className='mb-2 hover:text-[#F47E02] transition duration-300 ease-in-out'>
-                    <i className='bx bx-exit' ></i>
+                <li className='hover:text-[#F47E02] transition duration-300 ease-in-out'>
+                    <img className='w-8' src={logo} alt="logo"/>
                 </li>
                 </Link>
 
