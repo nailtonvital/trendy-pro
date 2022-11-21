@@ -25,29 +25,30 @@ export default function LandingPage() {
     <>
       <div className={style.body}>
         <div className={style.container}>
-          <nav>
+        <nav>
             <a href="/LandingPage">
             <div className={style.logo}>
               <img src={Fox} alt="imgFox" />
             </div>
             </a>
-            <div className="space-x-1.5">
-            <a href="/login">
-                <button className="h-16 mt-7 px-2.5 rounded-3xl text-lg font-semibold bg-transparent hover:bg-glass"
-                type="button">1</button>
-              </a>
+
+            <div className="flex space-x-16 text-2xl font-semibold">
               <a href="/login">
-                <button className="h-16 mt-7 px-2.5 rounded-3xl text-lg font-semibold bg-transparent hover:bg-glass"
-                type="button">2</button>
-              </a>
+              <p className="relative group">
+                  <span>Contact</span>
+                 <span className="absolute -bottom-1 left-0 w-0 h-1 bg-gray-200 transition-all group-hover:w-full"></span>
+              </p></a>
               <a href="/login">
-                <button className="h-16 mt-7 px-2.5 rounded-3xl text-lg font-semibold bg-transparent hover:bg-glass"
-                type="button">3</button>
-              </a>
+              <p className="relative group">
+                  <span>About Us</span>
+                 <span className="absolute -bottom-1 left-0 w-0 h-1 bg-gray-200 transition-all group-hover:w-full"></span>
+              </p></a>
               <a href="/login">
-                <button className="h-16 mt-7 px-2.5 rounded-3xl border-solid border-2 text-lg font-semibold bg-transparent hover:bg-glass"
-                type="button">Sing in</button>
-              </a> 
+              <p className="relative group">
+                  <span>Sing In</span>
+                 <span className="absolute -bottom-1 left-0 w-0 h-1 bg-gray-200 transition-all group-hover:w-full"></span>
+              </p></a>
+
               </div>
           </nav>
       
