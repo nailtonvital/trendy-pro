@@ -26,21 +26,32 @@ export default function LandingPage() {
       <div className={style.body}>
         <div className={style.container}>
           <nav>
+            <a href="/LandingPage">
             <div className={style.logo}>
               <img src={Fox} alt="imgFox" />
             </div>
-            <button className={style.hamburguer} onClick={handleNavbar}>
-              <img src={hamburger} alt="hamburger" />
-            </button>
-            
+            </a>
+            <div className="space-x-1.5">
+            <a href="/login">
+                <button className="h-16 mt-7 px-2.5 rounded-3xl text-lg font-semibold bg-transparent hover:bg-glass"
+                type="button">1</button>
+              </a>
+              <a href="/login">
+                <button className="h-16 mt-7 px-2.5 rounded-3xl text-lg font-semibold bg-transparent hover:bg-glass"
+                type="button">2</button>
+              </a>
+              <a href="/login">
+                <button className="h-16 mt-7 px-2.5 rounded-3xl text-lg font-semibold bg-transparent hover:bg-glass"
+                type="button">3</button>
+              </a>
+              <a href="/login">
+                <button className="h-16 mt-7 px-2.5 rounded-3xl border-solid border-2 text-lg font-semibold bg-transparent hover:bg-glass"
+                type="button">Sing in</button>
+              </a> 
+              </div>
           </nav>
-          <div className={sidebar ? style.navbar : style.navbarClosed}>
-            <ul>
-              <li>Features</li>
-              <li>About Us</li>
-            </ul>
-          </div>
-
+      
+  
           <div className={style.hero}>
             <div className={style["left-hero"]}>
               <h3 className={style.titleHeader}>
