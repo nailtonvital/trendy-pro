@@ -33,12 +33,12 @@ export default function LandingPage() {
             </a>
 
             <div className="flex space-x-16 text-2xl font-semibold">
-              <a href="/login">
+              <a href="#Contact">
               <p className="relative group">
                   <span>Contact</span>
                  <span className="absolute -bottom-1 left-0 w-0 h-1 bg-gray-200 transition-all group-hover:w-full"></span>
               </p></a>
-              <a href="/login">
+              <a href="#About Us">
               <p className="relative group">
                   <span>About Us</span>
                  <span className="absolute -bottom-1 left-0 w-0 h-1 bg-gray-200 transition-all group-hover:w-full"></span>
@@ -134,6 +134,7 @@ export default function LandingPage() {
 
           <div className={style.item}>
             <div className={style["left-align"]}>
+              <a id="About Us"></a>
               <h3 className={style.titleHeader}>Know what’s going on around the world</h3>
               <p>
               Acess to all trending topics on the social media
@@ -145,8 +146,8 @@ export default function LandingPage() {
             </div>
           </div>
 
-          <div className={style["center-align"]}>
-            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+          <div className={style["center-align"]}>  
+              <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
             <p>
               Nullam lorem elit, faucibus non tellus ut, tempor posuere arcu.
             </p>
@@ -258,6 +259,7 @@ export default function LandingPage() {
             <img src={Product} alt="imgProductPresentation" />
             </div>
           </div>
+          <a id="Contact"></a>
           <footer>© 2022 TrendyPro | All Rights Reserved</footer>
         </div>
       </div>
