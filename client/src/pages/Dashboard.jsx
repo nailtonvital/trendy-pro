@@ -18,6 +18,7 @@ import SocialMedia from "./SocialMedia";
 import Songs from "./Songs";
 import Twitter from "./Twitter";
 import LoginPage from "./Login";
+import TiktokPage from "./TiktokPage";
 
 export default function Dashboard() {
   const [sidebarHover, setSidebarHover] = useState(false)
@@ -39,8 +40,8 @@ export default function Dashboard() {
           <Route path="social-media" element={<SocialMedia />} />
           <Route path="social-media/google" element={<DailyTrends />} />
           <Route path="social-media/twitter" element={<Twitter />} />
-          <Route path="social-media/reddit" />
-          <Route path="social-media/youtube" />
+          <Route path="social-media/tiktok" element={<TiktokPage/>} />
+
           <Route path="seo-tools" element={<SeoTools />} />
           <Route
             path="seo-tools/related-queries"
