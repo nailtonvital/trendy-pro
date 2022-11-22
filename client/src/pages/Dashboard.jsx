@@ -17,8 +17,8 @@ import SeoTools from "./SeoTools";
 import SocialMedia from "./SocialMedia";
 import Songs from "./Songs";
 import Twitter from "./Twitter";
-import LoginPage from "./Login";
 import TiktokPage from "./TiktokPage";
+import AllNewsPage from "./AllNewsPage";
 import NewsPage from "./NewsPage";
 
 export default function Dashboard() {
@@ -51,7 +51,8 @@ export default function Dashboard() {
           <Route path="seo-tools/backlink-checker" element={<BacklinkChecker />} />
           <Route path="seo-tools/keyword-generator" element={<KeywordGenerator />} />
           <Route path="seo-tools/seo-checker" />
-          <Route path="rss-feed" element={<NewsPage/>} />
+          <Route path="rss-feed" element={<AllNewsPage/>} />
+          <Route path="rss-feed/news" element={<NewsPage/>} />
         </Routes>
       </div>
     </div>
