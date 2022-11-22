@@ -5,7 +5,12 @@ import { Link } from 'react-router-dom';
 export default function AllNewsPage() {
      const[posts, setPosts] = useState([])
 
-    const rssFeeds = ['https://feeds.macrumors.com/MacRumors-All', 'https://www.vox.com/rss/recode/index.xml', 'http://feeds.arstechnica.com/arstechnica/technology-lab', 'https://www.wired.com/feed/rss']
+    const rssFeeds = [
+      "https://feeds.macrumors.com/MacRumors-All",
+      "https://www.vox.com/rss/recode/index.xml",
+      "http://feeds.arstechnica.com/arstechnica/technology-lab",
+      "https://www.wired.com/feed/rss",
+    ];
 
     useEffect(() => {
       rssFeeds.map((url) => {
