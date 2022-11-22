@@ -10,9 +10,7 @@ export default function Home() {
 
   const [posts, setPosts] = useState([]);
 
-  const rssFeeds = [
-    "http://feeds.arstechnica.com/arstechnica/technology-lab",
-  ];
+  const rssFeeds = ["https://www.vox.com/rss/recode/index.xml"];
 
   useEffect(() => {
     rssFeeds.map((url) => {

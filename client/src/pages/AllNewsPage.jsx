@@ -12,14 +12,17 @@ export default function AllNewsPage() {
       "https://www.wired.com/feed/rss",
     ];
 
-    useEffect(() => {
+    useEffect(() => { 
+      var allPosts = []
       rssFeeds.map((url) => {
         Axios.get(`https://api.rss2json.com/v1/api.json?rss_url=${url}`).then(
           (data) => {
-            setPosts((prev) => [...prev, ...data.data.items]);
+            allPosts.push(...data.data.items);
+            setPosts(allPosts);
           }
         );
       });
+      
 
     }, []);
 
@@ -44,7 +47,7 @@ export default function AllNewsPage() {
                 <img src={post.thumbnail} className="rounded" alt="" />
                 <p className="font-bold mt-2">{post.title}</p>
                 <p className="text-[#CBCBCB] font-thin">{post.author}</p>
-                <p className="truncate">
+                <p className="line-clamp-3 text-sm">
                   {post.description.replace(/<\/?[^>]+(>|$)/g, "")}
                 </p>
               </Link>
