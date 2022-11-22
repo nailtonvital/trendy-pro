@@ -4,7 +4,7 @@ import logo from "../assets/logo.webp";
 
 export default function Sidebar() {
   return (
-    <nav className='bg-[#1B1A20] flex flex-col h-screen justify-between rounded-full p-5 ml-4'>
+    <nav className='bg-[#1B1A20] flex flex-col h-screen justify-between rounded-full p-5 ml-2 mt-1'>
         <div className="text-center text-3xl text-[#9A9A9A]">
             <ul className=''>
                 <Link to='/dashboard'>
