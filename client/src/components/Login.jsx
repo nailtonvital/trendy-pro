@@ -16,7 +16,7 @@ function Login() {
           <p><span>Email:</span>
           </p></div>
 
-        <input type="text" placeholder="contact@trendypro.app" className="rounded-lg font-medium bg-glass border-white border-2 text-slate-100 placeholder-white"/>
+        <input type="text" placeholder="TrendyPro.com.br" className="rounded-lg font-medium bg-glass border-white border-2 text-slate-100 placeholder-white"/>
 
         <div className="text-xl font-light mb-1 my-4">
           <p><span>Password:</span>
