@@ -28,7 +28,7 @@ export default function AllNewsPage() {
           return (
             <div className="flex-col rounded-xl shadow-2xl w-72 p-5">
               <Link
-                to="rss-feed/news"
+                to="/dashboard/rss-feed/news"
                 state={{
                   img: post.thumbnail,
                   title: post.title,
