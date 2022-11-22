@@ -5,6 +5,9 @@ import { MoonLoader } from "react-spinners";
 import { Line } from "react-chartjs-2";
 import Chart from "chart.js/auto";
 import { CategoryScale } from "chart.js";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 Chart.register(CategoryScale);
 
@@ -31,6 +34,13 @@ export default function MoviePage() {
     if (n >= 1e12) return +(n / 1e12).toFixed(1) + "T";
   };
 
+  const settings = {
+    dots: false,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 4.5,
+    slidesToScroll: 1,
+  };
 
   const chart = () => {
     let time = [];
@@ -397,18 +407,20 @@ export default function MoviePage() {
           {actors.length !== 0 ? (
             <>
               <h5 className="text-xl font-bold mb-2">Cast</h5>
-              <div className="flex gap-2 overflow-x-auto">
-                {actors.cast.map((item) => (
-                  <div className="min-w-[180px]">
-                    <img
-                      className="h-72 rounded-xl"
-                      src={`https://image.tmdb.org/t/p/original/${item.profile_path}`}
-                      alt=""
-                    />
-                    <h6 className="font-semibold">{item.character}</h6>
-                    <p className="text-slate-300">{item.original_name}</p>
-                  </div>
-                ))}
+              <div className="gap-2">
+                <Slider {...settings}>
+                  {actors.cast.map((item) => (
+                    <div className="min-w-[180px]">
+                      <img
+                        className="h-72 rounded-xl"
+                        src={`https://image.tmdb.org/t/p/original/${item.profile_path}`}
+                        alt=""
+                      />
+                      <h6 className="font-semibold">{item.character}</h6>
+                      <p className="text-slate-300">{item.original_name}</p>
+                    </div>
+                  ))}
+                </Slider>
               </div>
             </>
           ) : null}

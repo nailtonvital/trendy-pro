@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 export default function MovieCard(props) {
   return (
-    <div className="h-72 mb-72 min-w-[180px] cursor-pointer transition-transform duration-200 ease-out md:h-36 md:min-w-[260px] md:hover:scale-105">
+    <div className="h-72 mb-72  min-w-[180px] max-w-[180px] cursor-pointer transition-transform duration-200 ease-out md:h-36 md:min-w-[260px] md:hover:scale-105">
       <Link
         to={`/dashboard/movie`}
         state={{ id: props.id, title: props.title, type: props.type }}
