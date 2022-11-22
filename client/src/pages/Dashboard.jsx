@@ -19,13 +19,14 @@ import Songs from "./Songs";
 import Twitter from "./Twitter";
 import LoginPage from "./Login";
 import TiktokPage from "./TiktokPage";
+import NewsPage from "./NewsPage";
 
 export default function Dashboard() {
-  const [sidebarHover, setSidebarHover] = useState(false)
+  const [sidebarHover, setSidebarHover] = useState(false);
 
   function toggleSidebar() {
-    console.log(sidebarHover)
-    setSidebarHover(!sidebarHover)
+    console.log(sidebarHover);
+    setSidebarHover(!sidebarHover);
   }
 
   return (
@@ -40,30 +41,17 @@ export default function Dashboard() {
           <Route path="social-media" element={<SocialMedia />} />
           <Route path="social-media/google" element={<DailyTrends />} />
           <Route path="social-media/twitter" element={<Twitter />} />
-          <Route path="social-media/tiktok" element={<TiktokPage/>} />
-
+          <Route path="social-media/tiktok" element={<TiktokPage />} />
           <Route path="seo-tools" element={<SeoTools />} />
-          <Route
-            path="seo-tools/related-queries"
-            element={<RelatedQueries />}
-          />
+          <Route path="seo-tools/related-queries" element={<RelatedQueries />} />
           <Route path="seo-tools/related-topics" element={<RelatedTopics />} />
-          <Route
-            path="seo-tools/interest-overtime"
-            element={<RelatedInterest />}
-          />
+          <Route path="seo-tools/interest-overtime" element={<RelatedInterest />} />
           <Route path="seo-tools/facebook-interests" element={<Interests />} />
-          <Route path="seo-tools/pagespeed-insights" element={<PageSpeed/>} />
-          <Route
-            path="seo-tools/backlink-checker"
-            element={<BacklinkChecker />}
-          />
-          <Route
-            path="seo-tools/keyword-generator"
-            element={<KeywordGenerator />}
-          />
+          <Route path="seo-tools/pagespeed-insights" element={<PageSpeed />} />
+          <Route path="seo-tools/backlink-checker" element={<BacklinkChecker />} />
+          <Route path="seo-tools/keyword-generator" element={<KeywordGenerator />} />
           <Route path="seo-tools/seo-checker" />
-          <Route path="rss-feed" />
+          <Route path="rss-feed" element={<NewsPage/>} />
         </Routes>
       </div>
     </div>
