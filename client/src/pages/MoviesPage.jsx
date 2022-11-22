@@ -54,7 +54,6 @@ export default function MoviesPage() {
         <h4 className="text-lg font-bold mt-5">Movies</h4>
         <div className="mr-7 mt-1.5">
           <Slider {...settings}>
-            {" "}
             {movies.map((item, index) => {
               return (
                 <MovieCard
