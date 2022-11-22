@@ -40,8 +40,8 @@ export default function Home() {
         <img src={stars} className="h-28" alt="" srcset="" />
       </div>
       <div className="w-full"></div>
-      <div className="items-stretch flex space-x-10">
-        <div className="bg-[#1B1A20] h-96 rounded-xl w-1/2 mt-7">
+      <div className="items-stretch flex gap-5">
+        <div className="bg-[#1B1A20] w-96 rounded-xl mt-7">
           <Slider {...settings}>
             {posts.map(post=>{
               return (
