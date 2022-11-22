@@ -15,20 +15,34 @@ export default function Home() {
         <img src={stars} className="h-28" alt="" srcset="" />
       </div>
 
-<div className='items-stretch flex space-x-10'>
-      <div className="bg-[#1B1A20] h-96 rounded-xl w-1/2 mt-7">
-      <p className="text-white text-center ">CAROUSEL</p>
+      <div className='items-stretch flex space-x-10'>
+            <div className="bg-[#1B1A20] h-96 rounded-xl w-1/2 mt-7">
+              <p className="text-white text-center ">CAROUSEL</p>
+              <p className="text-white text-center ">Affiliate marketing Trends for 2023</p>
+            </div>
+
+            <div className="bg-[#1B1A20] h-96 rounded-xl w-1/4 mt-7">
+              <p className="text-white text-center ">Movies</p>
+            </div>
+
+            <div className="bg-[#1B1A20] h-96 rounded-xl w-1/4 mt-7">
+              <p className="text-white text-center ">Songs</p>
+            </div>
       </div>
+      <div className='items-stretch flex space-x-10'> 
+            <div className="bg-[#1B1A20] h-96 rounded-xl w-1/4 mt-7">
+            <p className="text-white text-center ">My Watchlist</p>
+            </div>
 
-      <div className="bg-[#1B1A20] h-96 rounded-xl w-1/4 mt-7">
+            <div className="bg-[#1B1A20] h-96 rounded-xl w-1/4 mt-7">
+            <p className="text-white text-center ">Animes</p>
+            </div>
+
+            <div className="bg-[#1B1A20] h-96 rounded-xl w-1/2 mt-7">
+              <p className="text-white text-center ">CAROUSEL</p>
+              <p className="text-white text-center ">Affiliate marketing Trends for 2023</p>
+            </div>
       </div>
-
-      <div className="bg-[#1B1A20] h-96 rounded-xl w-1/4 mt-7">
-      </div>
-
-</div>
-
     </div>
-
   );
 }

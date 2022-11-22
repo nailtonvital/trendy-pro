@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import style from "./style.module.scss";
-import Fox from "../assets/Fox.webp";
+import Fox from "../assets/logo1.webp";
 import Mundo from "../assets/Mundo.webp";
 import MapaMundi from "../assets/MapaMundi.webp";
 import User from "../assets/User.webp";
