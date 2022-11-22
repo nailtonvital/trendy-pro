@@ -13,7 +13,7 @@ export default function NewsPage() {
         Author: {location.state.author}
       </p>
       <div className="img mt-5">
-        <img src={location.state.img} className="rounded-xl" alt="" />
+        <img src={location.state.img} className="rounded-xl w-full" alt="" />
       </div>
       <p className="mt-5">
         {location.state.content.replace(/<\/?[^>]+(>|$)/g, "")}
