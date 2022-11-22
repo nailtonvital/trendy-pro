@@ -46,7 +46,7 @@ export default function LandingPage() {
               </a>
               <a href="/login">
                 <button className="h-16 mt-7 px-2.5 rounded-3xl border-solid border-2 text-lg font-semibold bg-transparent hover:bg-glass"
-                type="button">Sing in</button>
+                type="button">Sign in</button>
               </a> 
               </div>
           </nav>
