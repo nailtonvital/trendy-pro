@@ -26,40 +26,15 @@ export default function NewsPage() {
         {posts.map((post) => {
           return (
             <div className="flex-col rounded-xl shadow-2xl w-72 p-5">
-              <img
-                src="https://images.macrumors.com/article-new/2022/11/Flighty-Live-Activities.jpeg"
-                className="rounded"
-                alt=""
-              />
-              <p className="font-bold">
-                Five Useful iPhone Apps With Live Activities for World Cup
-                Scores and More
-              </p>
-              <p className="text-[#CBCBCB] font-thin">Joe Rossignol</p>
-              <p>
-                iOS 16.1 was released in September with support for Live
-                Activities in third-party apps. This...
-              </p>
+              <img src={post.thumbnail} className="rounded" alt="" />
+              <p className="font-bold">{post.title}</p>
+              <p className="text-[#CBCBCB] font-thin">{post.author}</p>
+              <p className="truncate">{post.description}</p>
             </div>
           );
         })}
 
-        <div className="flex-col rounded-xl shadow-2xl w-72 p-5">
-          <img
-            src="https://images.macrumors.com/article-new/2022/11/Flighty-Live-Activities.jpeg"
-            className="rounded"
-            alt=""
-          />
-          <p className="font-bold">
-            Five Useful iPhone Apps With Live Activities for World Cup Scores
-            and More
-          </p>
-          <p className="text-[#CBCBCB] font-thin">Joe Rossignol</p>
-          <p>
-            iOS 16.1 was released in September with support for Live Activities
-            in third-party apps. This...
-          </p>
-        </div>
+        
       </div>
     </div>
   );
