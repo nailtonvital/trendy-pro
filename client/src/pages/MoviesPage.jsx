@@ -44,7 +44,7 @@ export default function MoviesPage() {
         </div>
 
         <h4 className="text-lg font-bold mt-5">TV Shows</h4>
-        <div className="flex items-center scrollbar-hide space-x-0.5 overflow-x-scroll md:space-x-2.5 md:p-2">
+        <div className="flex items-center  space-x-0.5 overflow-x-scroll md:space-x-2.5 md:p-2">
           {tvs.map((item, index) => {
             return (
               <MovieCard
@@ -59,7 +59,7 @@ export default function MoviesPage() {
         </div>
 
         <h4 className="text-lg font-bold mt-5">Animes</h4>
-        <div className="flex items-center scrollbar-hide space-x-0.5 overflow-x-scroll md:space-x-2.5 md:p-2">
+        <div className="flex items-center space-x-0.5 overflow-x-scroll md:space-x-2.5 md:p-2">
           {animes.map((item, index) => {
             return (
               <MovieCard

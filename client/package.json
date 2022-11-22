@@ -16,7 +16,8 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.2",
     "react-spinners": "^0.13.6",
-    "sass": "^1.56.1"
+    "sass": "^1.56.1",
+    "tailwind-scrollbar": "^2.0.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.17",

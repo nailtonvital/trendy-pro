@@ -8,10 +8,14 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ["Poppins", "ui-sans-serif", "system-ui"],
+      darkMode: 'media',
     },
     colors: {
       glass: 'rgba(255, 255, 255, 0.15);',
     },
+    variants: {
+      scrollbar: ['dark']
+  },
     extend: {},
   },
   plugins: [require("flowbite/plugin")],

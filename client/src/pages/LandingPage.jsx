@@ -25,29 +25,30 @@ export default function LandingPage() {
     <>
       <div className={style.body}>
         <div className={style.container}>
-          <nav>
+        <nav>
             <a href="/LandingPage">
             <div className={style.logo}>
               <img src={Fox} alt="imgFox" />
             </div>
             </a>
-            <div className="space-x-1.5">
-            <a href="/login">
-                <button className="h-16 mt-7 px-2.5 rounded-3xl text-lg font-semibold bg-transparent hover:bg-glass"
-                type="button">1</button>
-              </a>
+
+            <div className="flex space-x-16 text-2xl font-semibold">
+              <a href="#Contact">
+              <p className="relative group">
+                  <span>Contact</span>
+                 <span className="absolute -bottom-1 left-0 w-0 h-1 bg-gray-200 transition-all group-hover:w-full"></span>
+              </p></a>
+              <a href="#About Us">
+              <p className="relative group">
+                  <span>About Us</span>
+                 <span className="absolute -bottom-1 left-0 w-0 h-1 bg-gray-200 transition-all group-hover:w-full"></span>
+              </p></a>
               <a href="/login">
-                <button className="h-16 mt-7 px-2.5 rounded-3xl text-lg font-semibold bg-transparent hover:bg-glass"
-                type="button">2</button>
-              </a>
-              <a href="/login">
-                <button className="h-16 mt-7 px-2.5 rounded-3xl text-lg font-semibold bg-transparent hover:bg-glass"
-                type="button">3</button>
-              </a>
-              <a href="/login">
-                <button className="h-16 mt-7 px-2.5 rounded-3xl border-solid border-2 text-lg font-semibold bg-transparent hover:bg-glass"
-                type="button">Sign in</button>
-              </a> 
+              <p className="relative group">
+                  <span>Sign In</span>
+                 <span className="absolute -bottom-1 left-0 w-0 h-1 bg-gray-200 transition-all group-hover:w-full"></span>
+              </p></a>
+
               </div>
           </nav>
       
@@ -61,10 +62,14 @@ export default function LandingPage() {
                 We track every topic across the internet to identify growing
                 trends.
               </p>
-              <a href="/login">
-                <button className="w-2/4 h-16 mt-7 px-2.5 rounded-3xl border-solid border-2 text-lg font-semibold bg-transparent hover:bg-glass"
-                type="button">GET STARTED</button>
-              </a>
+              <div className="text-3xl py-5">
+                <a href="/Login" class="relative inline-flex items-center justify-start inline-block px-5 py-3 overflow-hidden font-bold rounded-full group">
+                  <span class="w-32 h-32 rotate-45 translate-x-12 -translate-y-12 absolute left-0 top-0 bg-white opacity-[3%]"></span>
+                  <span class="absolute top-0 left-0 w-48 h-48 -mt-1 transition-all duration-500 ease-in-out rotate-45 -translate-x-60 -translate-y-24 bg-white opacity-100 group-hover:-translate-x-8"></span>
+                  <span class="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-gray-900">Get Started</span>
+                  <span class="absolute inset-0 border-2 border-white rounded-full"></span>
+                </a>
+              </div> 
             </div>
 
             <div className={style["right-hero"]}>
@@ -129,6 +134,7 @@ export default function LandingPage() {
 
           <div className={style.item}>
             <div className={style["left-align"]}>
+              <a id="About Us"></a>
               <h3 className={style.titleHeader}>Know what’s going on around the world</h3>
               <p>
               Acess to all trending topics on the social media
@@ -140,8 +146,8 @@ export default function LandingPage() {
             </div>
           </div>
 
-          <div className={style["center-align"]}>
-            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+          <div className={style["center-align"]}>  
+              <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
             <p>
               Nullam lorem elit, faucibus non tellus ut, tempor posuere arcu.
             </p>
@@ -253,6 +259,7 @@ export default function LandingPage() {
             <img src={Product} alt="imgProductPresentation" />
             </div>
           </div>
+          <a id="Contact"></a>
           <footer>© 2022 TrendyPro | All Rights Reserved</footer>
         </div>
       </div>

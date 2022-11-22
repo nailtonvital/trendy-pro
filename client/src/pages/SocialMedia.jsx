@@ -1,10 +1,7 @@
 import React from 'react'
 import Card from '../components/Card'
-import reddit from '../assets/reddit.png'
 import twitter from '../assets/twitter.webp'
 import google from '../assets/google.webp'
-import youtube from '../assets/youtube.png'
-import facebook from '../assets/facebook.webp'
 import tiktok from '../assets/tiktok.webp'
 import { Link } from 'react-router-dom'
 
@@ -15,9 +12,6 @@ export default function SocialMedia() {
     const socialFeatures = [
         {img: google, name:"Google", description: "Access the Google Daily Trends", link: 'google'},
         {img: twitter, name:"Twitter", description: "Access the Twitter Trending Topics", link: 'twitter'},
-        {img: reddit, name:"Reddit", description: "Access the most popular posts of Reddit", link: 'reddit'},
-        {img: youtube, name:"Youtube", description: "Access the Trending Youtube Videos", link: 'youtube'},
-        {img: facebook, name:"Facebook", description: "Access the most popular posts of Facebook", link: 'facebook'},
         {img: tiktok, name:"TikTok", description: "Access the Trending TikTok Videos", link: 'tiktok'},
     ]
   return (
