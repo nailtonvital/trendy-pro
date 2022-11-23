@@ -4,11 +4,14 @@ import Fox from "../assets/logo1.webp";
 import Mundo from "../assets/Mundo.webp";
 import MapaMundi from "../assets/MapaMundi.webp";
 import User from "../assets/User.webp";
-import hamburger from "../assets/hamburger.webp";
 import rate from "../assets/rate.webp";
 import Filmes from "../assets/filmes.webp";
-import Michael from "../assets/michael.webp";
-import Anne from "../assets/anne.webp";
+import nana from "../assets/nana.webp";
+import maicon from "../assets/maicon1.webp";
+import luccas from "../assets/luccas.webp";
+import genu from "../assets/genu2.webp";
+import home from "../assets/home1.webp";
+import sobe from "../assets/sobe.webp";
 // import Sarah from "../../assets/sarah.webp";
 import Product from "../assets/MacBook-Pro-16.webp";
       
@@ -53,7 +56,7 @@ export default function LandingPage() {
           </nav>
       
   
-          <div className={style.hero}>
+          <div id="sobe" className={style.hero}>
             <div className={style["left-hero"]}>
               <h3 className={style.titleHeader}>
                 Discover trends while it trending
@@ -136,33 +139,22 @@ export default function LandingPage() {
             <div className={style["left-align"]}>
               <a id="About Us"></a>
               <h3 className={style.titleHeader}>Know what’s going on around the world</h3>
-              <p>
-              Acess to all trending topics on the social media
-              </p>
-              <img src="" alt="" />
             </div>
             <div className={style["right-align"]}>
-              <img src={MapaMundi} alt="imgMapaMundi" />
+              <img  className="mb-20" src={MapaMundi} alt="imgMapaMundi" />
             </div>
           </div>
 
-          <div className={style["center-align"]}>  
-              <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
-            <p>
-              Nullam lorem elit, faucibus non tellus ut, tempor posuere arcu.
-            </p>
-            <img src={User} alt="imgUser" />
-          </div>
-
-          <div className={style["left-align"]}>
-            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
-            <p>
-              Nullam lorem elit, faucibus non tellus ut, tempor posuere arcu.
-            </p>
+          <div className="items-stretch flex mb-24">  
+            <img className="w-1/3" src={User} alt="imgUser" />
+                <div className=" pl-60 pt-28 text-end">
+                  <p className="text-5xl font-bold pb-6">We at TrendyPro will bring the ease to the user</p>
+                  <p className="text-xl font-light">An efficient application that will provide versioning <br></br> and practicality in a single click.</p>
+                </div>
           </div>
 
           <div className={style["social-proof"]}>
-            <h2>What are people saying?</h2>
+          <p className="text-3xl font-bold">The Workers</p>
             <div className={style["social-cards"]}>
               <div className={style["social-card"]}>
                 <img src={rate} alt="rate" />
@@ -176,27 +168,7 @@ export default function LandingPage() {
                   </p>
                 </div>
                 <div className={style.people}>
-                  <img src={Anne} alt="" />
-                  <div className={style["people-info"]}>
-                    <h2>Anne Gorchakov</h2>
-                    <p>Digital Marketer</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className={style["social-card"]}>
-                <img src={rate} alt="rate" />
-                <div className={style["social-quote"]}>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et,
-                    quis quis sem odio ultricies eu maecenas ante ut. Fames
-                    luctus tempor eu diam ut quam. Malesuada risus turpis ante
-                    rhoncus viverra ipsum vel scelerisque. Arcu urna, aliquam
-                    elit amet.
-                  </p>
-                </div>
-                <div className={style.people}>
-                  <img src="img/nana.svg" alt="" />
+                  <img src={nana} alt="" />
                   <div className={style["people-info"]}>
                     <h2>Nailton Vital</h2>
                     <p>Full Stack Developer</p>
@@ -216,10 +188,10 @@ export default function LandingPage() {
                   </p>
                 </div>
                 <div className={style.people}>
-                  <img src={Michael} alt="" />
+                  <img src={luccas} alt="" />
                   <div className={style["people-info"]}>
-                    <h2>Michael Turner</h2>
-                    <p>Entrepreneur</p>
+                    <h2>Luccas Anjos</h2>
+                    <p>Developer</p>
                   </div>
                 </div>
               </div>
@@ -235,32 +207,58 @@ export default function LandingPage() {
                     elit amet.
                   </p>
                 </div>
-                <div className={style["social-quote"]}>
-                  <img alt="" />
+                <div className={style.people}>
+                  <img src={maicon} alt="" />
                   <div className={style["people-info"]}>
-                    <h2>Sarah Borba</h2>
-                    <p>Digital Influencer</p>
+                    <h2>Maicon Oliveira</h2>
+                    <p>Full Stack Developer</p>
                   </div>
                 </div>
               </div>
+
+              <div className={style["social-card"]}>
+                <img src={rate} alt="rate" />
+                <div className={style["social-quote"]}>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et,
+                    quis quis sem odio ultricies eu maecenas ante ut. Fames
+                    luctus tempor eu diam ut quam. Malesuada risus turpis ante
+                    rhoncus viverra ipsum vel scelerisque. Arcu urna, aliquam
+                    elit amet.
+                  </p>
+                </div>
+                <div className={style.people}>
+                  <img src={genu} alt="" />
+                  <div className={style["people-info"]}>
+                    <h2>Lucas Genú</h2>
+                    <p>Designer</p>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
-          <div className={style.filmes}>
-            <div>
-              <h1>Acess to all trending topics on the social media</h1>
+
+            <div className="items-stretch flex mb-24">  
+                <div className="mt-52 text-start">
+                  <p className="text-5xl font-bold pb-6">Figuring out what the next big trend is tells us what to focus on</p>
+                </div> 
+                <img className="-mr-44" src={Filmes} alt="imgUser" />
             </div>
-            <img src={Filmes} alt="imgFilmes" />
+
+            <div className="items-stretch flex mb-24">  
+              <img className="w-4/6 -ml-52" src={home} alt="imgUser" />
+                  <div className=" pl-60 pt-28 text-end w-1/2">
+                    <p className="text-5xl font-bold pb-6">Access most relevant information whats popular</p>
+                    <p className="text-xl font-light">Acess to all trending topics on the social media</p>
+                </div>
+            </div>
+
+          <div className="mt-48 mb-4">
+             <a id="Contact"></a>
+              <footer>© 2022 TrendyPro | All Rights Reserved</footer>
           </div>
-          <div className={style.macpro}>
-            <div>
-              <h1>Access the most relevant and popular information at the moment</h1>
-            </div>
-            <div className={style.macpro}>
-            <img src={Product} alt="imgProductPresentation" />
-            </div>
-          </div>
-          <a id="Contact"></a>
-          <footer>© 2022 TrendyPro | All Rights Reserved</footer>
+
         </div>
       </div>
     </>
