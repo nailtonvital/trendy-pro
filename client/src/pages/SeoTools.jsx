@@ -58,7 +58,7 @@ export default function SeoTools() {
   ];
 
   return (
-    <div className="text-white mt-5">
+    <div className="text-white mt-5 ml-16 bg-[#262631] h-screen">
       <h3
         className="font-bold text-4xl"
         data-bs-toggle="tooltip"
@@ -67,7 +67,7 @@ export default function SeoTools() {
         SEO Tools
       </h3>
 
-      <div className="flex-wrap lg:flex gap-5 mt-7">
+      <div className="flex-wrap lg:flex gap-5 mt-7 ">
         {seoFeatures.map((item, key) => {
           return (
             <Link to={item.link}>

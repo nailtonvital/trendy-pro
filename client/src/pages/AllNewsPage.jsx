@@ -27,14 +27,14 @@ export default function AllNewsPage() {
     }, []);
 
   return (
-    <div className="text-white mt-5">
+    <div className="text-white mt-5 ml-16 bg-[#262631] h-screen">
       <h3 className="font-bold text-4xl">RSS Feed</h3>
       <p className="font-bold text-xl text-[#CBCBCB]">Latest News</p>
       {/* Hashtag */}
       <div className="grid grid-cols-4 gap-3 mx-auto mt-7">
         {posts.map((post) => {
           return (
-            <div className="flex-col rounded-xl shadow-2xl w-72 p-5">
+            <div className="flex-col bg-[#37383F] rounded-xl shadow-2xl w-72 p-5">
               <Link
                 to="/dashboard/rss-feed/news"
                 state={{

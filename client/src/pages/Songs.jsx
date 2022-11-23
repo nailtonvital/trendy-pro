@@ -13,7 +13,7 @@ export default function Songs() {
     },[])
 
   return (
-    <div className='text-white mt-5'>
+    <div className='text-white mt-5 ml-16'>
         <h3 className='font-bold text-4xl'  data-bs-toggle='tooltip' title="Hi! I'm tooltip">Popular Songs</h3>
         <p className='font-bold text-xl text-[#CBCBCB]'>Trending Now</p>
         

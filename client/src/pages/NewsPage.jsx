@@ -5,7 +5,7 @@ export default function NewsPage() {
       const location = useLocation();
       console.log(location);
   return (
-    <div className="text-white mt-5">
+    <div className="text-white mt-5 ">
       <h1 className="font-bold text-3xl text-center ">
         {location.state.title}
       </h1>
