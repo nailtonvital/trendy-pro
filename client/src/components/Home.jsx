@@ -41,7 +41,9 @@ export default function Home() {
       </div>
       <div className="w-full"></div>
       <div className="items-stretch flex gap-5">
-        <div className="bg-[#1B1A20] w-96 rounded-xl mt-7">
+
+        <div className="bg-[#1B1A20] w-80 rounded-xl mt-7">
+          <p className="text-white text-center text-xl font-medium"> Affiliate marketing Trends for 2023</p>
           <Slider {...settings}>
             {posts.map(post=>{
               return (
@@ -51,33 +53,40 @@ export default function Home() {
                 </div>
               );
             })}
-            
           </Slider>
         </div>
 
         <div className="bg-[#1B1A20] h-96 rounded-xl w-1/4 mt-7">
-          <p className="text-white text-center ">Movies</p>
+          <p className="text-white text-center text-xl font-medium">Movies</p>
         </div>
 
         <div className="bg-[#1B1A20] h-96 rounded-xl w-1/4 mt-7">
-          <p className="text-white text-center ">Songs</p>
+          <p className="text-white text-center text-xl font-medium">Songs</p>
         </div>
       </div>
       <div className="items-stretch flex space-x-10">
         <div className="bg-[#1B1A20] h-96 rounded-xl w-1/4 mt-7">
-          <p className="text-white text-center ">My Watchlist</p>
+          <p className="text-white text-center text-xl font-medium">My Watchlist</p>
         </div>
 
-        <div className="bg-[#1B1A20] h-96 rounded-xl w-1/4 mt-7">
-          <p className="text-white text-center ">Animes</p>
+        <div className="bg-[#1B1A20] h-96 rounded-xl w-1/4 mt-7 ">
+          <p className="text-white text-center text-xl font-medium">Animes</p>
         </div>
 
-        <div className="bg-[#1B1A20] h-96 rounded-xl w-1/2 mt-7">
-          <p className="text-white text-center ">CAROUSEL</p>
-          <p className="text-white text-center ">
-            Affiliate marketing Trends for 2023
-          </p>
+        <div className="bg-[#1B1A20] w-80 rounded-xl mt-7">
+          <p className="text-white text-center text-xl font-medium"> Affiliate marketing Trends for 2023</p>
+          <Slider {...settings}>
+            {posts.map(post=>{
+              return (
+                <div className="text-white">
+                  <img src={post.thumbnail} className="h-25" alt="" />
+                  <h3 className="">{post.title}</h3>
+                </div>
+              );
+            })}
+          </Slider>
         </div>
+
       </div>
     </div>
   );
