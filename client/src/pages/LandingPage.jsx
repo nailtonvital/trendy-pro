@@ -156,29 +156,40 @@ export default function LandingPage() {
                 </div>
           </div>
 
+          <div className="items-stretch flex mb-24 mt-80">  
+              <div className="mt-52 text-start">
+                <p className="text-5xl font-bold pb-6">Figuring out what the next big trend is tells us what to focus on</p>
+              </div> 
+              <img className="-mr-44" src={Filmes} alt="imgUser" />
+          </div>
+
           <div className={style["social-proof"]}>
-          <p className="text-3xl font-bold mt-80">The Workers</p>
+            <a id="Contact"></a>
+            <p className="text-3xl font-bold mt-80">The Workers</p>
             <div className={style["social-cards"]}>
-              <div className={style["social-card"]}>
-                <img src={rate} alt="rate" />
-                <div className={style["social-quote"]}>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et,
-                    quis quis sem odio ultricies eu maecenas ante ut. Fames
-                    luctus tempor eu diam ut quam. Malesuada risus turpis ante
-                    rhoncus viverra ipsum vel scelerisque. Arcu urna, aliquam
-                    elit amet.
-                  </p>
-                </div>
-                <div className={style.people}>
-                  <img src={nana} alt="" />
-                  <div className={style["people-info"]}>
-                    <h2>Nailton Vital</h2>
-                    <p>Full Stack Developer</p>
+              <a href="https://www.instagram.com/nailtonvital/" target="_blank">
+                <div className={style["social-card"]}>
+                  <img src={rate} alt="rate" />
+                  <div className={style["social-quote"]}>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et,
+                      quis quis sem odio ultricies eu maecenas ante ut. Fames
+                      luctus tempor eu diam ut quam. Malesuada risus turpis ante
+                      rhoncus viverra ipsum vel scelerisque. Arcu urna, aliquam
+                      elit amet.
+                    </p>
+                  </div>
+                  <div className={style.people}>
+                    <img src={nana} alt="" />
+                    <div className={style["people-info"]}>
+                      <h2>Nailton Vital</h2>
+                      <p>Full Stack Developer</p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </a>
 
+              <a href="https://www.instagram.com/_luccaos_/" target="_blank">
               <div className={style["social-card"]}>
                 <img src={rate} alt="rate" />
                 <div className={style["social-quote"]}>
@@ -198,7 +209,9 @@ export default function LandingPage() {
                   </div>
                 </div>
               </div>
+              </a>
 
+              <a href="https://www.instagram.com/_maicxn/" target="_blank">
               <div className={style["social-card"]}>
                 <img src={rate} alt="rate" />
                 <div className={style["social-quote"]}>
@@ -218,7 +231,9 @@ export default function LandingPage() {
                   </div>
                 </div>
               </div>
+              </a>
 
+              <a href="https://www.instagram.com/luh.genu/" target="_blank">
               <div className={style["social-card"]}>
                 <img src={rate} alt="rate" />
                 <div className={style["social-quote"]}>
@@ -238,7 +253,9 @@ export default function LandingPage() {
                   </div>
                 </div>
               </div>
+              </a>
 
+              <a href="https://www.instagram.com/_guizen/" target="_blank">
               <div className={style["social-card"]}>
                 <img src={rate} alt="rate" />
                 <div className={style["social-quote"]}>
@@ -258,7 +275,9 @@ export default function LandingPage() {
                   </div>
                 </div>
               </div>
+              </a>
 
+              <a href="https://www.instagram.com/viniciussribeir0/" target="_blank">
               <div className={style["social-card"]}>
                 <img src={rate} alt="rate" />
                 <div className={style["social-quote"]}>
@@ -278,7 +297,9 @@ export default function LandingPage() {
                   </div>
                 </div>
               </div>
+              </a>
 
+              <a href="https://www.instagram.com/ylan_costa/" target="_blank">
               <div className={style["social-card"]}>
                 <img src={rate} alt="rate" />
                 <div className={style["social-quote"]}>
@@ -298,7 +319,9 @@ export default function LandingPage() {
                   </div>
                 </div>
               </div>
+              </a>
 
+              <a href="https://www.instagram.com/madu_goda/" target="_blank">
               <div className={style["social-card"]}>
                 <img src={rate} alt="rate" />
                 <div className={style["social-quote"]}>
@@ -318,16 +341,10 @@ export default function LandingPage() {
                   </div>
                 </div>
               </div>
+              </a>
 
             </div>
           </div>
-
-            <div className="items-stretch flex mb-24 mt-80">  
-                <div className="mt-52 text-start">
-                  <p className="text-5xl font-bold pb-6">Figuring out what the next big trend is tells us what to focus on</p>
-                </div> 
-                <img className="-mr-44" src={Filmes} alt="imgUser" />
-            </div>
 
             <div className="items-stretch flex mb-24 mt-80">  
               <img className="w-4/6 -ml-52" src={home} alt="imgUser" />
@@ -337,8 +354,7 @@ export default function LandingPage() {
                 </div>
             </div>
 
-          <div className="mt-48 mb-4 text-xl">
-             <a id="Contact"></a>
+          <div className="mt-48 mb-4 text-2xl">
               <footer>© 2022 TrendyPro | All Rights Reserved</footer>
           </div>
 
