@@ -48,7 +48,7 @@ export default function MoviesPage() {
   }, []);
 
   return (
-    <div className="text-white mt-5 w-full ml-16">
+    <div className="text-white mt-5 w-full">
       <h3 className="font-bold text-4xl">Entertainament</h3>
       <p className="font-bold text-xl text-[#CBCBCB] -mt-1">Trending Now</p>
 

@@ -15,7 +15,7 @@ export default function SocialMedia() {
         {img: tiktok, name:"TikTok", description: "Access the Trending TikTok Videos", link: 'tiktok'},
     ]
   return (
-    <div className='text-white mt-5 ml-16 bg-[#262631] h-screen'>
+    <div className='text-white mt-5 bg-[#262631] h-screen'>
         <h3 className='font-bold text-4xl'>Social Media</h3>
         <p className='font-bold text-xl text-[#CBCBCB]'>Trending Now</p>
 

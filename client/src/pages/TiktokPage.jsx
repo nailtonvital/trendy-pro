@@ -60,7 +60,7 @@ export default function TiktokPage() {
 
 //trendy-tiktok-api.herokuapp.com/trend-api/wsgeral/hastag
 return (
-  <div className="text-white mt-5 ml-16 bg-[#262631] h-screen">
+  <div className="text-white mt-5 bg-[#262631] h-screen">
     <h3 className="font-bold text-4xl">Tiktok</h3>
     <p className="font-bold text-xl ">Trending Now</p>
     {/* Hashtag */}

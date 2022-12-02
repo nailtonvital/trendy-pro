@@ -58,7 +58,7 @@ export default function SeoTools() {
   ];
 
   return (
-    <div className="text-white mt-5 ml-16 bg-[#262631] h-screen">
+    <div className="text-white mt-5 bg-[#262631] h-screen">
       <h3
         className="font-bold text-4xl"
         data-bs-toggle="tooltip"

@@ -30,7 +30,7 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="flex bg-[#262631] h-full overflow-x-hidden" id="scrollbar">
+    <div className="flex bg-[#262631] h-full overflow-x-hidden " id="scrollbar">
       <Sidebar />
       <div className="w-full mr-5 ml-24">
         <Routes>

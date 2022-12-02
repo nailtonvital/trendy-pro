@@ -56,7 +56,7 @@ export default function Home() {
     slidesToScroll: 1,
   };
   return (
-    <div className="ml-16">
+    <div>
       <div className="bg-gradient-to-r flex from-purple-800 to-pink-700 h-48 rounded-xl w-full text-white font-sans p-0 pt-1 mt-4">
         <img src={minino} />
         <div className="mt-9 ml-4">

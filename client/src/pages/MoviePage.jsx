@@ -246,7 +246,7 @@ export default function MoviePage() {
   }
 
   return (
-    <div className="ml-16">
+    <div>
       {console.log(movie)}
 
       <div className="grid grid-cols-9 gap-4 text-white">
