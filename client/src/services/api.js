@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://trendy-pro.herokuapp.com/",
+  baseURL: "https://keikoapp.herokuapp.com/",
 });
 
 export default api;

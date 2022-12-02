@@ -49,7 +49,7 @@ export default function Home() {
   }, []);
 
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -67,25 +67,25 @@ export default function Home() {
       </div>
       <div className="w-full"></div>
       
-      <div className=" grid-cols-3 gap-5">
+      <div className="grid grid-cols-3 gap-5">
 
-        <div className="bg-[#1B1A20] w-1/3 h-1/5 rounded-xl mt-7">
-          <p className="text-white text-center text-xl font-medium"> Affiliate marketing Trends for 2023</p>
+        <div className="bg-[#1B1A20] w-full px-8 rounded-xl mt-7">
+          <p className="text-white  text-2xl font-semibold my-1 mb-4">Latest news</p>
           <Slider {...settings}>
             {posts.map((post) => {
               return (
                 <div className="text-white">
-                  <img src={post.thumbnail} className="h-72" alt="" />
-                  <h3 className="">{post.title}</h3>
+                  <img src={post.thumbnail} className="h-full rounded-xl" alt="" />
+                  <h3 className="pt-3">{post.title}</h3>
                 </div>
               );
             })}
           </Slider>
         </div>
 
-        <div className="bg-[#1B1A20] w-1/4 rounded-xl mt-7">
+        <div className="bg-[#1B1A20] w-full rounded-xl mt-7">
           <div className="mx-5 my-5">
-            <h1 className="text-white text-start text-2xl font-semibold mb-1">Movies</h1>
+            <h1 className="text-white text-start text-2xl font-semibold mt-3 my-1">Movies</h1>
             <div className="flex">
               <img src="https://image.tmdb.org/t/p/original/nwkBJF67diqq1w20Xl5pxBZPAiB.jpg" className="h-36 rounded-md"/>
               <div className="ml-3">
@@ -113,9 +113,9 @@ export default function Home() {
           </div>     
         </div>
 
-        <div className="bg-[#1B1A20] w-1/4 rounded-xl mt-7">
+        <div className="bg-[#1B1A20] w-full rounded-xl mt-7">
           <div className="mx-5 my-5">
-            <h1 className="text-white text-start text-2xl font-semibold mb-1">Songs</h1>
+            <h1 className="text-white text-start text-2xl font-semibold my-1">Songs</h1>
             <div className="flex">
               <img src="https://i.scdn.co/image/ab67616d0000b2737b2dba12da4b7f8e18cba810" className="h-36 rounded-md"/>
               <div className="ml-3">
@@ -143,9 +143,9 @@ export default function Home() {
           </div>     
         </div>
 
-        <div className="bg-[#1B1A20] w-1/4 rounded-xl mt-7">
+        <div className="bg-[#1B1A20] w-full rounded-xl mt-7">
           <div className="mx-5 my-5">
-            <h1 className="text-white text-start text-2xl font-semibold mb-1">Animes</h1>
+            <h1 className="text-white text-start text-2xl font-semibold my-1">Animes</h1>
             <div className="flex">
               <img src="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx127230-FlochcFsyoF4.png" className="h-36 rounded-md"/>
               <div className="ml-3">
@@ -173,9 +173,9 @@ export default function Home() {
           </div>     
         </div>
 
-        <div className="bg-[#1B1A20] w-1/4 rounded-xl mt-7">
+        <div className="bg-[#1B1A20] w-full rounded-xl mt-7">
           <div className="mx-5 my-5">
-            <h1 className="text-white text-start text-2xl font-semibold mb-1">Series</h1>
+            <h1 className="text-white text-start text-2xl font-semibold my-1">Series</h1>
             <div className="flex">
               <img src="https://image.tmdb.org/t/p/original/58ugmnhnrnWC8tLNvifxlQVFB7K.jpg" className="h-36 rounded-md"/>
               <div className="ml-3">

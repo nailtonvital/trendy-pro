@@ -125,7 +125,7 @@ export default function RelatedQueries() {
                               target="_blank"
                             >
                               <svg
-                                className="fill-slate-600 hover:fill-[#6B36FF]"
+                                className="fill-gray-600 hover:fill-white"
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="24"
                                 height="24"
@@ -140,7 +140,7 @@ export default function RelatedQueries() {
                               target="_blank"
                             >
                               <svg
-                                className="fill-slate-600 hover:fill-[#6B36FF]"
+                                className="fill-gray-600 hover:fill-white"
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="24"
                                 height="24"

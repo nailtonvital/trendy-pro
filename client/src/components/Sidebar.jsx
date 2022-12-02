@@ -45,11 +45,7 @@ export default function Sidebar() {
         </div>
         <div className="text-center text-3xl text-[#9A9A9A]">
             <ul>
-                <Link to='preferences'>
-                <li className='mb-2 hover:text-[#F47E02] transition duration-300 ease-in-out'>
-                    <i className='bx bx-cog'></i>
-                </li>
-                </Link>
+                
                 <Link to='/login'>
                 <li className='hover:text-[#F47E02] transition duration-300 ease-in-out'>
                     <img className='w-8' src={logo} alt="logo"/>
