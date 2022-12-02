@@ -15,9 +15,15 @@ export default function NewsPage() {
       <div className="img mt-5">
         <img src={location.state.img} className="rounded-xl w-full" alt="" />
       </div>
-      <p className="mt-5">
-        {location.state.content.replace(/<\/?[^>]+(>|$)/g, "")}
-      </p>
+      <div
+        className="mt-5"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(location.state.content).replace(
+            /\\r\\n/g,
+            "<br />"
+          ),
+        }}
+      ></div>
     </div>
   );
 }

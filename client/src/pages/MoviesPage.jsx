@@ -5,6 +5,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+
 export default function MoviesPage() {
   document.title = "TrendyPro | Movies";
 
@@ -18,6 +19,7 @@ export default function MoviesPage() {
     speed: 500,
     slidesToShow: 4.5,
     slidesToScroll: 1,
+
   };
 
   useEffect(() => {
@@ -53,7 +55,7 @@ export default function MoviesPage() {
       <div className="w-11/12">
         <h4 className="text-lg font-bold mt-5">Movies</h4>
         <div className="mr-7 mt-1.5">
-          <Slider {...settings}>
+          <Slider {...settings} className="gap-52">
             {movies.map((item, index) => {
               return (
                 <MovieCard
