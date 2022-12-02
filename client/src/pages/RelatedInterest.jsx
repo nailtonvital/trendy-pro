@@ -74,7 +74,7 @@ export default function RelatedInterest() {
   };
 
   return (
-    <div className="text-white mt-5 ml-16 bg-[#262631] h-screen">
+    <div className="text-white mt-5 bg-[#262631] h-screen">
       <h3 className="font-bold text-4xl">Interests Overtime</h3>
       <p className="font-bold text-xl text-[#CBCBCB]">SEO Tools</p>
 
