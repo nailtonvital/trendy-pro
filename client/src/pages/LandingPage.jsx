@@ -163,6 +163,14 @@ export default function LandingPage() {
               <img className="-mr-44" src={Filmes} alt="imgUser" />
           </div>
 
+          <div className="items-stretch flex mb-24 mt-80">  
+              <img className="w-4/6 -ml-52" src={home} alt="imgUser" />
+                  <div className=" pl-60 pt-28 text-end w-1/2">
+                    <p className="text-5xl font-bold pb-6">Access most relevant information whats popular</p>
+                    <p className="text-xl font-light">Acess to all trending topics on the social media</p>
+                </div>
+            </div>
+
           <div className={style["social-proof"]}>
             <a id="Contact"></a>
             <p className="text-3xl font-bold mt-80">The Workers</p>
@@ -346,13 +354,7 @@ export default function LandingPage() {
             </div>
           </div>
 
-            <div className="items-stretch flex mb-24 mt-80">  
-              <img className="w-4/6 -ml-52" src={home} alt="imgUser" />
-                  <div className=" pl-60 pt-28 text-end w-1/2">
-                    <p className="text-5xl font-bold pb-6">Access most relevant information whats popular</p>
-                    <p className="text-xl font-light">Acess to all trending topics on the social media</p>
-                </div>
-            </div>
+            
 
           <div className="mt-48 mb-4 text-2xl">
               <footer>© 2022 TrendyPro | All Rights Reserved</footer>
