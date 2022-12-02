@@ -1,13 +1,17 @@
-import { useState, useEffect } from "react";
-import stars from '../assets/stars.png'
-import minino from '../assets/minino.webp'
+import React, { useEffect, useState } from "react";
+import stars from "../assets/stars.png";
+import minino from "../assets/minino.webp";
 import Slider from "react-slick";
+import api from "../services/api";
 import Axios from "axios";
 import { Link } from "react-router-dom";
 
 export default function Home() {
-  document.title = 'TrendyPro | Home'
+  document.title = "TrendyPro | Home";
 
+  const [movies, setMovies] = useState([]);
+  const [tvs, setTvs] = useState([]);
+  const [animes, setAnimes] = useState([]);
   const [posts, setPosts] = useState([]);
 
   const rssFeeds = ["https://www.vox.com/rss/recode/index.xml"];
@@ -16,10 +20,32 @@ export default function Home() {
     rssFeeds.map((url) => {
       Axios.get(`https://api.rss2json.com/v1/api.json?rss_url=${url}`).then(
         (data) => {
-          setPosts((prev) => [ ...data.data.items]);
+          setPosts((prev) => [...data.data.items]);
         }
       );
     });
+    api
+      .get("/trendingMovies")
+      .then((response) => setMovies(response.data))
+      .catch((err) => {
+        console.error("ops! ocorreu um erro" + err);
+      });
+    api
+      .get("/trendingTV")
+      .then((response) => {
+        setTvs(response.data);
+      })
+      .catch((err) => {
+        console.error("ops! ocorreu um erro" + err);
+      });
+    api
+      .get("/trendingAnimes")
+      .then((response) => {
+        setAnimes(response.data);
+      })
+      .catch((err) => {
+        console.error("ops! ocorreu um erro" + err);
+      });
   }, []);
 
   const settings = {
@@ -43,7 +69,7 @@ export default function Home() {
       <div className="items-stretch flex gap-5">
         <div className="bg-[#1B1A20] w-96 rounded-xl mt-7">
           <Slider {...settings}>
-            {posts.map(post=>{
+            {posts.map((post) => {
               return (
                 <div className="text-white">
                   <img src={post.thumbnail} className="h-25" alt="" />
@@ -51,7 +77,6 @@ export default function Home() {
                 </div>
               );
             })}
-            
           </Slider>
         </div>
 
