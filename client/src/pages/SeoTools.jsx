@@ -37,12 +37,12 @@ export default function SeoTools() {
       description: "Generate keywords for your content",
       link: "interest-overtime",
     },
-    {
-      img: pagespeed,
-      name: "PageSpeed Insights",
-      description: "Check the speed of a website",
-      link: "pagespeed-insights",
-    },
+    // {
+    //   img: pagespeed,
+    //   name: "PageSpeed Insights",
+    //   description: "Check the speed of a website",
+    //   link: "pagespeed-insights",
+    // },
     {
       img: backlink,
       name: "Backlink Checker",
@@ -62,7 +62,7 @@ export default function SeoTools() {
       <h3
         className="font-bold text-4xl"
         data-bs-toggle="tooltip"
-        title="Hi! I'm tooltip"
+
       >
         SEO Tools
       </h3>
