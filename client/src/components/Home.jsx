@@ -70,12 +70,12 @@ export default function Home() {
       <div className="grid grid-cols-3 gap-5">
 
         <div className="bg-[#1B1A20] w-full px-8 rounded-xl mt-7">
-          <p className="text-white  text-2xl font-semibold my-1 mb-4">Latest news</p>
+          <p className="text-white  text-2xl font-semibold my-4 mb-4">Latest news</p>
           <Slider {...settings}>
             {posts.map((post) => {
               return (
                 <div className="text-white">
-                  <img src={post.thumbnail} className="h-full rounded-xl" alt="" />
+                  <a href="../AllNewsPage"><img src={post.thumbnail} className="h-full rounded-xl" alt="" /></a>
                   <h3 className="pt-3">{post.title}</h3>
                 </div>
               );
@@ -201,6 +201,20 @@ export default function Home() {
                 </div>
             </div>  
           </div>     
+        </div>
+
+        <div className="bg-[#1B1A20] w-full px-8 rounded-xl mt-7">
+          <p className="text-white  text-2xl font-semibold my-4 mb-4">Top news</p>
+          <Slider {...settings}>
+            {posts.map((post) => {
+              return (
+                <a href="#"><div className="text-white">
+                  <img src={post.thumbnail} className="h-full rounded-xl" alt="" />
+                  <h3 className="pt-3">{post.title}</h3>
+                </div></a>
+              );
+            })}
+          </Slider>
         </div>
 
 

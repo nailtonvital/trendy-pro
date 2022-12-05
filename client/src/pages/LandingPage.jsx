@@ -180,11 +180,8 @@ export default function LandingPage() {
                   <img src={rate} alt="rate" />
                   <div className={style["social-quote"]}>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et,
-                      quis quis sem odio ultricies eu maecenas ante ut. Fames
-                      luctus tempor eu diam ut quam. Malesuada risus turpis ante
-                      rhoncus viverra ipsum vel scelerisque. Arcu urna, aliquam
-                      elit amet.
+                    "Quando se mostra ao mundo e exibe os seus talentos, naturalmente desperta todo tipo de ressentimento,
+                     inveja e outras manifestações de insegurança." <br></br>-Robert Greene
                     </p>
                   </div>
                   <div className={style.people}>
@@ -202,11 +199,15 @@ export default function LandingPage() {
                 <img src={rate} alt="rate" />
                 <div className={style["social-quote"]}>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et,
-                    quis quis sem odio ultricies eu maecenas ante ut. Fames
-                    luctus tempor eu diam ut quam. Malesuada risus turpis ante
-                    rhoncus viverra ipsum vel scelerisque. Arcu urna, aliquam
-                    elit amet.
+                  "Um dia azul, tenho um sonho<br></br>
+                  Ir pra Cancún, viver longe<br></br>
+                  Todo mal dessa gente<br></br>
+                  Plantar um pé, colher e ser feliz<br></br>
+                  Hoje eu tenho andado bem distante <br></br>
+                  Dessa vida solta, dez mil na roupa <br></br>
+                  Vinte na bolsa <br></br>
+                  Pra minha moça, deixo ela solta" <br></br>
+                  -Teto
                   </p>
                 </div>
                 <div className={style.people}>
@@ -219,60 +220,12 @@ export default function LandingPage() {
               </div>
               </a>
 
-              <a href="https://www.instagram.com/_maicxn/" target="_blank">
-              <div className={style["social-card"]}>
-                <img src={rate} alt="rate" />
-                <div className={style["social-quote"]}>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et,
-                    quis quis sem odio ultricies eu maecenas ante ut. Fames
-                    luctus tempor eu diam ut quam. Malesuada risus turpis ante
-                    rhoncus viverra ipsum vel scelerisque. Arcu urna, aliquam
-                    elit amet.
-                  </p>
-                </div>
-                <div className={style.people}>
-                  <img src={maicon} alt="" />
-                  <div className={style["people-info"]}>
-                    <h2>Maicon Oliveira</h2>
-                    <p>Full Stack Developer</p>
-                  </div>
-                </div>
-              </div>
-              </a>
-
-              <a href="https://www.instagram.com/luh.genu/" target="_blank">
-              <div className={style["social-card"]}>
-                <img src={rate} alt="rate" />
-                <div className={style["social-quote"]}>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et,
-                    quis quis sem odio ultricies eu maecenas ante ut. Fames
-                    luctus tempor eu diam ut quam. Malesuada risus turpis ante
-                    rhoncus viverra ipsum vel scelerisque. Arcu urna, aliquam
-                    elit amet.
-                  </p>
-                </div>
-                <div className={style.people}>
-                  <img src={genu} alt="" />
-                  <div className={style["people-info"]}>
-                    <h2>Lucas Genú</h2>
-                    <p>Designer</p>
-                  </div>
-                </div>
-              </div>
-              </a>
-
               <a href="https://www.instagram.com/_guizen/" target="_blank">
               <div className={style["social-card"]}>
                 <img src={rate} alt="rate" />
                 <div className={style["social-quote"]}>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et,
-                    quis quis sem odio ultricies eu maecenas ante ut. Fames
-                    luctus tempor eu diam ut quam. Malesuada risus turpis ante
-                    rhoncus viverra ipsum vel scelerisque. Arcu urna, aliquam
-                    elit amet.
+                  "Pra quem tem pensamento forte o impossível é só questão de opinião"<br></br> - Charlie Brown Jr
                   </p>
                 </div>
                 <div className={style.people}>
@@ -285,16 +238,61 @@ export default function LandingPage() {
               </div>
               </a>
 
+              <a href="https://www.instagram.com/luh.genu/" target="_blank">
+              <div className={style["social-card"]}>
+                <img src={rate} alt="rate" />
+                <div className={style["social-quote"]}>
+                  <p>
+                  "Nos sentindo melhor que os outros<br></br>
+                  Por ter mais coisas que os outros<br></br>
+                  Vê que o inimigo ganhou?<br></br>
+                  A gente se tornou tudo<br></br>
+                  Aquilo que sempre odiou"<br></br>
+                  -BK
+                  </p>
+                </div>
+                <div className={style.people}>
+                  <img src={genu} alt="" />
+                  <div className={style["people-info"]}>
+                    <h2>Lucas Genú</h2>
+                    <p>Designer</p>
+                  </div>
+                </div>
+              </div>
+              </a>
+
+              <a href="https://www.instagram.com/_maicxn/" target="_blank">
+              <div className={style["social-card"]}>
+                <img src={rate} alt="rate" />
+                <div className={style["social-quote"]}>
+                  <p>
+                  "Eu sou a continuação de um sonho<br></br>
+                  Da minha mãe do meu pai<br></br>
+                  De todos que vieram antes de mim<br></br>
+                  Eu sou a continuação de um sonho<br></br>
+                  Da minha vó, do meu vô<br></br>
+                  Quem sangrou pra gente poder sorrir"<br></br>
+                  - BK
+                  </p>
+                </div>
+                <div className={style.people}>
+                  <img src={maicon} alt="" />
+                  <div className={style["people-info"]}>
+                    <h2>Maicon Oliveira</h2>
+                    <p>Full Stack Developer</p>
+                  </div>
+                </div>
+              </div>
+              </a>
+
               <a href="https://www.instagram.com/viniciussribeir0/" target="_blank">
               <div className={style["social-card"]}>
                 <img src={rate} alt="rate" />
                 <div className={style["social-quote"]}>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et,
-                    quis quis sem odio ultricies eu maecenas ante ut. Fames
-                    luctus tempor eu diam ut quam. Malesuada risus turpis ante
-                    rhoncus viverra ipsum vel scelerisque. Arcu urna, aliquam
-                    elit amet.
+                  "A vida me ensinou a nunca desistir
+                  Nem ganhar, nem perder mas procurar evoluir"
+                  <br></br>- Charlie Brown Jr
                   </p>
                 </div>
                 <div className={style.people}>
@@ -307,38 +305,13 @@ export default function LandingPage() {
               </div>
               </a>
 
-              <a href="https://www.instagram.com/ylan_costa/" target="_blank">
-              <div className={style["social-card"]}>
-                <img src={rate} alt="rate" />
-                <div className={style["social-quote"]}>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et,
-                    quis quis sem odio ultricies eu maecenas ante ut. Fames
-                    luctus tempor eu diam ut quam. Malesuada risus turpis ante
-                    rhoncus viverra ipsum vel scelerisque. Arcu urna, aliquam
-                    elit amet.
-                  </p>
-                </div>
-                <div className={style.people}>
-                  <img src={Ilan} alt="" />
-                  <div className={style["people-info"]}>
-                    <h2>Ilan Costa</h2>
-                    <p>Full Stack Developer</p>
-                  </div>
-                </div>
-              </div>
-              </a>
-
               <a href="https://www.instagram.com/madu_goda/" target="_blank">
               <div className={style["social-card"]}>
                 <img src={rate} alt="rate" />
                 <div className={style["social-quote"]}>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et,
-                    quis quis sem odio ultricies eu maecenas ante ut. Fames
-                    luctus tempor eu diam ut quam. Malesuada risus turpis ante
-                    rhoncus viverra ipsum vel scelerisque. Arcu urna, aliquam
-                    elit amet.
+                  "Não importa o que você seja, quem você seja, ou que deseja na vida, a ousadia em ser di
+                  ferente reflete na sua personalidade, no seu caráter, naquilo que você é. E é assim que as pessoas lembrarão de você um dia." <br></br>   - Ayrton Senna
                   </p>
                 </div>
                 <div className={style.people}>
@@ -346,6 +319,24 @@ export default function LandingPage() {
                   <div className={style["people-info"]}>
                     <h2>Maria Goda</h2>
                     <p>Archivist</p>
+                  </div>
+                </div>
+              </div>
+              </a>
+
+              <a href="https://www.instagram.com/ylan_costa/" target="_blank">
+              <div className={style["social-card"]}>
+                <img src={rate} alt="rate" />
+                <div className={style["social-quote"]}>
+                  <p>
+                  “Os que vencem, não importa como vençam, nunca conquistam a vergonha”. - Nicolau Maquiavel
+                  </p>
+                </div>
+                <div className={style.people}>
+                  <img src={Ilan} alt="" />
+                  <div className={style["people-info"]}>
+                    <h2>Ilan Costa</h2>
+                    <p>Full Stack Developer</p>
                   </div>
                 </div>
               </div>
