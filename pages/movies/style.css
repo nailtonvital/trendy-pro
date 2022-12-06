@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: #0D0D1F;
+    color: #FFFFFF;
+}
+
+.title {
+    margin-top: 1%;
+    margin-left: 1%;
+    margin-bottom: 0;
+}
+
+.subtitle {
+    margin-left: 1%;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.cards {
+    margin-left: 1%;
+    display: flex;
+}
+
+.card {
+    margin-right: 20px;
+}
+
+.card img {
+    width: 350px;
+    margin-bottom: 0;
+    border-radius: 16px;
+}
+
+.card p {
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    margin-top: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

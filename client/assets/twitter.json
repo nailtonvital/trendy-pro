@@ -1,0 +1,2128 @@
+{
+  "date": "10/27/2022, 6:54:43 PM",
+  "error": false,
+  "dev_msg": "Unexpected end of JSON input",
+  "error_msg": false,
+  "locales": [
+    "worldwide",
+    "abu-dhabi",
+    "acapulco",
+    "accra",
+    "adana",
+    "adelaide",
+    "aguascalientes",
+    "ahmedabad",
+    "ahsa",
+    "albuquerque",
+    "alexandria",
+    "algeria",
+    "algiers",
+    "amman",
+    "amritsar",
+    "amsterdam",
+    "ankara",
+    "ansan",
+    "antalya",
+    "antipolo",
+    "argentina",
+    "athens",
+    "atlanta",
+    "auckland",
+    "austin",
+    "australia",
+    "austria",
+    "bahrain",
+    "baltimore",
+    "bandung",
+    "bangalore",
+    "bangkok",
+    "barcelona",
+    "barcelona_es",
+    "barquisimeto",
+    "barranquilla",
+    "baton-rouge",
+    "bekasi",
+    "belarus",
+    "belem",
+    "belfast",
+    "belgium",
+    "belo-horizonte",
+    "benin-city",
+    "bergen",
+    "berlin",
+    "bhopal",
+    "bilbao",
+    "birmingham",
+    "birmingham_us",
+    "blackpool",
+    "bogota",
+    "bologna",
+    "bordeaux",
+    "boston",
+    "bournemouth",
+    "brasilia",
+    "brazil",
+    "bremen",
+    "brest",
+    "brighton",
+    "brisbane",
+    "bristol",
+    "bucheon",
+    "buenos-aires",
+    "bursa",
+    "busan",
+    "cagayan-de-oro",
+    "cairo",
+    "calgary",
+    "cali",
+    "calocan",
+    "campinas",
+    "can-tho",
+    "canada",
+    "canberra",
+    "cape-town",
+    "caracas",
+    "cardiff",
+    "cebu-city",
+    "changwon",
+    "charlotte",
+    "chelyabinsk",
+    "chennai",
+    "chiba",
+    "chicago",
+    "chihuahua",
+    "chile",
+    "cincinnati",
+    "ciudad-guayana",
+    "ciudad-juarez",
+    "cleveland",
+    "cologne",
+    "colombia",
+    "colorado-springs",
+    "columbus",
+    "concepcion",
+    "cordoba",
+    "cork",
+    "coventry",
+    "culiacan",
+    "curitiba",
+    "da-nang",
+    "daegu",
+    "daejeon",
+    "dallas-ft.-worth",
+    "dammam",
+    "darwin",
+    "davao-city",
+    "delhi",
+    "den-haag",
+    "denmark",
+    "denver",
+    "depok",
+    "derby",
+    "detroit",
+    "diyarbakir",
+    "dnipropetrovsk",
+    "dominican-republic",
+    "donetsk",
+    "dortmund",
+    "dresden",
+    "dubai",
+    "dublin",
+    "durban",
+    "dusseldorf",
+    "ecatepec-de-morelos",
+    "ecuador",
+    "edinburgh",
+    "edmonton",
+    "egypt",
+    "el-paso",
+    "eskisehir",
+    "essen",
+    "faisalabad",
+    "fortaleza",
+    "france",
+    "frankfurt",
+    "fresno",
+    "fukuoka",
+    "galway",
+    "gaziantep",
+    "gdansk",
+    "geneva",
+    "genoa",
+    "germany",
+    "ghana",
+    "giza",
+    "glasgow",
+    "goiania",
+    "gomel",
+    "gothenburg",
+    "goyang",
+    "greece",
+    "greensboro",
+    "grodno",
+    "guadalajara",
+    "guarulhos",
+    "guatemala",
+    "guatemala-city",
+    "guayaquil",
+    "gwangju",
+    "hai-phong",
+    "haifa",
+    "hamamatsu",
+    "hamburg",
+    "hanoi",
+    "harrisburg",
+    "hermosillo",
+    "hiroshima",
+    "ho-chi-minh-city",
+    "honolulu",
+    "houston",
+    "hull",
+    "hulu-langat",
+    "hyderabad",
+    "ibadan",
+    "incheon",
+    "india",
+    "indianapolis",
+    "indonesia",
+    "indore",
+    "ipoh",
+    "ireland",
+    "irkutsk",
+    "israel",
+    "istanbul",
+    "italy",
+    "izmir",
+    "jackson",
+    "jacksonville",
+    "jaipur",
+    "jakarta",
+    "japan",
+    "jeddah",
+    "jerusalem",
+    "johannesburg",
+    "johor-bahru",
+    "jordan",
+    "kaduna",
+    "kajang",
+    "kano",
+    "kanpur",
+    "kansas-city",
+    "karachi",
+    "kawasaki",
+    "kayseri",
+    "kazan",
+    "kenya",
+    "khabarovsk",
+    "kharkiv",
+    "kitakyushu",
+    "klang",
+    "kobe",
+    "kolkata",
+    "konya",
+    "korea",
+    "krakow",
+    "krasnodar",
+    "krasnoyarsk",
+    "kuala-lumpur",
+    "kumamoto",
+    "kumasi",
+    "kuwait",
+    "kyiv",
+    "kyoto",
+    "lagos",
+    "lahore",
+    "las-palmas",
+    "las-vegas",
+    "latvia",
+    "lausanne",
+    "lebanon",
+    "leeds",
+    "leicester",
+    "leipzig",
+    "leon",
+    "lille",
+    "lima",
+    "liverpool",
+    "lodz",
+    "london",
+    "long-beach",
+    "los-angeles",
+    "louisville",
+    "lucknow",
+    "lviv",
+    "lyon",
+    "madrid",
+    "makassar",
+    "makati",
+    "malaga",
+    "malaysia",
+    "manaus",
+    "manchester",
+    "manila",
+    "maracaibo",
+    "maracay",
+    "marseille",
+    "maturin",
+    "mecca",
+    "medan",
+    "medellin",
+    "medina",
+    "melbourne",
+    "memphis",
+    "mendoza",
+    "merida",
+    "mersin",
+    "mesa",
+    "mexicali",
+    "mexico",
+    "mexico-city",
+    "miami",
+    "middlesbrough",
+    "milan",
+    "milwaukee",
+    "minneapolis",
+    "minsk",
+    "mombasa",
+    "monterrey",
+    "montpellier",
+    "montreal",
+    "morelia",
+    "moscow",
+    "multan",
+    "mumbai",
+    "munich",
+    "murcia",
+    "muscat",
+    "nagoya",
+    "nagpur",
+    "nairobi",
+    "nantes",
+    "naples",
+    "nashville",
+    "naucalpan-de-juarez",
+    "netherlands",
+    "new-haven",
+    "new-orleans",
+    "new-york",
+    "new-zealand",
+    "newcastle",
+    "nezahualcoyotl",
+    "nigeria",
+    "niigata",
+    "nizhny-novgorod",
+    "norfolk",
+    "norway",
+    "nottingham",
+    "novosibirsk",
+    "odesa",
+    "okayama",
+    "okinawa",
+    "oklahoma-city",
+    "omaha",
+    "oman",
+    "omsk",
+    "orlando",
+    "osaka",
+    "oslo",
+    "ottawa",
+    "pakistan",
+    "palembang",
+    "palermo",
+    "palma",
+    "panama",
+    "paris",
+    "pasig",
+    "patna",
+    "pekanbaru",
+    "perm",
+    "perth",
+    "peru",
+    "petaling",
+    "philadelphia",
+    "philippines",
+    "phoenix",
+    "pittsburgh",
+    "plymouth",
+    "poland",
+    "port-elizabeth",
+    "port-harcourt",
+    "portland",
+    "porto-alegre",
+    "portsmouth",
+    "portugal",
+    "poznan",
+    "preston",
+    "pretoria",
+    "providence",
+    "puebla",
+    "puerto-rico",
+    "pune",
+    "qatar",
+    "quebec",
+    "queretaro",
+    "quezon-city",
+    "quito",
+    "rajkot",
+    "raleigh",
+    "ranchi",
+    "rawalpindi",
+    "recife",
+    "rennes",
+    "richmond",
+    "riga",
+    "rio-de-janeiro",
+    "riyadh",
+    "rome",
+    "rosario",
+    "rostov-on-don",
+    "rotterdam",
+    "russia",
+    "sacramento",
+    "sagamihara",
+    "saint-petersburg",
+    "saitama",
+    "salt-lake-city",
+    "saltillo",
+    "salvador",
+    "samara",
+    "san-antonio",
+    "san-diego",
+    "san-francisco",
+    "san-jose",
+    "san-luis-potosi",
+    "santiago",
+    "santo-domingo",
+    "sao-luis",
+    "sao-paulo",
+    "sapporo",
+    "saudi-arabia",
+    "seattle",
+    "semarang",
+    "sendai",
+    "seongnam",
+    "seoul",
+    "seville",
+    "sharjah",
+    "sheffield",
+    "singapore",
+    "south-africa",
+    "soweto",
+    "spain",
+    "srinagar",
+    "st.-louis",
+    "stockholm",
+    "stoke-on-trent",
+    "strasbourg",
+    "stuttgart",
+    "surabaya",
+    "surat",
+    "suwon",
+    "swansea",
+    "sweden",
+    "switzerland",
+    "sydney",
+    "taguig",
+    "takamatsu",
+    "tallahassee",
+    "tampa",
+    "tangerang",
+    "tel-aviv",
+    "thailand",
+    "thane",
+    "thessaloniki",
+    "tijuana",
+    "tokyo",
+    "toluca",
+    "toronto",
+    "toulouse",
+    "tucson",
+    "turin",
+    "turkey",
+    "turmero",
+    "ufa",
+    "ukraine",
+    "ulsan",
+    "united-arab-emirates",
+    "united-kingdom",
+    "united-states",
+    "utrecht",
+    "valencia",
+    "valencia_es",
+    "valparaiso",
+    "vancouver",
+    "venezuela",
+    "vienna",
+    "vietnam",
+    "virginia-beach",
+    "vladivostok",
+    "volgograd",
+    "voronezh",
+    "warsaw",
+    "washington",
+    "winnipeg",
+    "wroclaw",
+    "yekaterinburg",
+    "yokohama",
+    "yongin",
+    "zamboanga-city",
+    "zapopan",
+    "zaporozhye",
+    "zaragoza",
+    "zurich"
+  ],
+  "code": 200,
+  "explain": {
+    "code": "OK",
+    "why": "The request is OK, this response depends on the HTTP method used."
+  },
+  "headers": {
+    "connection": "close",
+    "content-length": "169119",
+    "cache-control": "max-age=3600",
+    "content-type": "text/html; charset=utf-8",
+    "etag": "\"2017c6eb495ec9672b5d58260f1f4fbe8f483d064f7729fe89ec598fb42751ad\"",
+    "last-modified": "Thu, 27 Oct 2022 18:53:21 GMT",
+    "strict-transport-security": "max-age=31556926",
+    "accept-ranges": "bytes",
+    "date": "Thu, 27 Oct 2022 18:54:43 GMT",
+    "x-served-by": "cache-iad-kiad7000037-IAD",
+    "x-cache": "MISS",
+    "x-cache-hits": "0",
+    "x-timer": "S1666896884.568550,VS0,VE79",
+    "vary": "x-fh-requested-host, accept-encoding",
+    "alt-svc": "h3=\":443\";ma=86400,h3-29=\":443\";ma=86400,h3-27=\":443\";ma=86400"
+  },
+  "tweet": [
+    {
+      "count": "502K",
+      "url": "https://twitter.com/search?q=Banfield",
+      "trend": "Banfield"
+    },
+    {
+      "count": "468K",
+      "url": "https://twitter.com/search?q=Keanu",
+      "trend": "Keanu"
+    },
+    {
+      "count": "412K",
+      "url": "https://twitter.com/search?q=Varela",
+      "trend": "Varela"
+    },
+    {
+      "count": "401K",
+      "url": "https://twitter.com/search?q=Xavi",
+      "trend": "Xavi"
+    },
+    {
+      "count": "377K",
+      "url": "https://twitter.com/search?q=Gabler",
+      "trend": "Gabler"
+    },
+    {
+      "count": "370K",
+      "url": "https://twitter.com/search?q=%23MAFS",
+      "trend": "#MAFS"
+    },
+    {
+      "count": "370K",
+      "url": "https://twitter.com/search?q=%23HaddadNoFlow",
+      "trend": "#HaddadNoFlow"
+    },
+    {
+      "count": "349K",
+      "url": "https://twitter.com/search?q=Siakam",
+      "trend": "Siakam"
+    },
+    {
+      "count": "324K",
+      "url": "https://twitter.com/search?q=%23%ED%81%A5%EC%86%8C%EC%A7%91%ED%95%B4%EC%A0%9C_D100",
+      "trend": "#큥소집해제_D100"
+    },
+    {
+      "count": "315K",
+      "url": "https://twitter.com/search?q=Emerson",
+      "trend": "Emerson"
+    },
+    {
+      "count": "314K",
+      "url": "https://twitter.com/search?q=Carrasco",
+      "trend": "Carrasco"
+    },
+    {
+      "count": "310K",
+      "url": "https://twitter.com/search?q=Europa%20League",
+      "trend": "Europa League"
+    },
+    {
+      "count": "299K",
+      "url": "https://twitter.com/search?q=Renee",
+      "trend": "Renee"
+    },
+    {
+      "count": "293K",
+      "url": "https://twitter.com/search?q=Herschel%20Walker",
+      "trend": "Herschel Walker"
+    },
+    {
+      "count": "272K",
+      "url": "https://twitter.com/search?q=Nawaz",
+      "trend": "Nawaz"
+    },
+    {
+      "count": "252K",
+      "url": "https://twitter.com/search?q=Atleti",
+      "trend": "Atleti"
+    },
+    {
+      "count": "224K",
+      "url": "https://twitter.com/search?q=%23FBvREN",
+      "trend": "#FBvREN"
+    },
+    {
+      "count": "217K",
+      "url": "https://twitter.com/search?q=Nketiah",
+      "trend": "Nketiah"
+    },
+    {
+      "count": "200K",
+      "url": "https://twitter.com/search?q=%23Come100HomeBAEKHYUN",
+      "trend": "#Come100HomeBAEKHYUN"
+    },
+    {
+      "count": "181K",
+      "url": "https://twitter.com/search?q=Pakistan",
+      "trend": "Pakistan"
+    },
+    {
+      "count": "170K",
+      "url": "https://twitter.com/search?q=Skechers",
+      "trend": "Skechers"
+    },
+    {
+      "count": "169K",
+      "url": "https://twitter.com/search?q=%23PSVARS",
+      "trend": "#PSVARS"
+    },
+    {
+      "count": "167K",
+      "url": "https://twitter.com/search?q=Toney",
+      "trend": "Toney"
+    },
+    {
+      "count": "157K",
+      "url": "https://twitter.com/search?q=%E3%82%82%E3%81%AE%E3%81%97%E3%82%8A%E3%81%A8%E3%82%8A",
+      "trend": "ものしりとり"
+    },
+    {
+      "count": "151K",
+      "url": "https://twitter.com/search?q=Erika",
+      "trend": "Erika"
+    },
+    {
+      "count": "145K",
+      "url": "https://twitter.com/search?q=%E4%BA%BA%E6%A0%BC%E6%8E%92%E6%B3%84",
+      "trend": "人格排泄"
+    },
+    {
+      "count": "145K",
+      "url": "https://twitter.com/search?q=%23VamosLaU",
+      "trend": "#VamosLaU"
+    },
+    {
+      "count": "143K",
+      "url": "https://twitter.com/search?q=%EB%A9%94%EA%B0%80%EB%A7%88%EC%9D%B8%EB%93%9C",
+      "trend": "메가마인드"
+    },
+    {
+      "count": "143K",
+      "url": "https://twitter.com/search?q=Sosis%20Sultan",
+      "trend": "Sosis Sultan"
+    },
+    {
+      "count": "143K",
+      "url": "https://twitter.com/search?q=Barcelona",
+      "trend": "Barcelona"
+    },
+    {
+      "count": "140K",
+      "url": "https://twitter.com/search?q=Dragic",
+      "trend": "Dragic"
+    },
+    {
+      "count": "131K",
+      "url": "https://twitter.com/search?q=%23silent",
+      "trend": "#silent"
+    },
+    {
+      "count": "129K",
+      "url": "https://twitter.com/search?q=Lindy",
+      "trend": "Lindy"
+    },
+    {
+      "count": "127K",
+      "url": "https://twitter.com/search?q=%23%E3%82%AC%E3%83%AB%E3%82%B9%E3%83%86",
+      "trend": "#ガルステ"
+    },
+    {
+      "count": "127K",
+      "url": "https://twitter.com/search?q=%23%E3%82%B1%E3%83%B3%E3%83%9F%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%BC",
+      "trend": "#ケンミンショー"
+    },
+    {
+      "count": "127K",
+      "url": "https://twitter.com/search?q=Tour%20de%20France",
+      "trend": "Tour de France"
+    },
+    {
+      "count": "127K",
+      "url": "https://twitter.com/search?q=Napoli",
+      "trend": "Napoli"
+    },
+    {
+      "count": "126K",
+      "url": "https://twitter.com/search?q=Pascal",
+      "trend": "Pascal"
+    },
+    {
+      "count": "120K",
+      "url": "https://twitter.com/search?q=Talleres",
+      "trend": "Talleres"
+    },
+    {
+      "count": "119K",
+      "url": "https://twitter.com/search?q=%E5%A4%89%E8%BA%AB%E3%83%99%E3%83%AB%E3%83%88",
+      "trend": "変身ベルト"
+    },
+    {
+      "count": "119K",
+      "url": "https://twitter.com/search?q=Barca",
+      "trend": "Barca"
+    },
+    {
+      "count": "119K",
+      "url": "https://twitter.com/search?q=Tiquinho%20Soares",
+      "trend": "Tiquinho Soares"
+    },
+    {
+      "count": "118K",
+      "url": "https://twitter.com/search?q=%E7%A4%BE%E9%95%B7%E5%B0%84%E6%AE%BA",
+      "trend": "社長射殺"
+    },
+    {
+      "count": "116K",
+      "url": "https://twitter.com/search?q=%E4%BA%AC%E9%83%BD%E5%BA%9C%E8%AD%A6",
+      "trend": "京都府警"
+    },
+    {
+      "count": "115K",
+      "url": "https://twitter.com/search?q=%E9%87%8E%E7%90%83%E3%81%AE%E3%81%9B%E3%81%84",
+      "trend": "野球のせい"
+    },
+    {
+      "count": "113K",
+      "url": "https://twitter.com/search?q=%E3%83%8A%E3%83%92%E3%83%BC%E3%83%80",
+      "trend": "ナヒーダ"
+    },
+    {
+      "count": "111K",
+      "url": "https://twitter.com/search?q=%EB%82%98%EB%AC%B4%EB%8A%98%EB%B3%B4",
+      "trend": "나무늘보"
+    },
+    {
+      "count": "111K",
+      "url": "https://twitter.com/search?q=Camp%20Nou",
+      "trend": "Camp Nou"
+    },
+    {
+      "count": "110K",
+      "url": "https://twitter.com/search?q=%E3%81%93%E3%81%AF%E3%81%8F%E3%81%8F%E3%82%93",
+      "trend": "こはくくん"
+    },
+    {
+      "count": "110K",
+      "url": "https://twitter.com/search?q=%23LakeShow",
+      "trend": "#LakeShow"
+    },
+    {
+      "count": "109K",
+      "url": "https://twitter.com/search?q=PRE%20SAVE%20FRAN%C3%87A",
+      "trend": "PRE SAVE FRANÇA"
+    },
+    {
+      "count": "108K",
+      "url": "https://twitter.com/search?q=%E5%90%89%E7%94%B0%E9%81%B8%E6%89%8B",
+      "trend": "吉田選手"
+    },
+    {
+      "count": "103K",
+      "url": "https://twitter.com/search?q=silent",
+      "trend": "silent"
+    },
+    {
+      "count": "103K",
+      "url": "https://twitter.com/search?q=Matthew%20Perry",
+      "trend": "Matthew Perry"
+    },
+    {
+      "count": "101K",
+      "url": "https://twitter.com/search?q=Sun%20Battle",
+      "trend": "Sun Battle"
+    },
+    {
+      "count": "99K",
+      "url": "https://twitter.com/search?q=%23NuNewShopeeZee%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%AA%E0%B8%B8%E0%B8%94",
+      "trend": "#NuNewShopeeZeeที่สุด"
+    },
+    {
+      "count": "97K",
+      "url": "https://twitter.com/search?q=%23INDvsNED",
+      "trend": "#INDvsNED"
+    },
+    {
+      "count": "97K",
+      "url": "https://twitter.com/search?q=BOSS%20AT%20PARAGON%20X%20MEW",
+      "trend": "BOSS AT PARAGON X MEW"
+    },
+    {
+      "count": "96K",
+      "url": "https://twitter.com/search?q=Orwell",
+      "trend": "Orwell"
+    },
+    {
+      "count": "96K",
+      "url": "https://twitter.com/search?q=%23%E0%B8%A3%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%A1%E0%B8%81%E0%B9%8D%E0%B8%B2%E0%B9%81%E0%B8%9E%E0%B8%87",
+      "trend": "#ร้องข้ามกําแพง"
+    },
+    {
+      "count": "93K",
+      "url": "https://twitter.com/search?q=Bragantino",
+      "trend": "Bragantino"
+    },
+    {
+      "count": "91K",
+      "url": "https://twitter.com/search?q=Jerry%20Lee%20Lewis",
+      "trend": "Jerry Lee Lewis"
+    },
+    {
+      "count": "90K",
+      "url": "https://twitter.com/search?q=%E3%83%9E%E3%82%AF%E3%82%AC%E3%83%95",
+      "trend": "マクガフ"
+    },
+    {
+      "count": "88K",
+      "url": "https://twitter.com/search?q=%E3%81%BF%E3%81%AA%E3%81%A8%E3%81%8F%E3%82%93",
+      "trend": "みなとくん"
+    },
+    {
+      "count": "88K",
+      "url": "https://twitter.com/search?q=Robert%20Quinn",
+      "trend": "Robert Quinn"
+    },
+    {
+      "count": "86K",
+      "url": "https://twitter.com/search?q=%23FRAOM",
+      "trend": "#FRAOM"
+    },
+    {
+      "count": "81K",
+      "url": "https://twitter.com/search?q=%E6%9D%89%E8%B0%B7%E5%BC%95%E9%80%80",
+      "trend": "杉谷引退"
+    },
+    {
+      "count": "80K",
+      "url": "https://twitter.com/search?q=Leverkusen",
+      "trend": "Leverkusen"
+    },
+    {
+      "count": "78K",
+      "url": "https://twitter.com/search?q=%E8%B3%A2%E3%81%95%E3%82%AA%E3%82%B0%E3%83%AA",
+      "trend": "賢さオグリ"
+    },
+    {
+      "count": "78K",
+      "url": "https://twitter.com/search?q=Ibarra",
+      "trend": "Ibarra"
+    },
+    {
+      "count": "73K",
+      "url": "https://twitter.com/search?q=harry%20styles",
+      "trend": "harry styles"
+    },
+    {
+      "count": "72K",
+      "url": "https://twitter.com/search?q=Koeman",
+      "trend": "Koeman"
+    },
+    {
+      "count": "69K",
+      "url": "https://twitter.com/search?q=%23%E8%91%A3%E6%80%9D%E6%88%90%E5%BD%93%E4%B8%8B%E6%AD%A3%E5%A5%BDJust25",
+      "trend": "#董思成当下正好Just25"
+    },
+    {
+      "count": "69K",
+      "url": "https://twitter.com/search?q=Felipe%20Melo",
+      "trend": "Felipe Melo"
+    },
+    {
+      "count": "69K",
+      "url": "https://twitter.com/search?q=Dier",
+      "trend": "Dier"
+    },
+    {
+      "count": "68K",
+      "url": "https://twitter.com/search?q=Aysel%20Tu%C4%9Fluk",
+      "trend": "Aysel Tuğluk"
+    },
+    {
+      "count": "67K",
+      "url": "https://twitter.com/search?q=%E9%87%8E%E7%90%83%E5%BB%B6%E9%95%B7",
+      "trend": "野球延長"
+    },
+    {
+      "count": "67K",
+      "url": "https://twitter.com/search?q=Zuck",
+      "trend": "Zuck"
+    },
+    {
+      "count": "67K",
+      "url": "https://twitter.com/search?q=%23TOTSPO",
+      "trend": "#TOTSPO"
+    },
+    {
+      "count": "66K",
+      "url": "https://twitter.com/search?q=Nacho",
+      "trend": "Nacho"
+    },
+    {
+      "count": "65K",
+      "url": "https://twitter.com/search?q=Bryan%20Gil",
+      "trend": "Bryan Gil"
+    },
+    {
+      "count": "62K",
+      "url": "https://twitter.com/search?q=%E3%82%BF%E3%83%9E%E3%81%A1%E3%82%83%E3%82%93",
+      "trend": "タマちゃん"
+    },
+    {
+      "count": "62K",
+      "url": "https://twitter.com/search?q=%23K23TikTokLive",
+      "trend": "#K23TikTokLive"
+    },
+    {
+      "count": "61K",
+      "url": "https://twitter.com/search?q=Vermeer",
+      "trend": "Vermeer"
+    },
+    {
+      "count": "61K",
+      "url": "https://twitter.com/search?q=%E3%82%A2%E3%82%AF%E3%82%B9%E3%82%BFFest",
+      "trend": "アクスタFest"
+    },
+    {
+      "count": "60K",
+      "url": "https://twitter.com/search?q=%23%E3%83%99%E3%82%B9%E3%83%88%E3%83%92%E3%83%83%E3%83%88%E6%AD%8C%E8%AC%A1%E7%A5%AD",
+      "trend": "#ベストヒット歌謡祭"
+    },
+    {
+      "count": "59K",
+      "url": "https://twitter.com/search?q=yeonjun",
+      "trend": "yeonjun"
+    },
+    {
+      "count": "58K",
+      "url": "https://twitter.com/search?q=%EC%B5%9C%EC%95%A0%20%EC%BB%BE%EB%A7%81",
+      "trend": "최애 컾링"
+    },
+    {
+      "count": "57K",
+      "url": "https://twitter.com/search?q=winwin",
+      "trend": "winwin"
+    },
+    {
+      "count": "57K",
+      "url": "https://twitter.com/search?q=Mr%20Bean",
+      "trend": "Mr Bean"
+    },
+    {
+      "count": "57K",
+      "url": "https://twitter.com/search?q=%23%EC%9A%B0%EC%A3%BC%EB%A7%88%EC%A0%80_%EA%B0%90%EB%8F%99%ED%95%9C_%EC%84%9D%EC%A7%84%EC%9D%B4_%EC%B2%AB%EC%8B%B1%EA%B8%80",
+      "trend": "#우주마저_감동한_석진이_첫싱글"
+    },
+    {
+      "count": "57K",
+      "url": "https://twitter.com/search?q=Millonarios",
+      "trend": "Millonarios"
+    },
+    {
+      "count": "57K",
+      "url": "https://twitter.com/search?q=Conte",
+      "trend": "Conte"
+    },
+    {
+      "count": "56K",
+      "url": "https://twitter.com/search?q=%23%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B8%95%E0%B8%AD%E0%B8%9A%E0%B9%80%E0%B8%A5%E0%B8%A2%E0%B8%99%E0%B9%89%E0%B8%B2LAZ1_MV",
+      "trend": "#ไม่ตอบเลยน้าLAZ1_MV"
+    },
+    {
+      "count": "56K",
+      "url": "https://twitter.com/search?q=Milei",
+      "trend": "Milei"
+    },
+    {
+      "count": "56K",
+      "url": "https://twitter.com/search?q=%23Minifootballbsc",
+      "trend": "#Minifootballbsc"
+    },
+    {
+      "count": "54K",
+      "url": "https://twitter.com/search?q=%E6%A2%85%E6%AF%92%E6%82%A3%E8%80%85",
+      "trend": "梅毒患者"
+    },
+    {
+      "count": "54K",
+      "url": "https://twitter.com/search?q=Pel%C3%A9",
+      "trend": "Pelé"
+    },
+    {
+      "count": "53K",
+      "url": "https://twitter.com/search?q=%E3%83%9B%E3%83%BC%E3%83%A0%E3%83%A9%E3%83%B3",
+      "trend": "ホームラン"
+    },
+    {
+      "count": "53K",
+      "url": "https://twitter.com/search?q=%E3%82%A4%E3%83%8A%E3%83%AA%E3%83%AF%E3%83%B3",
+      "trend": "イナリワン"
+    },
+    {
+      "count": "53K",
+      "url": "https://twitter.com/search?q=%23AIS5GPLAYARxPECK",
+      "trend": "#AIS5GPLAYARxPECK"
+    },
+    {
+      "count": "53K",
+      "url": "https://twitter.com/search?q=%D8%AA%D8%B4%D8%A7%D9%81%D9%8A",
+      "trend": "تشافي"
+    },
+    {
+      "count": "52K",
+      "url": "https://twitter.com/search?q=Rolon",
+      "trend": "Rolon"
+    },
+    {
+      "count": "51K",
+      "url": "https://twitter.com/search?q=%C4%B0hanet",
+      "trend": "İhanet"
+    },
+    {
+      "count": "51K",
+      "url": "https://twitter.com/search?q=Alexis",
+      "trend": "Alexis"
+    },
+    {
+      "count": "50K",
+      "url": "https://twitter.com/search?q=%E3%82%AC%E3%83%91%E3%82%AA%E3%83%A9%E3%82%A4%E3%82%B9",
+      "trend": "ガパオライス"
+    },
+    {
+      "count": "50K",
+      "url": "https://twitter.com/search?q=%23ProvaDoFazendeiro",
+      "trend": "#ProvaDoFazendeiro"
+    },
+    {
+      "count": "49K",
+      "url": "https://twitter.com/search?q=%E3%82%A2%E3%83%AB%E3%82%AD%E3%83%A1%E3%83%87%E3%82%B9",
+      "trend": "アルキメデス"
+    },
+    {
+      "count": "49K",
+      "url": "https://twitter.com/search?q=Rilee%20Rossouw",
+      "trend": "Rilee Rossouw"
+    },
+    {
+      "count": "48K",
+      "url": "https://twitter.com/search?q=Bucks",
+      "trend": "Bucks"
+    },
+    {
+      "count": "48K",
+      "url": "https://twitter.com/search?q=K23%20IS%20COMING",
+      "trend": "K23 IS COMING"
+    },
+    {
+      "count": "47K",
+      "url": "https://twitter.com/search?q=Krysten",
+      "trend": "Krysten"
+    },
+    {
+      "count": "47K",
+      "url": "https://twitter.com/search?q=Champions",
+      "trend": "Champions"
+    },
+    {
+      "count": "47K",
+      "url": "https://twitter.com/search?q=Sporting",
+      "trend": "Sporting"
+    },
+    {
+      "count": "46K",
+      "url": "https://twitter.com/search?q=Ajax",
+      "trend": "Ajax"
+    },
+    {
+      "count": "45K",
+      "url": "https://twitter.com/search?q=%23Liella",
+      "trend": "#Liella"
+    },
+    {
+      "count": "45K",
+      "url": "https://twitter.com/search?q=%E3%82%AF%E3%82%BD%E3%83%87%E3%82%AB%E7%B5%B5%E9%A6%AC",
+      "trend": "クソデカ絵馬"
+    },
+    {
+      "count": "45K",
+      "url": "https://twitter.com/search?q=%E3%82%AB%E3%83%AB%E3%83%91%E3%83%A9%E3%82%BF%E8%93%AE",
+      "trend": "カルパラタ蓮"
+    },
+    {
+      "count": "45K",
+      "url": "https://twitter.com/search?q=Botafogo",
+      "trend": "Botafogo"
+    },
+    {
+      "count": "45K",
+      "url": "https://twitter.com/search?q=Busquets",
+      "trend": "Busquets"
+    },
+    {
+      "count": "44K",
+      "url": "https://twitter.com/search?q=Jokic",
+      "trend": "Jokic"
+    },
+    {
+      "count": "44K",
+      "url": "https://twitter.com/search?q=Messi",
+      "trend": "Messi"
+    },
+    {
+      "count": "43K",
+      "url": "https://twitter.com/search?q=%E6%97%A5%E6%9C%AC%E3%82%B7%E3%83%AA%E3%83%BC%E3%82%BA",
+      "trend": "日本シリーズ"
+    },
+    {
+      "count": "43K",
+      "url": "https://twitter.com/search?q=%23AnandaUrbanPulse2022xBKPP",
+      "trend": "#AnandaUrbanPulse2022xBKPP"
+    },
+    {
+      "count": "43K",
+      "url": "https://twitter.com/search?q=%D8%A7%D9%84%D8%AC%D9%86%D9%8A%D9%87%20%D8%A7%D9%84%D9%85%D8%B5%D8%B1%D9%8A",
+      "trend": "الجنيه المصري"
+    },
+    {
+      "count": "43K",
+      "url": "https://twitter.com/search?q=Rohit",
+      "trend": "Rohit"
+    },
+    {
+      "count": "42K",
+      "url": "https://twitter.com/search?q=%E5%B1%B1%E4%B8%8B%E3%81%8F%E3%82%93",
+      "trend": "山下くん"
+    },
+    {
+      "count": "42K",
+      "url": "https://twitter.com/search?q=Copa%20Argentina",
+      "trend": "Copa Argentina"
+    },
+    {
+      "count": "41K",
+      "url": "https://twitter.com/search?q=%23%E3%83%97%E3%83%AC%E3%83%90%E3%83%88",
+      "trend": "#プレバト"
+    },
+    {
+      "count": "40K",
+      "url": "https://twitter.com/search?q=Zimbabwe",
+      "trend": "Zimbabwe"
+    },
+    {
+      "count": "40K",
+      "url": "https://twitter.com/search?q=K%C3%BCr%C5%9Fad%20Zorlu",
+      "trend": "Kürşad Zorlu"
+    },
+    {
+      "count": "40K",
+      "url": "https://twitter.com/search?q=Rossi",
+      "trend": "Rossi"
+    },
+    {
+      "count": "40K",
+      "url": "https://twitter.com/search?q=UEFA",
+      "trend": "UEFA"
+    },
+    {
+      "count": "39K",
+      "url": "https://twitter.com/search?q=Eden",
+      "trend": "Eden"
+    },
+    {
+      "count": "38K",
+      "url": "https://twitter.com/search?q=Memur%C3%96%C4%9Fretmenler",
+      "trend": "MemurÖğretmenler"
+    },
+    {
+      "count": "38K",
+      "url": "https://twitter.com/search?q=Julieta",
+      "trend": "Julieta"
+    },
+    {
+      "count": "37K",
+      "url": "https://twitter.com/search?q=Rouge",
+      "trend": "Rouge"
+    },
+    {
+      "count": "37K",
+      "url": "https://twitter.com/search?q=%23%E3%82%A2%E3%82%A4%E3%83%97%E3%83%A9%E7%94%9F%E6%94%BE%E9%80%81",
+      "trend": "#アイプラ生放送"
+    },
+    {
+      "count": "37K",
+      "url": "https://twitter.com/search?q=%23GH22",
+      "trend": "#GH22"
+    },
+    {
+      "count": "37K",
+      "url": "https://twitter.com/search?q=Knicks",
+      "trend": "Knicks"
+    },
+    {
+      "count": "36K",
+      "url": "https://twitter.com/search?q=Elon%20Musk",
+      "trend": "Elon Musk"
+    },
+    {
+      "count": "36K",
+      "url": "https://twitter.com/search?q=PayPal",
+      "trend": "PayPal"
+    },
+    {
+      "count": "36K",
+      "url": "https://twitter.com/search?q=LATAM",
+      "trend": "LATAM"
+    },
+    {
+      "count": "36K",
+      "url": "https://twitter.com/search?q=%23%E3%82%81%E3%81%96%E3%81%BE%E3%81%97%E3%83%86%E3%83%AC%E3%83%93",
+      "trend": "#めざましテレビ"
+    },
+    {
+      "count": "35K",
+      "url": "https://twitter.com/search?q=%E3%83%81%E3%82%A7%E3%83%B3%E3%82%BD%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B3%E3%83%A9%E3%83%9C",
+      "trend": "チェンソーマンコラボ"
+    },
+    {
+      "count": "35K",
+      "url": "https://twitter.com/search?q=Ben%20Simmons",
+      "trend": "Ben Simmons"
+    },
+    {
+      "count": "34K",
+      "url": "https://twitter.com/search?q=Karpet%20Antiapi",
+      "trend": "Karpet Antiapi"
+    },
+    {
+      "count": "34K",
+      "url": "https://twitter.com/search?q=Veretout",
+      "trend": "Veretout"
+    },
+    {
+      "count": "33K",
+      "url": "https://twitter.com/search?q=%23%E3%81%90%E3%82%8B%E3%83%8A%E3%82%A4",
+      "trend": "#ぐるナイ"
+    },
+    {
+      "count": "33K",
+      "url": "https://twitter.com/search?q=silent%E3%83%AA%E3%82%A2%E3%82%BF%E3%82%A4",
+      "trend": "silentリアタイ"
+    },
+    {
+      "count": "33K",
+      "url": "https://twitter.com/search?q=%23AIS5G%E0%B8%97%E0%B8%B5%E0%B9%881%E0%B8%95%E0%B8%B1%E0%B8%A7%E0%B8%88%E0%B8%A3%E0%B8%B4%E0%B8%87",
+      "trend": "#AIS5Gที่1ตัวจริง"
+    },
+    {
+      "count": "33K",
+      "url": "https://twitter.com/search?q=Steve%20Nash",
+      "trend": "Steve Nash"
+    },
+    {
+      "count": "32K",
+      "url": "https://twitter.com/search?q=Bron",
+      "trend": "Bron"
+    },
+    {
+      "count": "32K",
+      "url": "https://twitter.com/search?q=ALEXA%20BIDASTAR%20JUDGE",
+      "trend": "ALEXA BIDASTAR JUDGE"
+    },
+    {
+      "count": "32K",
+      "url": "https://twitter.com/search?q=%23per%C5%9Fembe",
+      "trend": "#perşembe"
+    },
+    {
+      "count": "32K",
+      "url": "https://twitter.com/search?q=Randle",
+      "trend": "Randle"
+    },
+    {
+      "count": "31K",
+      "url": "https://twitter.com/search?q=%E7%AC%AC280%E5%9B%9E",
+      "trend": "第280回"
+    },
+    {
+      "count": "31K",
+      "url": "https://twitter.com/search?q=Dembele",
+      "trend": "Dembele"
+    },
+    {
+      "count": "30K",
+      "url": "https://twitter.com/search?q=Feliz%20Anivers%C3%A1rio",
+      "trend": "Feliz Aniversário"
+    },
+    {
+      "count": "30K",
+      "url": "https://twitter.com/search?q=%E3%82%A2%E3%83%AB%E3%83%80%E3%83%B3",
+      "trend": "アルダン"
+    },
+    {
+      "count": "29K",
+      "url": "https://twitter.com/search?q=Kendrick%20Nunn",
+      "trend": "Kendrick Nunn"
+    },
+    {
+      "count": "29K",
+      "url": "https://twitter.com/search?q=%E7%94%B1%E8%89%AF%E5%85%88%E8%BC%A9",
+      "trend": "由良先輩"
+    },
+    {
+      "count": "29K",
+      "url": "https://twitter.com/search?q=Lewandowski",
+      "trend": "Lewandowski"
+    },
+    {
+      "count": "29K",
+      "url": "https://twitter.com/search?q=Nunez",
+      "trend": "Nunez"
+    },
+    {
+      "count": "28K",
+      "url": "https://twitter.com/search?q=Kathy",
+      "trend": "Kathy"
+    },
+    {
+      "count": "28K",
+      "url": "https://twitter.com/search?q=%24META",
+      "trend": "$META"
+    },
+    {
+      "count": "27K",
+      "url": "https://twitter.com/search?q=%E3%83%84%E3%82%A2%E3%83%BC%E5%AE%8C%E8%B5%B0",
+      "trend": "ツアー完走"
+    },
+    {
+      "count": "27K",
+      "url": "https://twitter.com/search?q=%E9%81%93%E8%B7%AF%E5%88%A9%E7%94%A8%E7%A8%8E",
+      "trend": "道路利用税"
+    },
+    {
+      "count": "27K",
+      "url": "https://twitter.com/search?q=%23EminAuteentic",
+      "trend": "#EminAuteentic"
+    },
+    {
+      "count": "27K",
+      "url": "https://twitter.com/search?q=Bellerin",
+      "trend": "Bellerin"
+    },
+    {
+      "count": "26K",
+      "url": "https://twitter.com/search?q=%E5%90%89%E7%94%B0%E6%AD%A3%E5%B0%9A",
+      "trend": "吉田正尚"
+    },
+    {
+      "count": "26K",
+      "url": "https://twitter.com/search?q=Arao",
+      "trend": "Arao"
+    },
+    {
+      "count": "26K",
+      "url": "https://twitter.com/search?q=D-100",
+      "trend": "D-100"
+    },
+    {
+      "count": "26K",
+      "url": "https://twitter.com/search?q=%E3%81%8A%E3%82%8A%E3%81%BB%E3%83%BC",
+      "trend": "おりほー"
+    },
+    {
+      "count": "26K",
+      "url": "https://twitter.com/search?q=FELIZ%20ANIVERS%C3%81RIO%20LULA",
+      "trend": "FELIZ ANIVERSÁRIO LULA"
+    },
+    {
+      "count": "26K",
+      "url": "https://twitter.com/search?q=Mi%C5%82ego",
+      "trend": "Miłego"
+    },
+    {
+      "count": "26K",
+      "url": "https://twitter.com/search?q=%23AbbottElementary",
+      "trend": "#AbbottElementary"
+    },
+    {
+      "count": "26K",
+      "url": "https://twitter.com/search?q=Raptors",
+      "trend": "Raptors"
+    },
+    {
+      "count": "26K",
+      "url": "https://twitter.com/search?q=JAIR%20EM%20DESESPERO",
+      "trend": "JAIR EM DESESPERO"
+    },
+    {
+      "count": "26K",
+      "url": "https://twitter.com/search?q=%D8%A8%D8%B1%D8%B4%D9%84%D9%88%D9%86%D8%A9",
+      "trend": "برشلونة"
+    },
+    {
+      "count": "25K",
+      "url": "https://twitter.com/search?q=%23MusicForASushiRestaurant",
+      "trend": "#MusicForASushiRestaurant"
+    },
+    {
+      "count": "25K",
+      "url": "https://twitter.com/search?q=Lincoln",
+      "trend": "Lincoln"
+    },
+    {
+      "count": "25K",
+      "url": "https://twitter.com/search?q=%E3%82%AA%E3%83%AA%E3%83%83%E3%82%AF%E3%82%B9",
+      "trend": "オリックス"
+    },
+    {
+      "count": "25K",
+      "url": "https://twitter.com/search?q=%23%E3%83%80%E3%82%A6%E3%83%B3%E3%82%BF%E3%82%A6%E3%83%B3DX",
+      "trend": "#ダウンタウンDX"
+    },
+    {
+      "count": "25K",
+      "url": "https://twitter.com/search?q=%E3%82%B1%E3%83%AB%E3%83%99%E3%83%AD%E3%82%B9",
+      "trend": "ケルベロス"
+    },
+    {
+      "count": "25K",
+      "url": "https://twitter.com/search?q=%23WeTrustImranKhan",
+      "trend": "#WeTrustImranKhan"
+    },
+    {
+      "count": "25K",
+      "url": "https://twitter.com/search?q=Lakers",
+      "trend": "Lakers"
+    },
+    {
+      "count": "25K",
+      "url": "https://twitter.com/search?q=%E5%B0%8F%E5%AD%A6%E7%94%9F%E7%B5%B5%E5%B8%AB",
+      "trend": "小学生絵師"
+    },
+    {
+      "count": "25K",
+      "url": "https://twitter.com/search?q=Zahawi",
+      "trend": "Zahawi"
+    },
+    {
+      "count": "25K",
+      "url": "https://twitter.com/search?q=Gamero",
+      "trend": "Gamero"
+    },
+    {
+      "count": "25K",
+      "url": "https://twitter.com/search?q=%23RHOBH",
+      "trend": "#RHOBH"
+    },
+    {
+      "count": "25K",
+      "url": "https://twitter.com/search?q=Briasco",
+      "trend": "Briasco"
+    },
+    {
+      "count": "25K",
+      "url": "https://twitter.com/search?q=Maxi",
+      "trend": "Maxi"
+    },
+    {
+      "count": "25K",
+      "url": "https://twitter.com/search?q=P%C3%A9tala",
+      "trend": "Pétala"
+    },
+    {
+      "count": "25K",
+      "url": "https://twitter.com/search?q=Elie",
+      "trend": "Elie"
+    },
+    {
+      "count": "25K",
+      "url": "https://twitter.com/search?q=Tottenham",
+      "trend": "Tottenham"
+    },
+    {
+      "count": "24K",
+      "url": "https://twitter.com/search?q=%E3%83%96%E3%83%A9%E3%83%83%E3%82%AF%E3%82%B5%E3%83%B3",
+      "trend": "ブラックサン"
+    },
+    {
+      "count": "24K",
+      "url": "https://twitter.com/search?q=Credit%20Suisse",
+      "trend": "Credit Suisse"
+    },
+    {
+      "count": "24K",
+      "url": "https://twitter.com/search?q=Cano",
+      "trend": "Cano"
+    },
+    {
+      "count": "24K",
+      "url": "https://twitter.com/search?q=Martina",
+      "trend": "Martina"
+    },
+    {
+      "count": "24K",
+      "url": "https://twitter.com/search?q=Cear%C3%A1",
+      "trend": "Ceará"
+    },
+    {
+      "count": "24K",
+      "url": "https://twitter.com/search?q=Alexandre%20de%20Moraes",
+      "trend": "Alexandre de Moraes"
+    },
+    {
+      "count": "23K",
+      "url": "https://twitter.com/search?q=Tiesto",
+      "trend": "Tiesto"
+    },
+    {
+      "count": "23K",
+      "url": "https://twitter.com/search?q=Oneus",
+      "trend": "Oneus"
+    },
+    {
+      "count": "23K",
+      "url": "https://twitter.com/search?q=JAIR",
+      "trend": "JAIR"
+    },
+    {
+      "count": "22K",
+      "url": "https://twitter.com/search?q=%23PAKvsZIM",
+      "trend": "#PAKvsZIM"
+    },
+    {
+      "count": "22K",
+      "url": "https://twitter.com/search?q=%E6%B9%8A%E6%96%97%E3%81%8F%E3%82%93",
+      "trend": "湊斗くん"
+    },
+    {
+      "count": "22K",
+      "url": "https://twitter.com/search?q=Orsini",
+      "trend": "Orsini"
+    },
+    {
+      "count": "22K",
+      "url": "https://twitter.com/search?q=COMPLOT",
+      "trend": "COMPLOT"
+    },
+    {
+      "count": "21K",
+      "url": "https://twitter.com/search?q=Andre%20the%20Giant",
+      "trend": "Andre the Giant"
+    },
+    {
+      "count": "21K",
+      "url": "https://twitter.com/search?q=Skyy%20Moore",
+      "trend": "Skyy Moore"
+    },
+    {
+      "count": "21K",
+      "url": "https://twitter.com/search?q=TheWallSong%20x%20Win",
+      "trend": "TheWallSong x Win"
+    },
+    {
+      "count": "21K",
+      "url": "https://twitter.com/search?q=%2325YearsOfWINderland",
+      "trend": "#25YearsOfWINderland"
+    },
+    {
+      "count": "21K",
+      "url": "https://twitter.com/search?q=SURPRISE%20REVEAL%20DONBELLE",
+      "trend": "SURPRISE REVEAL DONBELLE"
+    },
+    {
+      "count": "21K",
+      "url": "https://twitter.com/search?q=Roncaglia",
+      "trend": "Roncaglia"
+    },
+    {
+      "count": "21K",
+      "url": "https://twitter.com/search?q=Patronato",
+      "trend": "Patronato"
+    },
+    {
+      "count": "21K",
+      "url": "https://twitter.com/search?q=Mora",
+      "trend": "Mora"
+    },
+    {
+      "count": "21K",
+      "url": "https://twitter.com/search?q=Simeone",
+      "trend": "Simeone"
+    },
+    {
+      "count": "21K",
+      "url": "https://twitter.com/search?q=Nick%20Cannon",
+      "trend": "Nick Cannon"
+    },
+    {
+      "count": "21K",
+      "url": "https://twitter.com/search?q=Howie",
+      "trend": "Howie"
+    },
+    {
+      "count": "20K",
+      "url": "https://twitter.com/search?q=Sikandar%20Raza",
+      "trend": "Sikandar Raza"
+    },
+    {
+      "count": "20K",
+      "url": "https://twitter.com/search?q=Wasim",
+      "trend": "Wasim"
+    },
+    {
+      "count": "20K",
+      "url": "https://twitter.com/search?q=Del%20Moro",
+      "trend": "Del Moro"
+    },
+    {
+      "count": "19K",
+      "url": "https://twitter.com/search?q=Altay",
+      "trend": "Altay"
+    },
+    {
+      "count": "19K",
+      "url": "https://twitter.com/search?q=Lokonga",
+      "trend": "Lokonga"
+    },
+    {
+      "count": "19K",
+      "url": "https://twitter.com/search?q=PARAB%C3%89NS%20PRESIDENTE%20LULA",
+      "trend": "PARABÉNS PRESIDENTE LULA"
+    },
+    {
+      "count": "19K",
+      "url": "https://twitter.com/search?q=%23%E3%82%B9%E3%83%AD%E3%83%83%E3%83%88%E3%83%A1%E3%83%BC%E3%82%AB%E3%83%BC",
+      "trend": "#スロットメーカー"
+    },
+    {
+      "count": "19K",
+      "url": "https://twitter.com/search?q=%E3%82%B5%E3%83%B3%E3%82%BF%E3%83%8A",
+      "trend": "サンタナ"
+    },
+    {
+      "count": "19K",
+      "url": "https://twitter.com/search?q=E%C4%9Fitimciler%20Ge%C3%A7inemiyor",
+      "trend": "Eğitimciler Geçinemiyor"
+    },
+    {
+      "count": "19K",
+      "url": "https://twitter.com/search?q=JESUS%20IS%20REAL",
+      "trend": "JESUS IS REAL"
+    },
+    {
+      "count": "19K",
+      "url": "https://twitter.com/search?q=Kane",
+      "trend": "Kane"
+    },
+    {
+      "count": "19K",
+      "url": "https://twitter.com/search?q=Cholo",
+      "trend": "Cholo"
+    },
+    {
+      "count": "18K",
+      "url": "https://twitter.com/search?q=Auron",
+      "trend": "Auron"
+    },
+    {
+      "count": "18K",
+      "url": "https://twitter.com/search?q=%E5%B7%A5%E8%97%A4%E4%BC%9A%E7%B3%BB%E5%B9%B9%E9%83%A8",
+      "trend": "工藤会系幹部"
+    },
+    {
+      "count": "18K",
+      "url": "https://twitter.com/search?q=%23%E3%81%BE%E3%81%8A%E3%82%8A%E3%82%85%E3%81%861%E5%91%A8%E5%B9%B4",
+      "trend": "#まおりゅう1周年"
+    },
+    {
+      "count": "18K",
+      "url": "https://twitter.com/search?q=Netherlands",
+      "trend": "Netherlands"
+    },
+    {
+      "count": "18K",
+      "url": "https://twitter.com/search?q=Rob%20Pelinka",
+      "trend": "Rob Pelinka"
+    },
+    {
+      "count": "18K",
+      "url": "https://twitter.com/search?q=%23FicaBabi",
+      "trend": "#FicaBabi"
+    },
+    {
+      "count": "17K",
+      "url": "https://twitter.com/search?q=Luuk%20de%20Jong",
+      "trend": "Luuk de Jong"
+    },
+    {
+      "count": "17K",
+      "url": "https://twitter.com/search?q=%E7%B1%B3%E6%B4%A5%E3%81%95%E3%82%93",
+      "trend": "米津さん"
+    },
+    {
+      "count": "17K",
+      "url": "https://twitter.com/search?q=Tourmalet",
+      "trend": "Tourmalet"
+    },
+    {
+      "count": "17K",
+      "url": "https://twitter.com/search?q=Bavuma",
+      "trend": "Bavuma"
+    },
+    {
+      "count": "17K",
+      "url": "https://twitter.com/search?q=Marco%20Bello",
+      "trend": "Marco Bello"
+    },
+    {
+      "count": "16K",
+      "url": "https://twitter.com/search?q=Nac%C3%AD",
+      "trend": "Nací"
+    },
+    {
+      "count": "16K",
+      "url": "https://twitter.com/search?q=Tozza",
+      "trend": "Tozza"
+    },
+    {
+      "count": "16K",
+      "url": "https://twitter.com/search?q=%23%E3%83%8F%E3%83%83%E3%83%94%E3%83%BC%E3%82%B5%E3%83%97%E3%83%A9%E3%82%A4%E3%82%BA",
+      "trend": "#ハッピーサプライズ"
+    },
+    {
+      "count": "16K",
+      "url": "https://twitter.com/search?q=Dutton",
+      "trend": "Dutton"
+    },
+    {
+      "count": "16K",
+      "url": "https://twitter.com/search?q=%E5%90%BE%E9%83%8E%E3%81%95%E3%82%93",
+      "trend": "吾郎さん"
+    },
+    {
+      "count": "16K",
+      "url": "https://twitter.com/search?q=Surya",
+      "trend": "Surya"
+    },
+    {
+      "count": "16K",
+      "url": "https://twitter.com/search?q=%E3%82%A6%E3%83%A9%E3%82%AA%E3%83%A2%E3%83%86",
+      "trend": "ウラオモテ"
+    },
+    {
+      "count": "16K",
+      "url": "https://twitter.com/search?q=CR%E3%82%AB%E3%83%83%E3%83%97",
+      "trend": "CRカップ"
+    },
+    {
+      "count": "16K",
+      "url": "https://twitter.com/search?q=Bruce%20Brown",
+      "trend": "Bruce Brown"
+    },
+    {
+      "count": "16K",
+      "url": "https://twitter.com/search?q=Rihanna",
+      "trend": "Rihanna"
+    },
+    {
+      "count": "15K",
+      "url": "https://twitter.com/search?q=Cosqu%C3%ADn",
+      "trend": "Cosquín"
+    },
+    {
+      "count": "15K",
+      "url": "https://twitter.com/search?q=Halk%C4%B1n%C4%B0radesi%20KHKl%C4%B1n%C4%B1n%C4%B0adesi",
+      "trend": "Halkınİradesi KHKlınınİadesi"
+    },
+    {
+      "count": "15K",
+      "url": "https://twitter.com/search?q=Valencia",
+      "trend": "Valencia"
+    },
+    {
+      "count": "15K",
+      "url": "https://twitter.com/search?q=Rizwan",
+      "trend": "Rizwan"
+    },
+    {
+      "count": "15K",
+      "url": "https://twitter.com/search?q=%E8%BB%A2%E3%82%B9%E3%83%A9%E3%82%B3%E3%83%A9%E3%83%9C",
+      "trend": "転スラコラボ"
+    },
+    {
+      "count": "15K",
+      "url": "https://twitter.com/search?q=Parab%C3%A9ns%20Lula",
+      "trend": "Parabéns Lula"
+    },
+    {
+      "count": "15K",
+      "url": "https://twitter.com/search?q=%E3%82%B0%E3%83%AA%E3%83%95%E3%82%A9%E3%83%B3",
+      "trend": "グリフォン"
+    },
+    {
+      "count": "15K",
+      "url": "https://twitter.com/search?q=%23OnitsukaTiger",
+      "trend": "#OnitsukaTiger"
+    },
+    {
+      "count": "15K",
+      "url": "https://twitter.com/search?q=Leaky%20Sue",
+      "trend": "Leaky Sue"
+    },
+    {
+      "count": "15K",
+      "url": "https://twitter.com/search?q=%23BeYourOwnBOSS",
+      "trend": "#BeYourOwnBOSS"
+    },
+    {
+      "count": "15K",
+      "url": "https://twitter.com/search?q=Goedemorgen",
+      "trend": "Goedemorgen"
+    },
+    {
+      "count": "15K",
+      "url": "https://twitter.com/search?q=%23Survivor",
+      "trend": "#Survivor"
+    },
+    {
+      "count": "15K",
+      "url": "https://twitter.com/search?q=%23AJALIV",
+      "trend": "#AJALIV"
+    },
+    {
+      "count": "14K",
+      "url": "https://twitter.com/search?q=Garnacho",
+      "trend": "Garnacho"
+    },
+    {
+      "count": "14K",
+      "url": "https://twitter.com/search?q=THE%20ASTRONAUT%20LANDING%20TODAY",
+      "trend": "THE ASTRONAUT LANDING TODAY"
+    },
+    {
+      "count": "14K",
+      "url": "https://twitter.com/search?q=SARAH%20G%20CUORE",
+      "trend": "SARAH G CUORE"
+    },
+    {
+      "count": "14K",
+      "url": "https://twitter.com/search?q=%23T20WC2022",
+      "trend": "#T20WC2022"
+    },
+    {
+      "count": "14K",
+      "url": "https://twitter.com/search?q=%E5%B9%B3%E9%87%8E%E3%81%8F%E3%82%93",
+      "trend": "平野くん"
+    },
+    {
+      "count": "14K",
+      "url": "https://twitter.com/search?q=%E4%B8%96%E7%B4%80%E7%8E%8B%E3%82%B5%E3%83%B3%E3%83%89%E3%83%A9%E3%82%A4%E3%83%90%E3%83%BC",
+      "trend": "世紀王サンドライバー"
+    },
+    {
+      "count": "14K",
+      "url": "https://twitter.com/search?q=%23fueramalasvibras",
+      "trend": "#fueramalasvibras"
+    },
+    {
+      "count": "14K",
+      "url": "https://twitter.com/search?q=Brunson",
+      "trend": "Brunson"
+    },
+    {
+      "count": "13K",
+      "url": "https://twitter.com/search?q=Spare",
+      "trend": "Spare"
+    },
+    {
+      "count": "13K",
+      "url": "https://twitter.com/search?q=%E7%B4%AC%E3%81%A1%E3%82%83%E3%82%93",
+      "trend": "紬ちゃん"
+    },
+    {
+      "count": "13K",
+      "url": "https://twitter.com/search?q=Chp%20Mahkeme%20Bast%C4%B1",
+      "trend": "Chp Mahkeme Bastı"
+    },
+    {
+      "count": "13K",
+      "url": "https://twitter.com/search?q=%E9%81%8E%E5%8E%BB%E6%9C%80%E5%A4%9A",
+      "trend": "過去最多"
+    },
+    {
+      "count": "13K",
+      "url": "https://twitter.com/search?q=%E3%83%95%E3%82%A1%E3%83%B3%E3%82%BF%E3%82%B8%E3%83%BC%E3%82%B9%E3%83%97%E3%83%AA%E3%83%B3%E3%82%B0%E3%82%B9",
+      "trend": "ファンタジースプリングス"
+    },
+    {
+      "count": "13K",
+      "url": "https://twitter.com/search?q=%23VenmoMe",
+      "trend": "#VenmoMe"
+    },
+    {
+      "count": "13K",
+      "url": "https://twitter.com/search?q=%23SAvsBAN",
+      "trend": "#SAvsBAN"
+    },
+    {
+      "count": "13K",
+      "url": "https://twitter.com/search?q=%E3%82%B9%E3%83%86%E3%82%A4%E3%83%95%E3%83%BC%E3%83%AA%E3%83%83%E3%82%B7%E3%83%A5",
+      "trend": "ステイフーリッシュ"
+    },
+    {
+      "count": "13K",
+      "url": "https://twitter.com/search?q=Altamirano",
+      "trend": "Altamirano"
+    },
+    {
+      "count": "13K",
+      "url": "https://twitter.com/search?q=Alfa",
+      "trend": "Alfa"
+    },
+    {
+      "count": "13K",
+      "url": "https://twitter.com/search?q=Vuaden",
+      "trend": "Vuaden"
+    },
+    {
+      "count": "13K",
+      "url": "https://twitter.com/search?q=Nets",
+      "trend": "Nets"
+    },
+    {
+      "count": "13K",
+      "url": "https://twitter.com/search?q=THE%20ASTRONAUT%20FOR%20JIN",
+      "trend": "THE ASTRONAUT FOR JIN"
+    },
+    {
+      "count": "12K",
+      "url": "https://twitter.com/search?q=%E9%A4%83%E5%AD%90%E3%81%AE%E7%8E%8B%E5%B0%86",
+      "trend": "餃子の王将"
+    },
+    {
+      "count": "12K",
+      "url": "https://twitter.com/search?q=Haider%20Ali",
+      "trend": "Haider Ali"
+    },
+    {
+      "count": "12K",
+      "url": "https://twitter.com/search?q=Babar",
+      "trend": "Babar"
+    },
+    {
+      "count": "12K",
+      "url": "https://twitter.com/search?q=%23%E3%83%A2%E3%83%8B%E3%82%BF%E3%83%AA%E3%83%B3%E3%82%B0",
+      "trend": "#モニタリング"
+    },
+    {
+      "count": "12K",
+      "url": "https://twitter.com/search?q=%E9%87%98%E3%83%90%E3%83%83%E3%83%88",
+      "trend": "釘バット"
+    },
+    {
+      "count": "12K",
+      "url": "https://twitter.com/search?q=%E3%83%8F%E3%83%AB%E3%82%AB%E3%83%8A%E3%83%9F%E3%83%A9%E3%82%A4",
+      "trend": "ハルカナミライ"
+    },
+    {
+      "count": "12K",
+      "url": "https://twitter.com/search?q=RUM%20PUM%20PUM%20OUT%20NOW",
+      "trend": "RUM PUM PUM OUT NOW"
+    },
+    {
+      "count": "12K",
+      "url": "https://twitter.com/search?q=%23MEXICO66CACTFUL",
+      "trend": "#MEXICO66CACTFUL"
+    },
+    {
+      "count": "12K",
+      "url": "https://twitter.com/search?q=%E3%81%93%E3%81%AF%E3%81%8F%E3%81%A1%E3%82%83%E3%82%93",
+      "trend": "こはくちゃん"
+    },
+    {
+      "count": "12K",
+      "url": "https://twitter.com/search?q=The%20k4sen",
+      "trend": "The k4sen"
+    },
+    {
+      "count": "12K",
+      "url": "https://twitter.com/search?q=Anthony%20Davis",
+      "trend": "Anthony Davis"
+    },
+    {
+      "count": "12K",
+      "url": "https://twitter.com/search?q=Vitor%20Pereira",
+      "trend": "Vitor Pereira"
+    },
+    {
+      "count": "12K",
+      "url": "https://twitter.com/search?q=%23AEWDynamite",
+      "trend": "#AEWDynamite"
+    },
+    {
+      "count": "12K",
+      "url": "https://twitter.com/search?q=Rinna",
+      "trend": "Rinna"
+    },
+    {
+      "count": "12K",
+      "url": "https://twitter.com/search?q=Tudor",
+      "trend": "Tudor"
+    },
+    {
+      "count": "12K",
+      "url": "https://twitter.com/search?q=Gnabry",
+      "trend": "Gnabry"
+    },
+    {
+      "count": "11K",
+      "url": "https://twitter.com/search?q=Schoen",
+      "trend": "Schoen"
+    },
+    {
+      "count": "11K",
+      "url": "https://twitter.com/search?q=%E5%B9%B3%E9%87%8E%E7%B4%AB%E8%80%80",
+      "trend": "平野紫耀"
+    },
+    {
+      "count": "11K",
+      "url": "https://twitter.com/search?q=DG%20ISI",
+      "trend": "DG ISI"
+    },
+    {
+      "count": "11K",
+      "url": "https://twitter.com/search?q=KL%20Rahul",
+      "trend": "KL Rahul"
+    },
+    {
+      "count": "11K",
+      "url": "https://twitter.com/search?q=Giannis",
+      "trend": "Giannis"
+    },
+    {
+      "count": "11K",
+      "url": "https://twitter.com/search?q=Christian%20Braun",
+      "trend": "Christian Braun"
+    },
+    {
+      "count": "11K",
+      "url": "https://twitter.com/search?q=Du%20Queiroz",
+      "trend": "Du Queiroz"
+    },
+    {
+      "count": "11K",
+      "url": "https://twitter.com/search?q=Doc%20Rivers",
+      "trend": "Doc Rivers"
+    },
+    {
+      "count": "11K",
+      "url": "https://twitter.com/search?q=Guendouzi",
+      "trend": "Guendouzi"
+    },
+    {
+      "count": "10K",
+      "url": "https://twitter.com/search?q=Rubius",
+      "trend": "Rubius"
+    },
+    {
+      "count": "10K",
+      "url": "https://twitter.com/search?q=Pak%20Bean",
+      "trend": "Pak Bean"
+    },
+    {
+      "count": "10K",
+      "url": "https://twitter.com/search?q=%E3%83%98%E3%83%AA%E3%82%AA%E3%82%B9",
+      "trend": "ヘリオス"
+    },
+    {
+      "count": "10K",
+      "url": "https://twitter.com/search?q=%E3%82%B5%E3%82%A4%E3%83%AC%E3%83%B3%E3%83%88",
+      "trend": "サイレント"
+    },
+    {
+      "count": "10K",
+      "url": "https://twitter.com/search?q=Pakistan%20by%201",
+      "trend": "Pakistan by 1"
+    },
+    {
+      "count": "10K",
+      "url": "https://twitter.com/search?q=%23%E3%81%B1%E3%81%8B%E3%83%A9%E3%82%A4%E3%83%96TV",
+      "trend": "#ぱかライブTV"
+    },
+    {
+      "count": "10K",
+      "url": "https://twitter.com/search?q=%23%EC%84%9D%EC%A7%80%EB%8B%88_%EB%85%B8%EB%9E%98%EB%82%98%EC%98%A8%EB%8B%A4_%EC%8A%A4%EB%B0%8D%EA%B6%8C%EC%9E%A5%EC%B0%A9",
+      "trend": "#석지니_노래나온다_스밍권장착"
+    },
+    {
+      "count": "10K",
+      "url": "https://twitter.com/search?q=%23JusticeForAlonso",
+      "trend": "#JusticeForAlonso"
+    },
+    {
+      "count": "10K",
+      "url": "https://twitter.com/search?q=%23DGISPR",
+      "trend": "#DGISPR"
+    },
+    {
+      "count": "10K",
+      "url": "https://twitter.com/search?q=Renzi",
+      "trend": "Renzi"
+    },
+    {
+      "count": "10K",
+      "url": "https://twitter.com/search?q=Kyrie",
+      "trend": "Kyrie"
+    },
+    {
+      "count": "10K",
+      "url": "https://twitter.com/search?q=Claudio",
+      "trend": "Claudio"
+    },
+    {
+      "count": "10K",
+      "url": "https://twitter.com/search?q=Keith%20Lee",
+      "trend": "Keith Lee"
+    },
+    {
+      "count": "10K",
+      "url": "https://twitter.com/search?q=Darwin",
+      "trend": "Darwin"
+    }
+  ]
+}

@@ -17,7 +17,7 @@ export async function getDailyTrends(local) {
 // Get the amount of searches over time
 export async function getInterestOverTime(word) { 
     let info = []
-    await googleTrends.interestOverTime({ keyword: word })
+    await googleTrends.interestOverTime({ keyword: word, startTime: new Date(2022 - 01 - 01) })
         .then((res) => {
             let arr = []
             let text = JSON.parse(res).default.timelineData

@@ -1,0 +1,39 @@
+.login_body {
+    display: flex;
+    animation: Gradient 100s ease infinite;
+    background: linear-gradient(5deg,
+            #b51f2c, #e3af68,
+            #07376e, #232692, #4c0fc7, #6501e6, #220a41,
+            #1d1e32, #2b1f43, #35185b, #07376e);
+    background-size: 1500% 1500%;
+}
+
+.logo_area {
+    display: flex;
+    background-color: transparent;
+    width: 60%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+@keyframes Gradient {
+    0% {
+        background-position: 0 50%
+    }
+
+    20% {
+        background-position: 50% 100%
+    }
+
+    80% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 50% 0
+    }
+}

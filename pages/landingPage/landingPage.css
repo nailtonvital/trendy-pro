@@ -1,0 +1,321 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@100;200;300;400;500;700&family=Montserrat:wght@500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:  'Montserrat', 'Outfit', sans-serif;
+}
+
+body {
+    animation: Gradient 300s ease infinite;
+    background: linear-gradient(1deg,
+            #07376e, #232692, #4c0fc7, #6501e6, #220a41,
+            #b51f2c, #e3af68,
+            #00755e, #177500, #14391c, #16293e,
+            #1d1e32, #2b1f43, #35185b, #07376e);
+    background-size: 300% 300%;
+    font-family: sans-serif;
+    color: white;
+    height: 400vh;
+    font-size: 100%;
+
+}
+
+nav,
+.hero,
+.proof-content,
+.item {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav {
+    padding-top: 3%;
+    align-items: center;
+}
+
+.logo {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.hero {
+    height: 100vh;
+    align-items: center;
+}
+
+.left-hero,
+.left-align {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+button {
+    width: 10rem;
+    height: 4rem;
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 25px;
+    border: 2px solid #fff;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    font-size: 18px;
+}
+
+span {
+    background: rgba(255, 255, 255, 0.25);
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+
+button:hover span {
+    width: 100%;
+}
+
+button:hover {
+    border: 2px solid;
+}
+
+.left-hero h3 {
+    font-weight: 700;
+    font-size: 50px;
+}
+
+.left-hero p {
+    font-weight: 200;
+    font-size: 20px;
+}
+
+.right-hero,
+.right-align {
+    width: 50%;
+}
+
+.right-hero img {
+    width: 100%;
+}
+
+.banner,
+.card {
+    border-radius: 8px;
+}
+
+.banner {
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2.2px);
+    -webkit-backdrop-filter: blur(2.2px);
+    padding: 30px;
+    margin-bottom: 100px;
+}
+
+.banner h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.banner ul {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    gap: 50px;
+}
+
+.banner li img {
+    width: 100%;
+}
+
+.banner ul li,
+.people {
+    font-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.title,
+.description,
+.people-info {
+    margin-left: 15px;
+}
+
+.container {
+    width: 80vw;
+    margin: 0 auto;
+}
+
+
+.left-align {
+    align-content: center;
+    margin: auto;
+}
+
+.right-align img {
+    width: 100%;
+}
+
+.center-align {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.center-align img {
+    width: 30%;
+}
+
+.social-proof {
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
+
+.social-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    gap: 40px;
+    margin-top: 15px;
+}
+
+.social-card {
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(18.3px);
+    -webkit-backdrop-filter: blur(18.3px);
+    padding: 25px;
+    border-style: none;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.social-quote {
+    margin: 10px 0 10px 0;
+}
+
+.people-info h2 {
+    margin-bottom: -5px;
+}
+
+.people-info p {
+    font-weight: 200;
+}
+
+
+.product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.product img {
+    width: 100%;
+    right: 100%;
+}
+
+.macpro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.macpro img {
+    margin-top: 20px;
+    width: 75%;
+    right: 75%;
+}
+
+.filmes {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.filmes img {
+    width: 100%;
+    right: 100%;
+}
+
+.component img {
+    width: 100%;
+    right: 100%;
+}
+
+footer {
+    text-align: center;
+    margin: 15px;
+}
+
+@media (max-width: 1112px) {
+    .proof-content {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 802px) {
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        height: 92vh;
+    }
+
+    .left-hero {
+        width: 100%;
+    }
+
+    .left-hero button {
+        width: 100%;
+    }
+
+    .right-hero {
+        width: 100%;
+    }
+}
+
+@media (max-width: 508px) {
+    .features-head h2 {
+        font-size: 35px;
+    }
+
+    .banner ul li {
+        width: 100%;
+    }
+}
+
+@keyframes Gradient {
+    0% {
+        background-position: 0 50%
+    }
+
+    20% {
+        background-position: 50% 100%
+    }
+
+    80% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 50% 0
+    }
+}

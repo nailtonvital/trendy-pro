@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family:  'Montserrat', 'Outfit', sans-serif;
+}
+
+body {
+    font-family: Outfit, sans-serif;
+    background-color: aliceblue;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    display: flex;
+}
+
+nav {
+    background-color: #2C2C2C;
+    color: white;
+    width: 7%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+ul {
+    width: 100%;
+}
+
+li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    width: 100%;
+}
+
+li p {
+    text-align: center;
+}
+
+li img {
+    width: 45px;
+}
+
+li:hover {
+    background-color: rgb(32, 31, 32);
+}
+
+.container {
+    margin: 5px auto;
+    width: 87%;
+    color: black;
+}
+
+header,
+.user-info {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+header,
+.user-info {
+    align-items: center;
+}
+
+header {
+    width: 100%;
+}
+
+.user-info img {
+    width: 40px;
+    border-radius: 6px;
+    border-width: 3px;
+    border-color: rgba(228, 233, 247, 0.8);
+    border-style: solid;
+    margin-inline: 8px;
+}
+
+svg{
+    width: 100%;
+}
