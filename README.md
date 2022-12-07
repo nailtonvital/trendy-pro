@@ -1,35 +1,69 @@
-<div className="trendy-pro">
-  <h1>
-    TrendyPro
-     <img align="center" alt="TPicon" height="100" width="100" src="https://user-images.githubusercontent.com/89430801/173159939-f902e314-3b7c-4b0f-afbe-fb985a11f801.svg"/> 
-  </h1>
-</div>
+<p align="center">
+  <img  src="https://user-images.githubusercontent.com/51789882/206223105-12a6b6c0-aee6-4bdb-ae3f-bbfe6afbc1c1.png" align=center">
+</p>
+<h1 align="center">TrendyPro</h1>
+<p align="center">A application that allows know know whats trending</p>
 
-## Conteúdos
-<h3>
-  <a href="https://www.figma.com/file/v9FxECnvkfPiMEH2DiCxy6/Untitled?node-id=0%3A1">
-    <div className="figma-container">
-      <p className="figma-contact-link">Banco de dados
-      <img align="center" alt="TPicon" height="100" width="100" src="https://user-images.githubusercontent.com/89430801/182031605-de8987f4-7275-4304-b184-e13b90b8c7a2.svg"/>
-      </p>
-    </div>
-  </a>
-</h3>
-<h3>
-  <a href="https://www.figma.com/file/fNaURtJQJOtBx2oLAQeeow/Concept">
-    <div className="figma-container">
-      <p className="figma-contact-link">Designer
-      <img align="center" alt="TPicon" height="100" width="100" src="https://user-images.githubusercontent.com/89430801/182031691-32a20122-7e74-4893-a888-c42956ba67b0.svg"/>
-      </p>
-    </div>
-  </a>
-</h3>
-<h3>
-  <a href="https://github.com/nailtonvital/trendy-pro/wiki">
-    <div className="wiki-container">
-      <p className="wiki-contact-link">Documentação
-      <img align="center" alt="TPicon" height="100" width="100" src="https://user-images.githubusercontent.com/89430801/182031457-bb70cb04-73a8-4762-a633-1aeeeea8ba40.svg"/>
-      </p>
-    </div>
-  </a>
-</h3>
+
+## About
+
+### What is TrendyPro?
+TrendyPro is a application that collect a amount of informations of whats in trending and brings in a single plataform.
+
+### Which problems does TrendyPro solve?
+The "TrendyPro" solves the main problem for content creators. The lack of ideas for their content and the constant need to produce content that is on trend. Our tools can also help companies that are interested in increasing their authority in the digital world by providing more relevant content to their audience.
+
+## Features
+
+### Entertainmant
+
+Returns the Movies, TV Shows and animes that are on trend.
+
+When the user selects the movie, he can see which keywords relate to the related to the movie and how the search volume has grown (chart)
+
+### Related Keywords
+The user must enter a term and will return a set of keywords and related searches will be picked up
+through the Google Trend API
+
+### Backlink Checker
+The user must enter a valid link and it will return all links within that site
+
+### Interest Overtime
+Returns the amount of searches over time
+
+### Facebook Interests
+The user will be able to see all interests within 'Facebook Ads 
+
+### Google Daily Trends (Not working)
+
+### Twitter Trending Topics
+Return the trending topics of twitter
+
+### Billboard Top 100
+Returns the top 100 songs of billboard
+
+### PageSpeed-Insights
+Returns all params data of the website
+
+## Preview
+
+### Tools
+
+## Concept, Prototyping and Apresentation
+Figma
+
+## Frameworks
+* React.js
+  * Axios
+  * Tailwind
+  * Sass CSS
+* Node.js
+  * Express.js
+  
+## External API's
+  * TMDB API
+  * Anilist API
+  * Google Trends API
+  * Facebook Bussines
+  * Billboard Top 100
+  * Twitter Trending Topics
