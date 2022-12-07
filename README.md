@@ -53,8 +53,7 @@ Returns all params data of the website
 ### Entertainmant
 
 ![Entertainmant](https://user-images.githubusercontent.com/51789882/206233425-07e1639a-b243-4f33-a186-0d3d11faf9ac.png)
-
-![Home](https://user-images.githubusercontent.com/51789882/206233442-deea3949-3f3a-483a-8e0c-457f65381282.png)
+![Movie](https://user-images.githubusercontent.com/51789882/206234726-98024c00-6558-40e2-90e2-041378b37c04.png)
 
 ### Related Keywords
 ![Keyword Generator](https://user-images.githubusercontent.com/51789882/206233489-fae99042-c374-4a81-add6-3b2f9fb4452a.png)
@@ -78,7 +77,17 @@ Returns all params data of the website
 ![image](https://user-images.githubusercontent.com/51789882/206234322-be361f22-84a2-4dec-a21b-8f4b32268d2b.png)
 
 ### PageSpeed-Insights (Not working on front-end)
-Returns all params data of the website
+...
+               
+### News Home            
+![Newspage](https://user-images.githubusercontent.com/51789882/206235166-a6481d48-3ead-4f4e-87f7-d5ee2c5acc09.png)
+
+### News  
+![News](https://user-images.githubusercontent.com/51789882/206235337-b7849e18-9ffe-4dd9-b1a1-c0aaf44d56e1.png)
+
+### Billboard Top 100
+![image](https://user-images.githubusercontent.com/51789882/206234322-be361f22-84a2-4dec-a21b-8f4b32268d2b.png)
+               
 ## Tools
 
 ### Concept, Prototyping and Apresentation
