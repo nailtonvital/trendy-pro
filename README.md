@@ -88,6 +88,13 @@ Returns all params data of the website
 ### Billboard Top 100
 ![image](https://user-images.githubusercontent.com/51789882/206234322-be361f22-84a2-4dec-a21b-8f4b32268d2b.png)
                
+### Messages
+![Loading-message](https://user-images.githubusercontent.com/51789882/206235669-2ec89d15-8b38-4dec-a230-71215215c2f4.png)
+![Error-message](https://user-images.githubusercontent.com/51789882/206235688-cb725e82-d6e9-41aa-ae5f-e5586437d53b.png)
+![Error-result-message](https://user-images.githubusercontent.com/51789882/206235703-0cf312a5-fd64-4298-a067-4c1c1d5a72da.png)
+![Insert-message](https://user-images.githubusercontent.com/51789882/206235714-d6e91fc8-10f0-4d35-a6d5-0c19b9700a40.png)
+
+               
 ## Tools
 
 ### Concept, Prototyping and Apresentation
