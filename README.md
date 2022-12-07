@@ -47,12 +47,12 @@ Returns all params data of the website
 
 ## Preview
 
-### Tools
+## Tools
 
-## Concept, Prototyping and Apresentation
+### Concept, Prototyping and Apresentation
 Figma
 
-## Frameworks
+### Frameworks
 * React.js
   * Axios
   * Tailwind
@@ -60,7 +60,7 @@ Figma
 * Node.js
   * Express.js
   
-## External API's
+### External API's
   * TMDB API
   * Anilist API
   * Google Trends API
