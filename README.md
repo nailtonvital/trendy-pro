@@ -34,7 +34,7 @@ Returns the amount of searches over time
 ### Facebook Interests
 The user will be able to see all interests within 'Facebook Ads 
 
-### Google Daily Trends (Not working)
+### Google Daily Trends (Not working on front-end)
 
 ### Twitter Trending Topics
 Return the trending topics of twitter
@@ -47,6 +47,38 @@ Returns all params data of the website
 
 ## Preview
 
+### Home
+![Home](https://user-images.githubusercontent.com/51789882/206233801-85851af0-8878-41f6-aa60-650bd4f98457.png)
+
+### Entertainmant
+
+![Entertainmant](https://user-images.githubusercontent.com/51789882/206233425-07e1639a-b243-4f33-a186-0d3d11faf9ac.png)
+
+![Home](https://user-images.githubusercontent.com/51789882/206233442-deea3949-3f3a-483a-8e0c-457f65381282.png)
+
+### Related Keywords
+![Keyword Generator](https://user-images.githubusercontent.com/51789882/206233489-fae99042-c374-4a81-add6-3b2f9fb4452a.png)
+
+### Backlink Checker
+![Backlink Checker](https://user-images.githubusercontent.com/51789882/206233525-95c63809-eef0-4243-a3fb-d6c3e828dfb3.png)
+
+### Interest Overtime
+![Interest Overtime](https://user-images.githubusercontent.com/51789882/206233564-583cdb1d-b86d-4d3d-9fe5-b1b2bf578734.png)
+
+### Facebook Interests
+![Facebook](https://user-images.githubusercontent.com/51789882/206233606-3d0d768e-59e8-440c-9f83-df96717e814c.png)
+
+### Keyword Generator
+![image](https://user-images.githubusercontent.com/51789882/206234242-77bcb9d5-9907-4bdb-907b-589246c4db54.png)
+
+### Twitter Trending Topics
+![image](https://user-images.githubusercontent.com/51789882/206234015-99d295c1-2a4d-4e1e-8e02-2d7b3894223c.png)
+
+### Billboard Top 100
+![image](https://user-images.githubusercontent.com/51789882/206234322-be361f22-84a2-4dec-a21b-8f4b32268d2b.png)
+
+### PageSpeed-Insights (Not working on front-end)
+Returns all params data of the website
 ## Tools
 
 ### Concept, Prototyping and Apresentation
