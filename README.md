@@ -56,7 +56,7 @@ Figma
 * React.js
   * Axios
   * Tailwind
-  * Sass CSS
+  * SCSS
 * Node.js
   * Express.js
   
