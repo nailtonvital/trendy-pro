@@ -63,7 +63,7 @@ export default function Home() {
           <p className="text-[#CBCBCB] font-bold">Good Evening</p>
           <h2 className="text-4xl font-bold">Nailton Vital</h2>
         </div>
-        <img src={stars} className="h-28" alt="" srcset="" />
+        <img src={stars} className="h-28" />
       </div>
       <div className="w-full"></div>
       

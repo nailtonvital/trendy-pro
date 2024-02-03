@@ -46,7 +46,7 @@ export default function Sidebar() {
           </Link>
           <Link to="rss-feed">
             <li className="mb-2 hover:text-[#F47E02] transition duration-300 ease-in-out">
-              <i class="bx bx-rss"></i>
+              <i className="bx bx-rss"></i>
             </li>
           </Link>
         </ul>

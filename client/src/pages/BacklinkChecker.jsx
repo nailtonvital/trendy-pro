@@ -82,26 +82,26 @@ export default function BacklinkChecker() {
           message="For some reason we can't find any result."
         />
       ) : results.length > 0 ? (
-        <div class="flex flex-col">
+        <div className="flex flex-col">
           {console.log(results)}
-          <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-            <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
-              <div class="overflow-hidden rounded-lg">
+          <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
+            <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+              <div className="overflow-hidden rounded-lg">
                 <h3 className="capitalize text-lg font-semibold flex my-2">
                   {results.length} links found
                 </h3>
-                <table class="w-full">
-                  <thead class="bg-[#1B1A20] border-b">
+                <table className="w-full">
+                  <thead className="bg-[#1B1A20] border-b">
                     <tr>
                       <th
                         scope="col"
-                        class="text-sm font-medium text-slate-200 pl-6 py-4 text-left"
+                        className="text-sm font-medium text-slate-200 pl-6 py-4 text-left"
                       >
                         Name
                       </th>
                       <th
                         scope="col"
-                        class="text-sm font-medium text-slate-200 pl-6 py-4 text-left"
+                        className="text-sm font-medium text-slate-200 pl-6 py-4 text-left"
                       >
                         URL
                       </th>
@@ -112,12 +112,12 @@ export default function BacklinkChecker() {
                       return (
                         <tr
                           key={index}
-                          class="bg-[#1B1A20] border-b transition duration-300 ease-in-out hover:bg-[#26252B] "
+                          className="bg-[#1B1A20] border-b transition duration-300 ease-in-out hover:bg-[#26252B] "
                         >
-                          <td class="pl-6 py-4 whitespace-nowrap text-sm font-bold text-slate-100">
+                          <td className="pl-6 py-4 whitespace-nowrap text-sm font-bold text-slate-100">
                             {item.name}
                           </td>
-                          <td class="pl-6 py-4  text-sm font-bold text-slate-100">
+                          <td className="pl-6 py-4  text-sm font-bold text-slate-100">
                             {item.url}
                           </td>
                         </tr>
