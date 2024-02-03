@@ -45,7 +45,7 @@ export default function Songs() {
                             <td className='pl-6 py-4 whitespace-nowrap text-sm font-medium text-slate-100'>{item.rank}</td>
                             <td className='text-sm flex-col text-white font-light pr-6 py-4 whitespace-nowrap'>
                             <div className='flex'>
-                                <img className='w-16 rounded-lg' src={item.cover} alt='' />
+                                <img loading="lazy" className='w-16 rounded-lg' src={item.cover} alt='' />
                                 <div className='ml-3 m-auto'>
                                     <h4 className='font-extrabold text-base'>{item.title}</h4>
                                     <p className='text-[#A9A9A9] font-bold'>{item.artist}</p>

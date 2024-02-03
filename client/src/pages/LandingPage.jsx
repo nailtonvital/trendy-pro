@@ -35,7 +35,7 @@ export default function LandingPage() {
         <nav>
             <a href="/LandingPage">
             <div className={style.logo}>
-              <img src={Fox} alt="imgFox" />
+              <img loading="lazy" src={Fox} alt="imgFox" />
             </div>
             </a>
 
@@ -80,7 +80,7 @@ export default function LandingPage() {
             </div>
 
             <div className={style["right-hero"]}>
-              <img src={Mundo} alt="imgMundo" />
+              <img loading="lazy" src={Mundo} alt="imgMundo" />
             </div>
           </div>
 
@@ -144,12 +144,12 @@ export default function LandingPage() {
               <h3 className={style.titleHeader}>Know what’s going on around the world</h3>
             </div>
             <div className={style["right-align"]}>
-              <img  className="mb-20 mt-80" src={MapaMundi} alt="imgMapaMundi" />
+              <img loading="lazy"  className="mb-20 mt-80" src={MapaMundi} alt="imgMapaMundi" />
             </div>
           </div>
 
           <div className="items-stretch flex mb-24 mt-80">  
-            <img className="w-1/3" src={User} alt="imgUser" />
+            <img loading="lazy" className="w-1/3" src={User} alt="imgUser" />
                 <div className=" pl-60 pt-28 text-end">
                   <p className="text-5xl font-bold pb-6">We at TrendyPro will bring the ease to the user</p>
                   <p className="text-xl font-light">An efficient application that will provide versioning <br></br> and practicality in a single click.</p>
@@ -160,11 +160,11 @@ export default function LandingPage() {
               <div className="mt-52 text-start">
                 <p className="text-5xl font-bold pb-6">Figuring out what the next big trend is tells us what to focus on</p>
               </div> 
-              <img className="-mr-44" src={Filmes} alt="imgUser" />
+              <img loading="lazy" className="-mr-44" src={Filmes} alt="imgUser" />
           </div>
 
           <div className="items-stretch flex mb-24 mt-80">  
-              <img className="w-4/6 -ml-52" src={home} alt="imgUser" />
+              <img loading="lazy" className="w-4/6 -ml-52" src={home} alt="imgUser" />
                   <div className=" pl-60 pt-28 text-end w-1/2">
                     <p className="text-5xl font-bold pb-6">Access most relevant information whats popular</p>
                     <p className="text-xl font-light">Acess to all trending topics on the social media</p>
@@ -177,7 +177,7 @@ export default function LandingPage() {
             <div className={style["social-cards"]}>
               <a href="https://www.instagram.com/nailtonvital/" target="_blank">
                 <div className={style["social-card"]}>
-                  <img src={rate} alt="rate" />
+                  <img loading="lazy" src={rate} alt="rate" />
                   <div className={style["social-quote"]}>
                     <p>
                     "Quando se mostra ao mundo e exibe os seus talentos, naturalmente desperta todo tipo de ressentimento,
@@ -185,7 +185,7 @@ export default function LandingPage() {
                     </p>
                   </div>
                   <div className={style.people}>
-                    <img src={nana} alt="" />
+                    <img loading="lazy" src={nana} alt="" />
                     <div className={style["people-info"]}>
                       <h2>Nailton Vital</h2>
                       <p>Full Stack Developer</p>
@@ -196,7 +196,7 @@ export default function LandingPage() {
 
               <a href="https://www.instagram.com/_luccaos_/" target="_blank">
               <div className={style["social-card"]}>
-                <img src={rate} alt="rate" />
+                <img loading="lazy" src={rate} alt="rate" />
                 <div className={style["social-quote"]}>
                   <p>
                   "Um dia azul, tenho um sonho<br></br>
@@ -211,7 +211,7 @@ export default function LandingPage() {
                   </p>
                 </div>
                 <div className={style.people}>
-                  <img src={luccas} alt="" />
+                  <img loading="lazy" src={luccas} alt="" />
                   <div className={style["people-info"]}>
                     <h2>Luccas Anjos</h2>
                     <p>Developer</p>
@@ -222,14 +222,14 @@ export default function LandingPage() {
 
               <a href="https://www.instagram.com/_guizen/" target="_blank">
               <div className={style["social-card"]}>
-                <img src={rate} alt="rate" />
+                <img loading="lazy" src={rate} alt="rate" />
                 <div className={style["social-quote"]}>
                   <p>
                   "Pra quem tem pensamento forte o impossível é só questão de opinião"<br></br> - Charlie Brown Jr
                   </p>
                 </div>
                 <div className={style.people}>
-                  <img src={campos} alt="" />
+                  <img loading="lazy" src={campos} alt="" />
                   <div className={style["people-info"]}>
                     <h2>Guilherme Campos</h2>
                     <p>Developer</p>
@@ -240,7 +240,7 @@ export default function LandingPage() {
 
               <a href="https://www.instagram.com/luh.genu/" target="_blank">
               <div className={style["social-card"]}>
-                <img src={rate} alt="rate" />
+                <img loading="lazy" src={rate} alt="rate" />
                 <div className={style["social-quote"]}>
                   <p>
                   "Nos sentindo melhor que os outros<br></br>
@@ -252,7 +252,7 @@ export default function LandingPage() {
                   </p>
                 </div>
                 <div className={style.people}>
-                  <img src={genu} alt="" />
+                  <img loading="lazy" src={genu} alt="" />
                   <div className={style["people-info"]}>
                     <h2>Lucas Genú</h2>
                     <p>Designer</p>
@@ -263,7 +263,7 @@ export default function LandingPage() {
 
               <a href="https://www.instagram.com/_maicxn/" target="_blank">
               <div className={style["social-card"]}>
-                <img src={rate} alt="rate" />
+                <img loading="lazy" src={rate} alt="rate" />
                 <div className={style["social-quote"]}>
                   <p>
                   "Eu sou a continuação de um sonho<br></br>
@@ -276,7 +276,7 @@ export default function LandingPage() {
                   </p>
                 </div>
                 <div className={style.people}>
-                  <img src={maicon} alt="" />
+                  <img loading="lazy" src={maicon} alt="" />
                   <div className={style["people-info"]}>
                     <h2>Maicon Oliveira</h2>
                     <p>Full Stack Developer</p>
@@ -287,7 +287,7 @@ export default function LandingPage() {
 
               <a href="https://www.instagram.com/viniciussribeir0/" target="_blank">
               <div className={style["social-card"]}>
-                <img src={rate} alt="rate" />
+                <img loading="lazy" src={rate} alt="rate" />
                 <div className={style["social-quote"]}>
                   <p>
                   "A vida me ensinou a nunca desistir
@@ -296,7 +296,7 @@ export default function LandingPage() {
                   </p>
                 </div>
                 <div className={style.people}>
-                  <img src={vini} alt="" />
+                  <img loading="lazy" src={vini} alt="" />
                   <div className={style["people-info"]}>
                     <h2>Vinicius Ribeiro</h2>
                     <p>Developer</p>
@@ -307,7 +307,7 @@ export default function LandingPage() {
 
               <a href="https://www.instagram.com/madu_goda/" target="_blank">
               <div className={style["social-card"]}>
-                <img src={rate} alt="rate" />
+                <img loading="lazy" src={rate} alt="rate" />
                 <div className={style["social-quote"]}>
                   <p>
                   "Não importa o que você seja, quem você seja, ou que deseja na vida, a ousadia em ser di
@@ -315,7 +315,7 @@ export default function LandingPage() {
                   </p>
                 </div>
                 <div className={style.people}>
-                  <img src={goda} alt="" />
+                  <img loading="lazy" src={goda} alt="" />
                   <div className={style["people-info"]}>
                     <h2>Maria Goda</h2>
                     <p>Archivist</p>
@@ -326,14 +326,14 @@ export default function LandingPage() {
 
               <a href="https://www.instagram.com/ylan_costa/" target="_blank">
               <div className={style["social-card"]}>
-                <img src={rate} alt="rate" />
+                <img loading="lazy" src={rate} alt="rate" />
                 <div className={style["social-quote"]}>
                   <p>
                   “Os que vencem, não importa como vençam, nunca conquistam a vergonha”. - Nicolau Maquiavel
                   </p>
                 </div>
                 <div className={style.people}>
-                  <img src={Ilan} alt="" />
+                  <img loading="lazy" src={Ilan} alt="" />
                   <div className={style["people-info"]}>
                     <h2>Ilan Costa</h2>
                     <p>Full Stack Developer</p>

@@ -253,13 +253,13 @@ export default function MoviePage() {
         <div className="col-span-2">
           {/* Poster */}
           {movie.poster_path ? (
-            <img
+            <img loading="lazy"
               className=" w-full p-2 rounded-xl"
               src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
               alt=""
             />
           ) : movie.coverImage ? (
-            <img
+            <img loading="lazy"
               className=" w-full p-2 rounded-xl"
               src={movie.coverImage.extraLarge}
               alt=""
@@ -411,7 +411,7 @@ export default function MoviePage() {
                 <Slider {...settings}>
                   {actors.cast.map((item) => (
                     <div className="min-w-[180px]">
-                      <img
+                      <img loading="lazy"
                         className="h-72 rounded-xl"
                         src={`https://image.tmdb.org/t/p/original/${item.profile_path}`}
                         alt=""

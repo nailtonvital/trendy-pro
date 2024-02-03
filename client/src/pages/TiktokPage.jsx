@@ -81,15 +81,15 @@ return (
     <h4 className="font-bold text-xl mt-5 mb-2">Creators</h4>
     <div className="flex gap-3 overflow-x-auto">
       <div className="flex-col">
-        <img src={Anne} alt="" />
+        <img loading="lazy" src={Anne} alt="" />
         <p>Anne</p>
       </div>
       <div className="flex-col">
-        <img src={Anne} alt="" />
+        <img loading="lazy" src={Anne} alt="" />
         <p>Anne</p>
       </div>
       <div className="flex-col">
-        <img src={Anne} alt="" />
+        <img loading="lazy" src={Anne} alt="" />
         <p>Anne</p>
       </div>
     </div>
