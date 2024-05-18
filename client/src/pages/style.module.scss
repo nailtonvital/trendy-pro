@@ -19,6 +19,7 @@
     #16293E, #1D1E32, #2B1F43, #35185B,
     #0D1458, #3D4AD0, #2274A5);
     background-size: 300% 300%;
+    max-width: 1080;
     color: white;
     font-size: 100%;
 }
@@ -143,7 +144,7 @@ nav button {
 }
 
 .container {
-    width: 80vw;
+    max-width: 1800px;
     margin: 0 auto;
 
 }
@@ -192,7 +193,7 @@ nav button {
 }
 
 .social-card {
-
+    min-height: 350px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -258,6 +259,104 @@ nav button {
 .component img {
     width: 100%;
     right: 100%;
+}
+
+.formsContainer{
+    display: flex;
+    flex-direction: column;
+    margin: 200px 0 200px 0;
+    width: 100%;
+}
+
+.formsDiv{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    background-color: #F5F5F5;
+    border-radius: 16px;
+    padding: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+.formsDiv div{
+    width: 100%;
+    margin: 20px 0 20px 0;
+}
+
+.formsDiv button{
+    background-color: #07376E;
+    width: 300px;
+    border-radius: 20px;
+    padding: 20px;
+    font-size:x-large;
+}
+.formsDiv button:hover{
+    background-color: #062d58;
+}
+
+.formsDiv p{
+    color: black;
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.inpForms{
+    color: black;
+    width: 100%;
+    height: 50px;
+    background-color: #DADADA;
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+}
+
+.multipleChoice{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.multipleChoice label{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.multipleChoice label p{
+    color: black;
+    font-size: 22px;
+    font-weight: 300;
+}
+
+.multipleChoice label{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.multipleChoice input{
+    display: flex;
+    flex-direction: column;
+}
+
+.titleDiv{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+    margin: 20px;
+}
+
+.titleDiv h1{
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.titleDiv h2{
+    font-size: 28px;
+    font-weight: lighter
 }
 
 footer {
