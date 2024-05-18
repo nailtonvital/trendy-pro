@@ -14,7 +14,7 @@ function LoginPage() {
   return (
     <div className={style.login_body}>
       <div className={style.logo_area}>
-        <img src={logo} alt="logo" />
+        <img loading="lazy" src={logo} alt="logo" />
       </div>
       {login ? <Login /> : <Signup />}
     </div>

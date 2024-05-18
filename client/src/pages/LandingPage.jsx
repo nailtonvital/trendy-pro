@@ -86,7 +86,7 @@ export default function LandingPage() {
             </div>
 
             <div className={style["right-hero"]}>
-              <img src={Mundo} alt="imgMundo" />
+              <img loading="lazy" src={Mundo} alt="imgMundo" />
             </div>
           </div>
 
@@ -213,7 +213,7 @@ export default function LandingPage() {
             <div className={style["social-cards"]}>
               <a href="https://www.instagram.com/nailtonvital/" target="_blank">
                 <div className={style["social-card"]}>
-                  <img src={rate} alt="rate" />
+                  <img loading="lazy" src={rate} alt="rate" />
                   <div className={style["social-quote"]}>
                     <p>
                       "Quando se mostra ao mundo e exibe os seus talentos,
@@ -223,7 +223,7 @@ export default function LandingPage() {
                     </p>
                   </div>
                   <div className={style.people}>
-                    <img src={nana} alt="" />
+                    <img loading="lazy" src={nana} alt="" />
                     <div className={style["people-info"]}>
                       <h2>Nailton Vital</h2>
                       <p>Full Stack Developer</p>

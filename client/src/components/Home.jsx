@@ -58,12 +58,12 @@ export default function Home() {
   return (
     <div className="bg-[#262631] h-screen">
       <div className="bg-gradient-to-r flex from-purple-800 to-pink-700 h-48 rounded-xl w-full text-white font-sans p-0 pt-1 mt-4">
-        <img src={minino} />
+        <img loading="lazy" src={minino} />
         <div className="mt-9 ml-4">
           <p className="text-[#CBCBCB] font-bold">Good Evening</p>
           <h2 className="text-4xl font-bold">Nailton Vital</h2>
         </div>
-        <img src={stars} className="h-28" alt="" srcset="" />
+        <img loading="lazy" src={stars} className="h-28" />
       </div>
       <div className="w-full"></div>
       
@@ -87,7 +87,7 @@ export default function Home() {
           <div className="mx-5 my-5">
             <h1 className="text-white text-start text-2xl font-semibold mt-3 my-1">Movies</h1>
             <div className="flex">
-              <img src="https://image.tmdb.org/t/p/original/nwkBJF67diqq1w20Xl5pxBZPAiB.jpg" className="h-36 rounded-md"/>
+              <img loading="lazy" src="https://image.tmdb.org/t/p/original/nwkBJF67diqq1w20Xl5pxBZPAiB.jpg" className="h-36 rounded-md"/>
               <div className="ml-3">
                 <h1 className="text-white text-base font-semibold">Black Panther: Wakanda Forever</h1>
                 <p className="text-gray-500 my-1">2022 • Action, Adventure, Science Fiction • 2h 42m</p> 
@@ -95,7 +95,7 @@ export default function Home() {
                 </div>
             </div>
             <div className="flex my-4">
-              <img src="https://image.tmdb.org/t/p/original/tnmdUnztAYbfJ0jhjpN6oxwP2sb.jpg" className="h-36 rounded-md"/>
+              <img loading="lazy" src="https://image.tmdb.org/t/p/original/tnmdUnztAYbfJ0jhjpN6oxwP2sb.jpg" className="h-36 rounded-md"/>
               <div className="ml-3">
                 <h1 className="text-white text-base font-semibold">Avatar: The Way of Water</h1>
                 <p className="text-gray-500 my-1">2022 • Science Fiction, Action, Adventure • 3h 12m </p> 
@@ -103,7 +103,7 @@ export default function Home() {
                 </div>
             </div>
             <div className="flex">
-              <img src="https://image.tmdb.org/t/p/original/iEqhF3dtajbTtNRCztgn0q5gWKG.jpg" className="h-36 rounded-md"/>
+              <img loading="lazy" src="https://image.tmdb.org/t/p/original/iEqhF3dtajbTtNRCztgn0q5gWKG.jpg" className="h-36 rounded-md"/>
               <div className="ml-3">
                 <h1 className="text-white text-base font-semibold">Black Adam </h1>
                 <p className="text-gray-500 my-1">2022 • Action, Fantasy, Science Fiction • 2h 5m</p> 
@@ -117,7 +117,7 @@ export default function Home() {
           <div className="mx-5 my-5">
             <h1 className="text-white text-start text-2xl font-semibold my-1">Songs</h1>
             <div className="flex">
-              <img src="https://i.scdn.co/image/ab67616d0000b2737b2dba12da4b7f8e18cba810" className="h-36 rounded-md"/>
+              <img loading="lazy" src="https://i.scdn.co/image/ab67616d0000b2737b2dba12da4b7f8e18cba810" className="h-36 rounded-md"/>
               <div className="ml-3">
                 <h1 className="text-white text-base font-semibold">ICARUS</h1>
                 <p className="text-gray-500 my-1">BK • Gigantes • JXNV$ • 2022 • 13 tracks, 43min 45s </p> 
@@ -125,7 +125,7 @@ export default function Home() {
                 </div>
             </div>
             <div className="flex my-5">
-              <img src="https://i.scdn.co/image/ab67616d0000b273a76808aeebe1d33acd737530" className="h-36 rounded-md"/>
+              <img loading="lazy" src="https://i.scdn.co/image/ab67616d0000b273a76808aeebe1d33acd737530" className="h-36 rounded-md"/>
               <div className="ml-3">
                 <h1 className="text-white text-base font-semibold">O Dono do Lugar</h1>
                 <p className="text-gray-500 my-1">Djonga • Coyote Beatz • 2022 • 12 tracks, 4min 45s</p> 
@@ -133,7 +133,7 @@ export default function Home() {
                 </div>
             </div>
             <div className="flex">
-              <img src="https://i.scdn.co/image/ab67616d00001e024c19babd4aead8628f89d07b" className="h-36 rounded-md"/>
+              <img loading="lazy" src="https://i.scdn.co/image/ab67616d00001e024c19babd4aead8628f89d07b" className="h-36 rounded-md"/>
               <div className="ml-3">
                 <h1 className="text-white text-base font-semibold">O Sábio</h1>
                 <p className="text-gray-500 my-1">MC Poze do rodo • 2022 • 9 tracks, 29min 17s</p> 
@@ -147,7 +147,7 @@ export default function Home() {
           <div className="mx-5 my-5">
             <h1 className="text-white text-start text-2xl font-semibold my-1">Animes</h1>
             <div className="flex">
-              <img src="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx127230-FlochcFsyoF4.png" className="h-36 rounded-md"/>
+              <img loading="lazy" src="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx127230-FlochcFsyoF4.png" className="h-36 rounded-md"/>
               <div className="ml-3">
                 <h1 className="text-white text-base font-semibold">Chainsaw Man</h1>
                 <p className="text-gray-500 my-1">2022 • Comedy Drama Horror Supernatural • 12 Episodes</p> 
@@ -155,7 +155,7 @@ export default function Home() {
                 </div>
             </div>
             <div className="flex my-4">
-              <img src="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx142838-ECZSqfknAqAT.jpg" className="h-36 rounded-md"/>
+              <img loading="lazy" src="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx142838-ECZSqfknAqAT.jpg" className="h-36 rounded-md"/>
               <div className="ml-3">
                 <h1 className="text-white text-base font-semibold">SPY×FAMILY</h1>
                 <p className="text-gray-500 my-1">2022 • Action Comedy Slice of Life Supernatural • 25 Episodes</p> 
@@ -163,7 +163,7 @@ export default function Home() {
                 </div>
             </div>
             <div className="flex">
-              <img src="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx139630-oc4l8OtJ4tRQ.jpg" className="h-36 rounded-md"/>
+              <img loading="lazy" src="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx139630-oc4l8OtJ4tRQ.jpg" className="h-36 rounded-md"/>
               <div className="ml-3">
                 <h1 className="text-white text-base font-semibold">Black Adam </h1>
                 <p className="text-gray-500 my-1">2022 • Action Adventure Comedy • 12 Episodes</p> 
@@ -177,7 +177,7 @@ export default function Home() {
           <div className="mx-5 my-5">
             <h1 className="text-white text-start text-2xl font-semibold my-1">Series</h1>
             <div className="flex">
-              <img src="https://image.tmdb.org/t/p/original/58ugmnhnrnWC8tLNvifxlQVFB7K.jpg" className="h-36 rounded-md"/>
+              <img loading="lazy" src="https://image.tmdb.org/t/p/original/58ugmnhnrnWC8tLNvifxlQVFB7K.jpg" className="h-36 rounded-md"/>
               <div className="ml-3">
                 <h1 className="text-white text-base font-semibold">RICK AND MORTY</h1>
                 <p className="text-gray-500 my-1">2022 • Adventure, Comedy, Sci-Fi, Animation • 6 season</p> 
@@ -185,7 +185,7 @@ export default function Home() {
                 </div>
             </div>
             <div className="flex my-4">
-              <img src="https://www.themoviedb.org/t/p/original/k4aASwwYQCwZ01YHLOJhvDiHFOf.jpg " className="h-36 rounded-md"/>
+              <img loading="lazy" src="https://www.themoviedb.org/t/p/original/k4aASwwYQCwZ01YHLOJhvDiHFOf.jpg " className="h-36 rounded-md"/>
               <div className="ml-3">
                 <h1 className="text-white text-base font-semibold">1899</h1>
                 <p className="text-gray-500 my-1">2022 • Mystery, Horror, Period Work • 1 season </p> 
@@ -193,7 +193,7 @@ export default function Home() {
                 </div>
             </div>
             <div className="flex">
-              <img src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/ooBR3qulC40ws0QkYBUAYFKmLRE.jpg" className="h-36 rounded-md"/>
+              <img loading="lazy" src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/ooBR3qulC40ws0QkYBUAYFKmLRE.jpg" className="h-36 rounded-md"/>
               <div className="ml-3">
                 <h1 className="text-white text-base font-semibold">Wandinha</h1>
                 <p className="text-gray-500 my-1">2022 • Horror Comedy, Supernatural Fiction • 1 season</p> 
@@ -209,7 +209,7 @@ export default function Home() {
             {posts.map((post) => {
               return (
                 <a href="#"><div className="text-white">
-                  <img src={post.thumbnail} className="h-full rounded-xl" alt="" />
+                  <img loading="lazy" src={post.thumbnail} className="h-full rounded-xl" alt="" />
                   <h3 className="pt-3">{post.title}</h3>
                 </div></a>
               );

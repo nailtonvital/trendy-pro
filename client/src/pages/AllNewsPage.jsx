@@ -44,7 +44,7 @@ export default function AllNewsPage() {
                   content: post.description,
                 }}
               >
-                <img src={post.thumbnail} className="rounded" alt="" />
+                <img loading="lazy" src={post.thumbnail} className="rounded" alt="" />
                 <p className="font-bold mt-2">{post.title}</p>
                 <p className="text-[#CBCBCB] font-thin">{post.author}</p>
                 <p className="line-clamp-3 text-sm">

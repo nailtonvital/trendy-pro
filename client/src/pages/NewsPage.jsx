@@ -15,7 +15,7 @@ export default function NewsPage() {
         Author: {location.state.author}
       </p>
       <div className="img mt-5 ">
-        <img src={location.state.img} className="mx-auto rounded-2xl" alt="" />
+        <img loading="lazy" src={location.state.img} className="mx-auto rounded-2xl" alt="" />
       </div>
       <div
         className="mt-5 mx-3 text-justify py-5"

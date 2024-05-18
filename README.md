@@ -1,5 +1,5 @@
 <p align="center">
-  <img  src="https://user-images.githubusercontent.com/51789882/206223105-12a6b6c0-aee6-4bdb-ae3f-bbfe6afbc1c1.png" align=center">
+  <img loading="lazy"  src="https://user-images.githubusercontent.com/51789882/206223105-12a6b6c0-aee6-4bdb-ae3f-bbfe6afbc1c1.png" align=center">
 </p>
 <h1 align="center">TrendyPro</h1>
 <p align="center">A application that allows know whats trending</p>

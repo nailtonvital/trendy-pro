@@ -9,13 +9,13 @@ export default function MovieCard(props) {
         state={{ id: props.id, title: props.title, type: props.type }}
       >
         {props.anime ? (
-          <img
+          <img loading="lazy"
             className="rounded-sm object-cover md:rounded h-96 w-full"
             src={props.poster_img}
             alt={props.title}
           />
         ) : (
-          <img
+          <img loading="lazy"
             className="rounded-sm object-cover md:rounded"
             src={" https://image.tmdb.org/t/p/original" + props.poster_img}
             alt={props.title}
