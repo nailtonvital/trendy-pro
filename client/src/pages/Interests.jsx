@@ -213,10 +213,10 @@ export default function Interests() {
           message="For some reason we can't find any result."
         />
       ) : results.length > 0 ? (
-        <div class="flex flex-col ">
-          <div class="overflow-x-auto sm:-mx-6 lg:-mx-8 ">
-            <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
-              <div class="overflow-hidden  rounded-lg ">
+        <div className="flex flex-col ">
+          <div className="overflow-x-auto sm:-mx-6 lg:-mx-8 ">
+            <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+              <div className="overflow-hidden  rounded-lg ">
                 <h3 className="capitalize text-lg font-semibold flex my-2">
                   <svg
                     className="fill-white"
@@ -229,30 +229,30 @@ export default function Interests() {
                   </svg>
                   {results.length} results found
                 </h3>
-                <table class="min-w-full overflow-auto">
-                  <thead class="bg-[#1B1A20] border-b">
+                <table className="min-w-full overflow-auto">
+                  <thead className="bg-[#1B1A20] border-b">
                     <tr>
                       <th
                         scope="col"
-                        class="text-sm font-medium  text-slate-100 pl-6 py-4 text-left"
+                        className="text-sm font-medium  text-slate-100 pl-6 py-4 text-left"
                       >
                         Audience Size
                       </th>
                       <th
                         scope="col"
-                        class="text-sm font-medium  text-slate-100 py-4 text-left"
+                        className="text-sm font-medium  text-slate-100 py-4 text-left"
                       >
                         Name
                       </th>
                       <th
                         scope="col"
-                        class="text-sm font-medium  text-slate-100 py-4 text-left"
+                        className="text-sm font-medium  text-slate-100 py-4 text-left"
                       >
                         Topic
                       </th>
                       <th
                         scope="col"
-                        class="text-sm font-medium  text-slate-100 py-4 text-left"
+                        className="text-sm font-medium  text-slate-100 py-4 text-left"
                       >
                         Path
                       </th>
@@ -264,18 +264,18 @@ export default function Interests() {
                       return (
                         <tr
                           key={index}
-                          class="bg-[#1B1A20] border-b transition duration-300 ease-in-out hover:bg-[#26252B] "
+                          className="bg-[#1B1A20] border-b transition duration-300 ease-in-out hover:bg-[#26252B] "
                         >
-                          <td class="pl-6 py-4 whitespace-nowrap text-sm font-medium text-slate-100 ">
+                          <td className="pl-6 py-4 whitespace-nowrap text-sm font-medium text-slate-100 ">
                             {formatNumber(item.audience_size_upper_bound)}
                           </td>
-                          <td class="text-sm flex-col text-white font-bold py-4">
+                          <td className="text-sm flex-col text-white font-bold py-4">
                             {item.name}
                           </td>
-                          <td class="text-sm flex-col text-white font-bold pr-12 py-4 whitespace-nowrap">
+                          <td className="text-sm flex-col text-white font-bold pr-12 py-4 whitespace-nowrap">
                             {item.topic}
                           </td>
-                          <td class="text-sm flex-col text-white  font-medium pr-6 py-4 whitespace-nowrapp">
+                          <td className="text-sm flex-col text-white  font-medium pr-6 py-4 whitespace-nowrapp">
                             {item.path
                               .join()
                               .replace(",", ">")

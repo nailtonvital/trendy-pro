@@ -21,7 +21,7 @@
             let div = document.createElement('div')
             div.innerHTML = `
                 <div class="card">
-                    <img src="${"https://image.tmdb.org/t/p/original" + i.poster_path}" alt="" srcset="">
+                    <img loading="lazy" src="${"https://image.tmdb.org/t/p/original" + i.poster_path}" alt="" srcset="">
                     <p>${i.title}</p>
                 </div>
             `

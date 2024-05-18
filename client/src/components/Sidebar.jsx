@@ -46,7 +46,7 @@ export default function Sidebar() {
           </Link>
           <Link to="rss-feed">
             <li className="mb-2 hover:text-[#F47E02] transition duration-300 ease-in-out">
-              <i class="bx bx-rss"></i>
+              <i className="bx bx-rss"></i>
             </li>
           </Link>
         </ul>
@@ -55,7 +55,7 @@ export default function Sidebar() {
         <ul>
           <Link to="/login">
             <li className="hover:text-[#F47E02] transition duration-300 ease-in-out">
-              <img className="w-8" src={logo} alt="logo" />
+              <img loading="lazy" className="w-8" src={logo} alt="logo" />
             </li>
           </Link>
         </ul>
